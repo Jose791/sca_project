@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class MedicalCheck extends Model
 {
+   
     protected $fillable=['asylee_id','diagnostico'];
 
 

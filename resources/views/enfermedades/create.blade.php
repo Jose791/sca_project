@@ -26,6 +26,12 @@ Registro de Enfermedades
 <div class="validation-system">
  		
  		<div class="validation-form">
+
+      <h2>
+        
+           <a href="{{route('enfermedad.index')}}" class="btn btn-primary pull-right">Enfermedades Registradas</a>
+
+      </h2>
  	<!---->
 <!--  	    <h1 align="center">Registro de Enfermedades</h1>-->
             

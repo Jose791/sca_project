@@ -1746,7 +1746,19 @@ div#home {
     color: #999;
     border-top: none !important;
 }
+.table tr {
 
+ text-align: center;
+
+
+}
+
+.table th {
+
+ text-align: center;
+
+
+}
 /*--inbox--*/
 .inbox-right {
     background-color: #fff;
@@ -2728,6 +2740,11 @@ h3.head-top {
 .alert {
     font-size: 0.9em;
 }
+
+.alert p{
+    text-align: center;
+}
+
 .pagination-lg>li>a, .pagination-lg>li>span {
     padding: 4px 12px;
 }

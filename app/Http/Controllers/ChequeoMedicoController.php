@@ -31,10 +31,11 @@ class ChequeoMedicoController extends Controller
     public function index()
     {
        
-      $chequeosmedicos = MedicalCheck::all();
-      
-//         dd($chequeosm );
-        
+        $chequeosmedicos = MedicalCheck::with('asylee')
+            ->get()
+            ->toArray();
+
+        // dd($chequeosmedicos);
         return view('chequeos_medicos.index',compact('chequeosmedicos'));
     }
 
@@ -60,21 +61,18 @@ class ChequeoMedicoController extends Controller
          $chequeosmedicos = MedicalCheck::create ($request->all());
         // $chequeosmedicos = MedicalCheck::all();
         
-        // pero despues que yo guarde un registro, quiere que me lleve a una vista principal de ese modulo...
-        // seria algo como esto:
+     
 
         return redirect()->route('chequeo_medico.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+     public function show($id)
     {
-        //
+        $chequeosmedicos = MedicalCheck::find($id);
+
+        // dd($asilados);
+
+        return view('chequeos_medicos.show', compact('chequeosmedicos'));
     }
 
     /**
@@ -85,7 +83,12 @@ class ChequeoMedicoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $asilados = Asylee::all();
+        $chequeosmedicos=MedicalCheck::with('asylee')->where('id', $id)
+            ->get()
+            ->toArray();
+
+        return view('chequeos_medicos.edit')->with (compact('chequeosmedicos', 'asilados'));
     }
 
     /**
@@ -95,9 +98,18 @@ class ChequeoMedicoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CrearChequeosMedicosRequest $request, $id)
     {
-        //
+        $chequeosmedicos=MedicalCheck::find($id);
+
+        $chequeosmedicos->asylee_id=$request->input('asylee_id');
+        $chequeosmedicos->diagnostico=$request->input('diagnostico');
+       
+
+        $chequeosmedicos->save();
+
+         // $asilados = Asylee::all();
+        return redirect('/chequeos_registrados');
     }
 
     /**
@@ -108,6 +120,13 @@ class ChequeoMedicoController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        // dd("eliminado".$id);
+        $chequeosmedicos = \App\MedicalCheck::findOrFail($id);
+        $chequeosmedicos->delete();
+
+        // Session::flash('info',$chequeosmedicos->nombre, $asilados->apellido. ' Fue Eliminado');
+
+         return redirect()->route('chequeo_medico.index');
     }
 }

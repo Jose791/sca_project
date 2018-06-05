@@ -27,7 +27,10 @@ class VisitaController extends Controller
     
     public function index()
     {
-        $visitas = Visit::all();
+        $visitas = Visit::with('asylee','visitor')->get()->toArray();
+;
+       // $visitas = Visit::all();
+        // dd($visitas);
         
         return view('visitas.index', compact('visitas'));
     }
@@ -50,12 +53,23 @@ class VisitaController extends Controller
 
     public function show($id)
     {
-        //
+        $visitas = Visit::find($id);
+
+
+        return view('visitas.show', compact('visitas'));
     }
 
     public function edit($id)
     {
-        //
+        
+        $visitantes=Visitor::with('visits')->get();
+        $asilados = Asylee::all();
+        $visitas=Visit::with('visitor')->get()->toArray();
+        // $asilados=Visit::with('asylee')->get()->toArray();
+    
+       
+
+        return view('visitas.edit')->with (compact('visitas','asilados','visitantes'));
     }
 
     public function update(Request $request, $id)
@@ -65,6 +79,12 @@ class VisitaController extends Controller
 
     public function destroy($id)
     {
-        //
+        // dd("eliminado".$id);
+        $visitas = \App\Visit::findOrFail($id);
+        $visitas->delete();
+
+        // Session::flash('info',$asilados->nombre, $asilados->apellido. ' Fue Eliminado');
+
+         return redirect()->route('visita.index');
     }
 }

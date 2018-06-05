@@ -16,7 +16,7 @@ class CreateAsyleesTable extends Migration
         Schema::create('asylees', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->integer('cedula');
+            $table->string('cedula');
             $table->string('nombre');
             $table->string('apellido');
             $table->string('sexo');
@@ -24,6 +24,7 @@ class CreateAsyleesTable extends Migration
             $table->date('fecha_nac');
             $table->string('condicion_especial');
             $table->string('estado');
+
         });
     }
 

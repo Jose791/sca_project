@@ -18,7 +18,7 @@ class CreateVisitorsTable extends Migration
             $table->timestamps();
             $table->string('nombre');
              $table->string('apellido');
-             $table->integer('cedula');
+             $table->string('cedula');
              $table->string('direccion');
              $table->string('sexo');
             

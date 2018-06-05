@@ -19,24 +19,39 @@
 	
 	<h2>Todos los Asilados</h2>
 	  <p>Todos los Asilados registrados</p>  
+	 
 	  <div class="validation-system">
  		
- 		<div class="validation-form">          
+ 		<div class="validation-form">  
+	<div class="col-sm-4">
+  
+@include('asilados.partials.aside')
+
+</div>
+ 		        
 	  <div class="panel-danger">
 	  	<div class="panel-body">
-		  <table class="table ">
+	  
+	  	<h2>
+	  		
+           <a href="{{route('asilado.create')}}" class="btn btn-primary pull-right">Nuevo</a>
+
+	  	</h2>
+	  	@include('asilados.partials.info')
+		  <table class="table table-bordered ">
 		    <thead>
-		      <tr>
-		        <th>Asilado #</th>
+		      <tr >
+		        <th >Asilado #</th>
 		        <th>Cedula</th>
                 <th>Nombre</th>
 		        <th>Apellidos</th>
                 <th>Sexo</th>
-		        <th>Residencia</th>
-                <th>Fecha de Nacimiento</th>
-		        <th class="col-md-4">Condicion</th>
+		        {{-- <th>Residencia</th>
+                <th>Fecha de Nacimiento</th> --}}
+		        <th >Condicion</th>
                 <th>Estado</th>
-                <th class="col-md-4">Opciones</th>
+                <th colspan="3">Accion</th>
+                {{-- <th class="col-md-4">Opciones</th> --}}
 		      </tr>
 		    </thead>
 		    <tbody>
@@ -47,37 +62,65 @@
                     <td>{{ $asilado->nombre }}</td>
 			        <td>{{ $asilado->apellido }}</td>
                     <td>{{ $asilado->sexo }}</td>
-			        <td>{{ $asilado->residencia }}</td>
-                    <td>{{ $asilado->fecha_nac }}</td>
+			        {{-- <td>{{ $asilado->residencia }}</td>
+                    <td>{{ $asilado->fecha_nac }}</td> --}}
 			        <td>{{ $asilado->condicion_especial }}</td>
                     <td>{{ $asilado->estado }}</td>
-                    {{-- <td>
+                    <td width="10px">
+                    	<a href="{{route('asilado.show',$asilado->id)}}" class="btn btn-info">
+                          
+                          Ver                    		
+
+                    	</a>
+                     </td>
+
+
+
+                   
+
+                    <td width="10px">
+                    	<a href="{{route('asilado.edit',$asilado->id)}}" class="btn btn-warning">
+                          
+                          Editar                    		
+
+                    	</a>
+
+
+                    </td>
+
+          
+                     <td width="10px">
+                    
                     	
-                      <button type="button" rel="tooltip" title="ver Asilado" class="btn btn-info btn-simple btn-xs">
-                      	<i class="fa fa-info"></i>
+                    	<form action="{{action('AsiladoController@destroy',$asilado['id'])}}"  method="post">
 
-                      </button>
+                    	{{ csrf_field() }}
 
-                      <a href="{{url('/asilados_registrados/'.$asilado->id.'/edit')}}" type="button" rel="tooltip" title="Editar Asilado" class="btn btn-success btn-simple btn-xs">
-                      	<i class="fa fa-edit"></i>
+                    	<input type="hidden" name="_method" value="DELETE">
 
-                      </a>
+                    	<button class="btn btn-danger" type="submit" onclick="return confirm('seguro que desea eliminar?')">Borrar</button>
 
-                      <button type="button" rel="tooltip" title="Eliminar Asilado" class="btn btn-danger btn-simple btn-xs">
-                      	<i class="fa fa-times"></i>
+                    	</form>
 
-                      </button>
-
-
-
-                    </td> --}}
+                     </td>
+                    
+                  
 			      </tr>
+
 		      @endforeach
+
 		    </tbody>
 		  </table>
-	  	</div>
+		  {!! $asilados->render() !!}
+	  	
+	  </div>
 	  </div>
 </div>
+
+
+
 </div>
+
+
 @endsection
 

@@ -26,6 +26,12 @@ Registro de Visitas
 <div class="validation-system">
  		
  		<div class="validation-form">
+
+      <h2>
+        
+           <a href="{{route('visita.index')}}" class="btn btn-primary pull-right">Visitas Registradas</a>
+
+      </h2>
  	<!---->
   	    
         <form method="post" action="{{ url('/visitas') }}">

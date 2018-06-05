@@ -26,8 +26,12 @@ Chequeos Medicos
 <div class="validation-system">
  		
  		<div class="validation-form">
- 	<!---->
-<!--  	    <h1 align="center">Registro de Chequeos Medicos</h1>-->
+
+          <h2>
+        
+           <a href="{{route('chequeo_medico.index')}}" class="btn btn-primary pull-right">Chequeos Registrados</a>
+
+      </h2>
         <form method="post" action="{{ url('/chequeos_medicos') }}">
             {{ csrf_field() }}
            

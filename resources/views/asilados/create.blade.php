@@ -26,6 +26,12 @@ Registro de Asilados
 <div class="validation-system">
  		
  		<div class="validation-form">
+
+      <h2>
+        
+           <a href="{{route('asilado.index')}}" class="btn btn-primary pull-right">Asilados Registrados</a>
+
+      </h2>
  	<!---->
         
 <!--            <h1 align="center">Registro de Asilado</h1>-->

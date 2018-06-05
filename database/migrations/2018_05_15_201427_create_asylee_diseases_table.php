@@ -13,12 +13,13 @@ class CreateAsyleeDiseasesTable extends Migration
      */
     public function up()
     {
-        Schema::create('asylee_diseases', function (Blueprint $table) {
+        Schema::create('asylee_disease', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
             $table->integer('asylee_id')->unsigned();
+            $table->foreign('asylee_id')->references('id')->on('asylees');
             $table->integer('disease_id')->unsigned();
-            
+            $table->foreign('disease_id')->references('id')->on('diseases');
+            $table->timestamps();
 //            $table->foreign('asylee_id')->references('id')->on('asylees');
 //            $table->foreign('disease_id')->references('id')->on('diseases');
         });

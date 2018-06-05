@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests\CrearAsiladosRequest;
 
+use Illuminate\Support\Facades\Session;
+
 class AsiladoController extends Controller
 {
     /**
@@ -29,8 +31,11 @@ class AsiladoController extends Controller
       
 
         // dd($medicamentos);
-        $asilados = Asylee::all();
-        return view('asilados.index')->with (compact('asilados'));
+        $asilados = \App\Asylee::OrderBy('id','DESC')->paginate(10);
+        
+
+
+        return view('asilados.index',compact('asilados'));
     }
 
     /**
@@ -51,7 +56,7 @@ class AsiladoController extends Controller
      */
     public function store(CrearAsiladosRequest $request)
     {
-        $asilado = Asylee::create ($request->all());
+        $asilados = Asylee::create ($request->all());
         // $asilados = Asylee::all();
         // pero despues que yo guarde un registro, quiere que me lleve a una vista principal de ese modulo...
         // seria algo como esto:
@@ -68,7 +73,11 @@ class AsiladoController extends Controller
      */
     public function show($id)
     {
-        //
+        $asilados = Asylee::find($id);
+
+        // dd($asilados);
+
+        return view('asilados.show', compact('asilados'));
     }
 
     /**
@@ -79,7 +88,7 @@ class AsiladoController extends Controller
      */
     public function edit($id)
     {
-        $asilados=asylee::find($id);
+        $asilados=Asylee::find($id);
 
         return view('asilados.edit')->with (compact('asilados'));
     }
@@ -93,20 +102,20 @@ class AsiladoController extends Controller
      */
     public function update(CrearAsiladosRequest $request, $id)
     {
-        $asilado=Asylee::find($id);
-        $asilado->nombre=$request->input('nombre');
-        $asilado->apellido=$request->input('apellido');
-        $asilado->cedula=$request->input('cedula');
-        $asilado->sexo=$request->input('sexo');
-        $asilado->residencia=$request->input('residencia');
-        $asilado->fecha_nac=$request->input('fecha_nac');
-        $asilado->condicion_especial=$request->input('condicion_especial');
-        $asilado->estado=$request->input('estado');
+        $asilados = Asylee::find($id);
 
-        $asilado->save();
+        $asilados->nombre = $request->nombre;
+        $asilados->apellido = $request->apellido;
+        $asilados->cedula = $request->cedula;
+        $asilados->sexo = $request->sexo;
+        $asilados->residencia = $request->residencia;
+        $asilados->fecha_nac = $request->fecha_nac;
+        $asilados->condicion_especial = $request->condicion_especial;
+        $asilados->estado = $request->estado;
 
-         // $asilados = Asylee::all();
-        return redirect('/asilados_registrados');
+        $asilados->save();
+
+        return redirect()->route('asilado.index');
     }
 
     /**
@@ -117,6 +126,13 @@ class AsiladoController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        // dd("eliminado".$id);
+        $asilados = \App\Asylee::findOrFail($id);
+        $asilados->delete();
+
+        Session::flash('info',$asilados->nombre, $asilados->apellido. ' Fue Eliminado');
+
+         return redirect()->route('asilado.index');
     }
 }

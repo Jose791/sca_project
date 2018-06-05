@@ -32,7 +32,7 @@ class CrearAsiladosRequest extends FormRequest
                'residencia'=>'required',
                'fecha_nac'=>'required',
                'condicion_especial'=>'required',
-               'estado'=>'required',    
+               'estado'=>'required' 
             
         ];
 

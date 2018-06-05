@@ -26,6 +26,12 @@ Registro de Dietas
 <div class="validation-system">
  		
  		<div class="validation-form">
+
+      <h2>
+        
+           <a href="{{route('dieta.index')}}" class="btn btn-primary pull-right">Dietas Registradas</a>
+
+      </h2>
  	<!---->
 <!--  	    <h1 align="center">Registro de Dietas</h1>-->
             

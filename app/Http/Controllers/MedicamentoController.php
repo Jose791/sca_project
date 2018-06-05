@@ -68,7 +68,11 @@ class MedicamentoController extends Controller
      */
     public function show($id)
     {
-        //
+        $medicamentos = Medicine::find($id);
+
+        // dd($asilados);
+
+        return view('medicamentos.show', compact('medicamentos'));
     }
 
     /**
@@ -79,7 +83,9 @@ class MedicamentoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $medicamentos=Medicine::find($id);
+
+        return view('medicamentos.edit')->with (compact('medicamentos'));
     }
 
     /**
@@ -91,7 +97,15 @@ class MedicamentoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         $medicamentos = Medicine::find($id);
+
+        $medicamentos->nombre = $request->nombre;
+        $medicamentos->condicion = $request->condicion;
+        
+
+        $medicamentos->save();
+
+        return redirect()->route('medicamento.index');
     }
 
     /**
@@ -102,6 +116,12 @@ class MedicamentoController extends Controller
      */
     public function destroy($id)
     {
-        //
+         // dd("eliminado".$id);
+        $medicamentos = \App\Medicine::findOrFail($id);
+        $medicamentos->delete();
+
+        // Session::flash('info',$asilados->nombre, $asilados->apellido. ' Fue Eliminado');
+
+         return redirect()->route('medicamento.index');
     }
 }

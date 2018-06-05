@@ -15,6 +15,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="{{asset('css/font-awesome.css')}}" rel="stylesheet"> 
 <script src="{{asset('js/jquery.min.js')}}"> </script>
 <script src="{{asset('js/bootstrap.min.js')}}"> </script>
+<script src="{{asset('js/Chart.js')}}"></script>
  
 <!-- Mainly scripts -->
 <script src="{{asset('js/jquery.metisMenu.js')}}"></script>
@@ -142,7 +143,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 -->
 		            </li>
 					<li class="dropdown">
-		              <a href="#" class="dropdown-toggle dropdown-at" data-toggle="dropdown"><span class=" name-caret">{{ Auth::user()->name }}<i class="caret"></i></span><img src="images/wo.jpg"></a>
+		              <a href="#" class="dropdown-toggle dropdown-at" data-toggle="dropdown"><span class=" name-caret">{{ Auth::user()->name }}<i class="caret"></i></span><img src="{{asset('images/wo.jpg')}}"></a>
 		              <ul class="dropdown-menu " role="menu">
 <!--
 		                <li><a href="profile.html"><i class="fa fa-user"></i>Edit Profile</a></li>
@@ -197,11 +198,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li>
                         <a href="#" class=" hvr-bounce-to-right"><i class="fa fa-list nav_icon"></i> <span class="nav-label">Formularios</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="asilados" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Ansianos</a></li>
+                            <li><a href="{{url('/asilados')}}" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Ansianos</a></li>
                             <li><a href="enfermedades" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Enfermedades</a></li>
                             <li><a href="medicamentos" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Medicamentos</a></li>
                             <li><a href="dietas" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Dietas</a></li>
-                            <li><a href="chequeos_medicos" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Chequeos Medicos</a></li>
+                            <li><a href="{{url('chequeos_medicos')}}" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Chequeos Medicos</a></li>
                             <li><a href="medicamento_asilado" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Asilado Medicamento</a></li>
                             <li><a href="visitantes" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Visitantes</a></li>
                             <li><a href="visitas" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Visitas</a></li>
@@ -211,7 +212,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li>
                         <a href="#" class=" hvr-bounce-to-right"><i class="fa fa-indent nav_icon"></i> <span class="nav-label">Reportes</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="#" class=" hvr-bounce-to-right"> <i class="fa fa-area-chart nav_icon"></i>#</a></li>
+                            <li><a href="{{url('chartjs')}}" class=" hvr-bounce-to-right"> <i class="fa fa-area-chart nav_icon"></i>reporte #1</a></li>
                             
                             <li><a href="#" class=" hvr-bounce-to-right"><i class="fa fa-map-marker nav_icon"></i>#</a></li>
 			

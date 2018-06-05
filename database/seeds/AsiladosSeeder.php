@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
+use Illuminate\Support\Facades\DB;
+
 class AsiladosSeeder extends Seeder
 {
     /**
@@ -11,6 +13,12 @@ class AsiladosSeeder extends Seeder
      */
     public function run()
     {
-        //
+        
+
+        DB::table('asylees')->insert([
+
+
+
+        ]);
     }
 }

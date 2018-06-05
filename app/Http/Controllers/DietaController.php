@@ -10,6 +10,8 @@ use App\Http\Requests\CrearDietasRequest;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Session;
+
 class DietaController extends Controller
 {
     /**
@@ -71,9 +73,13 @@ class DietaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+      public function show($id)
     {
-        //
+        $dietas = Diet::find($id);
+
+        // dd($asilados);
+
+        return view('dietas.show', compact('dietas'));
     }
 
     /**
@@ -84,8 +90,20 @@ class DietaController extends Controller
      */
     public function edit($id)
     {
-        //
-    }
+       
+       $asilados = Asylee::all();
+       $dietas=Diet::find($id);
+
+        return view('dietas.edit')->with (compact('dietas','asilados'));
+
+        // $asilados = Asylee::all();
+        // $dietas=Diet::with('asylee')->where('id', $id)
+        //     ->get()
+        //     ->toArray();
+
+        // return view('dietas.edit')->with (compact('dietas', 'asilados'));   
+
+         }
 
     /**
      * Update the specified resource in storage.
@@ -96,7 +114,17 @@ class DietaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+          $dietas = Diet::find($id);
+
+        $dietas->asylee_id = $request->asylee_id;
+        $dietas->descripcion = $request->descripcion;
+        $dietas->estado = $request->estado;
+        $dietas->hora_dieta = $request->hora_dieta;
+      
+
+        $dietas->save();
+
+        return redirect()->route('dieta.index');
     }
 
     /**
@@ -107,6 +135,13 @@ class DietaController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        // dd("eliminado".$id);
+        $dietas = \App\Diet::findOrFail($id);
+        $dietas->delete();
+
+        // Session::flash('info',$dietas->nombre, $asilados->apellido. ' Fue Eliminado');
+
+         return redirect()->route('dieta.index');
     }
 }

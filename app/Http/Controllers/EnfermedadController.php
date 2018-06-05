@@ -28,10 +28,9 @@ public function __construct()
     
     public function index()
     {
-        $enfermedades = Disease::all();
-
-        // dd($medicamentos);
-        
+        // $enfermedades = Disease::all();
+       $enfermedades = Disease::with('asylees')->get();
+        // dd($enfermedades);
         return view('enfermedades.index',compact('enfermedades'));
     }
 
@@ -71,7 +70,11 @@ public function __construct()
      */
     public function show($id)
     {
-        //
+        $enfermedades = Disease::find($id);
+
+        // dd($asilados);
+
+        return view('enfermedades.show', compact('enfermedades'));
     }
 
     /**
@@ -82,7 +85,9 @@ public function __construct()
      */
     public function edit($id)
     {
-        //
+        $enfermedades=Disease::find($id);
+
+        return view('enfermedades.edit')->with (compact('enfermedades'));
     }
 
     /**
@@ -94,7 +99,14 @@ public function __construct()
      */
     public function update(Request $request, $id)
     {
-        //
+         $enfermedades = Disease::find($id);
+
+        $enfermedades->nombre = $request->nombre;
+       
+
+        $enfermedades->save();
+
+        return redirect()->route('enfermedad.index');
     }
 
     /**
@@ -105,6 +117,12 @@ public function __construct()
      */
     public function destroy($id)
     {
-        //
+        // dd("eliminado".$id);
+        $enfermedades = \App\Disease::findOrFail($id);
+        $enfermedades->delete();
+
+        // Session::flash('info',$asilados->nombre, $asilados->apellido. ' Fue Eliminado');
+
+         return redirect()->route('enfermedad.index');
     }
 }
