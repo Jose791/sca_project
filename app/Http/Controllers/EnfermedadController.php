@@ -28,8 +28,10 @@ public function __construct()
     
     public function index()
     {
+
+        $enfermedades = \App\Disease::OrderBy('id','DESC')->paginate(10);
         // $enfermedades = Disease::all();
-       $enfermedades = Disease::with('asylees')->get();
+       // $enfermedades = Disease::with('asylees')->get();
         // dd($enfermedades);
         return view('enfermedades.index',compact('enfermedades'));
     }
@@ -52,6 +54,9 @@ public function __construct()
      */
     public function store(CrearEnfermedadesRequest $request)
     {
+
+       
+
         $enfermedade = Disease::create ($request->all());
 
         // $enfermedades = Disease::all();
@@ -97,11 +102,12 @@ public function __construct()
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CrearEnfermedadesRequest $request, $id)
     {
          $enfermedades = Disease::find($id);
 
-        $enfermedades->nombre = $request->nombre;
+        $enfermedades->enfermedad = $request->enfermedad;
+        // $enfermedades->descripcion = $request->descripcion;
        
 
         $enfermedades->save();

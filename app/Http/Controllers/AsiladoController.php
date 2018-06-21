@@ -4,11 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Asylee;
 
+use App\Disease;
+
+use App\Medicine;
+
 use Illuminate\Http\Request;
 
 use App\Http\Requests\CrearAsiladosRequest;
 
 use Illuminate\Support\Facades\Session;
+
+use Illuminate\Support\Facades\DB;
 
 class AsiladoController extends Controller
 {
@@ -28,15 +34,21 @@ class AsiladoController extends Controller
     }
     public function index()
     {
+       
       
+        $contar=Asylee::all()->count();
 
-        // dd($medicamentos);
         $asilados = \App\Asylee::OrderBy('id','DESC')->paginate(10);
+
+        // $users = DB::table('users')->count();
         
+        // dd($asilados);
+     
 
+        return view('asilados.index',compact('asilados','contar'));
+   
 
-        return view('asilados.index',compact('asilados'));
-    }
+}
 
     /**
      * Show the form for creating a new resource.
@@ -45,6 +57,10 @@ class AsiladoController extends Controller
      */
     public function create()
     {
+
+
+        
+
         return view('asilados.create');
     }
 
@@ -54,16 +70,58 @@ class AsiladoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CrearAsiladosRequest $request)
-    {
-        $asilados = Asylee::create ($request->all());
-        // $asilados = Asylee::all();
-        // pero despues que yo guarde un registro, quiere que me lleve a una vista principal de ese modulo...
-        // seria algo como esto:
+    public function store(CrearAsiladosRequest $request  )
+   
+
+    {    
+      
+        
+        $asilados = Asylee::create ($request->only(['nombre','apellido','cedula','sexo','residencia','fecha_nac','condicion_especial','estado']));
+
+         $enfermedades = explode( "," , $request->get( 'enfermedad'));
+         $medicinas = explode(",", $request->get('medicamento'));
+         $condi =explode(",", $request->get('condicion'));
+         $hora_medicamento = explode(",", $request->get('hora_medicamento'));
+         $complemento = explode(",", $request->get('complemento'));
+
+
+          $diseases=[];
+          $medicinaa=[];
+         
+   
+          foreach ($enfermedades as $enfermedad) {
+            $enfermedad_db = Disease::where('enfermedad', trim($enfermedad))->firstOrCreate(['enfermedad' => trim($enfermedad)]);
+           $diseases[] =  $enfermedad_db->id;
+       }
+
+       //tabla medicines
+
+       foreach ($medicinas as $medicina) {
+
+            foreach($condi as $condis)
+
+            $medicina_db = Medicine::where('medicamento', trim($medicina))->firstOrCreate(['medicamento' => trim($medicina), 'condicion'=>trim($condis)]);
+           $medicinaa[] =  $medicina_db->id;
+
+       }
+
+       //llenar tabla pivot asylee_disease
+        $asilados->diseases()->attach($diseases);
+
+       //tabla pivot asylee_medicine
+
+        foreach($hora_medicamento as $hora_medicine)
+            
+            foreach ($complemento as $complement)
+          
+        $asilados->medicines()->attach($medicinaa, ['hora_medicamento' => $hora_medicine, 'complemento'=>$complement]);
+        
+
 
         return redirect()->route('asilado.index');
     }
-    
+
+
 
     /**
      * Display the specified resource.
@@ -135,4 +193,10 @@ class AsiladoController extends Controller
 
          return redirect()->route('asilado.index');
     }
+
+
+
+      
 }
+
+

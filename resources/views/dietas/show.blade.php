@@ -15,6 +15,8 @@
 		        <th>Dieta #</th>
 		        <th>Asilado</th>  
                 <th>Descripcion</th>
+                <th>Estado</th>
+                <th>Hora</th>
                 <th colspan="3">Accion</th>
 		      </tr>
 		    </thead>
@@ -24,6 +26,8 @@
 			        <td>{{ $dietas->id}}</td>
 			        <td>{{ $dietas->asylee->nombre}}</td>
                     <td>{{ $dietas->descripcion }}</td>
+                    <td>{{ $dietas->estado }}</td>
+                    <td>{{ $dietas->hora_dieta }}</td>
                      {{-- <td width="10px">
                     	<a href="{{route('chequeo_medico.show',$chequeosmedicos->id)}}" class="btn btn-info">
                           

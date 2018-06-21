@@ -26,8 +26,9 @@
 		  <table class="table">
 		    <thead>
 		      <tr>
-		        <th>ID</th>
+		        <th># Enfermedad</th>
 		        <th>Nombre</th>
+		       {{--  <th>Descripcion</th> --}}
 		        <th colspan="3">Accion</th>
 		      </tr>
 		    </thead>
@@ -35,8 +36,8 @@
 		      @foreach($enfermedades as $enfermedad)
 			      <tr>
 			        <td>{{ $enfermedad->id }}</td>
-			        <td>{{ $enfermedad->nombre }}</td>
-
+			        <td>{{ $enfermedad->enfermedad }}</td>
+                   {{--  <td>{{ $enfermedad->descripcion }}</td> --}}
 
                    <td width="10px">
                     	<a href="{{route('enfermedad.show',$enfermedad->id)}}" class="btn btn-info">
@@ -81,6 +82,7 @@
 		      @endforeach
 		    </tbody>
 		  </table>
+		  {!! $enfermedades->render() !!}
 	  	</div>
 	  </div>
    </div>

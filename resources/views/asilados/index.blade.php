@@ -18,12 +18,22 @@
 
 	
 	<h2>Todos los Asilados</h2>
-	  <p>Todos los Asilados registrados</p>  
+	  <p>Todos los Asilados registrados</p> 
+
+	{{--   <div>
+	  	
+      <li>{{$contar}}</li>
+
+	  </div>  --}}
 	 
 	  <div class="validation-system">
  		
  		<div class="validation-form">  
 	<div class="col-sm-4">
+
+		<div >
+
+</div>
   
 @include('asilados.partials.aside')
 
@@ -31,14 +41,17 @@
  		        
 	  <div class="panel-danger">
 	  	<div class="panel-body">
-	  
+	  <h4 align="left">Cantidad de Registros {{$contar}}</h4>
 	  	<h2>
 	  		
            <a href="{{route('asilado.create')}}" class="btn btn-primary pull-right">Nuevo</a>
 
 	  	</h2>
 	  	@include('asilados.partials.info')
+	  	
+
 		  <table class="table table-bordered ">
+
 		    <thead>
 		      <tr >
 		        <th >Asilado #</th>

@@ -24,7 +24,8 @@ class CrearEnfermedadesRequest extends FormRequest
     public function rules()
     {
         return [
-                 'nombre'=>'required'
+                 'enfermedad'=>'required',
+                 'descripcion'=>'required'
         ];
     }
 
@@ -35,7 +36,8 @@ class CrearEnfermedadesRequest extends FormRequest
 
       return[
 
-               'nombre.required'=>'El campo Nombre de Enfermedad es requerido',
+               'enfermedad.required'=>'El campo Nombre de Enfermedad es requerido',
+               'descripcion.required'=>'El campo Descripcion de Enfermedad es requerido'
                
 
 

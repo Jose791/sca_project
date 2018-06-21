@@ -63,8 +63,14 @@ Registro de Enfermedades
 
             <div class="col-md-10 form-group1 group-mail">
               <label class="control-label">Nombre de Enfermedad</label>
-              <input name="nombre" type="text" placeholder="Nombre Enfermedad" >
+              <input name="enfermedad" type="text" placeholder="Nombre Enfermedad" >
             </div>
+
+              {{--  <div class="col-md-10 form-group1 group-mail">
+              <label class="control-label">Descripcion de la Enfermedad</label>
+              <input name="descripcion" type="text" placeholder="descripcion"  >
+            </div> --}}
+            
             
          	
             

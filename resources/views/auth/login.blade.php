@@ -39,8 +39,8 @@
 				<label class="hvr-shutter-in-horizontal login-sub">
                   <input type="submit" value="iniciar sesión" {{ __('Login') }}>
 				</label>
-					<p>¿No tiene una cuenta?</p>
-				<a href="register" class="hvr-shutter-in-horizontal">Regístrate</a>
+					{{-- <p>¿No tiene una cuenta?</p>
+				<a href="register" class="hvr-shutter-in-horizontal">Regístrate</a> --}}
 			</div>
 			
 			<div class="clearfix"> </div>

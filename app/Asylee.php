@@ -11,12 +11,14 @@ class Asylee extends Model
 
 
     public function diseases(){
-        return $this->belongsToMany('\App\Disease')->withTimestamps();
+        return $this->belongsToMany(Disease::class,'asylee_disease')
+            ->withPivot('asylee_id','disease_id')->withTimestamps();
             
     }
 
     public function medicines(){
-        return $this->belongsToMany('\App\Medicine')->withTimestamps();
+        return $this->belongsToMany(Medicine::class,'asylee_medicine')
+            ->withPivot('asylee_id','medicine_id','hora_medicamento', 'complemento')->withTimestamps();
             
     }
 

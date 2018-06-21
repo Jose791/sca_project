@@ -31,7 +31,7 @@
 		    <tbody>
 		      @foreach($medicamentos as $medicamento)
 			      <tr>
-			        <td>{{ $medicamento->nombre }}</td>
+			        <td>{{ $medicamento->medicamento }}</td>
 			        <td>{{ $medicamento->condicion }}</td>
 
 

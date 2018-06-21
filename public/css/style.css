@@ -1323,7 +1323,7 @@ label.control-label {
     margin: 0;
 }
 .form-group1 input[type="text"],.form-group1 textarea,
-.form-group1 input[type="password"],.form-group1 input[type="date"]{
+.form-group1 input[type="password"],.form-group1 input[type="date"],.form-group1 input[type="time"]{
 	border: 1px solid #E9E9E9;
     font-size: 0.9em;
     width: 100%;

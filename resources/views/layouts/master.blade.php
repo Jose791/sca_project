@@ -79,7 +79,39 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		        <ul class=" nav_1">
 		           
 		    		<li class="dropdown at-drop">
-		              <a href="#" class="dropdown-toggle dropdown-at " data-toggle="dropdown"><i class="fa fa-globe"></i> <span class="number">5</span></a>
+		              <a href="#" class="dropdown-toggle dropdown-at " data-toggle="dropdown"><i class="fa fa-globe"></i>
+                       
+                       @if (count(Auth::user()->unreadNotifications))
+
+		         <span class="number">{{count(Auth::user()->unreadNotifications)}}</span>
+                 
+                        @endif
+
+	       	           </a>
+
+		              <ul class="dropdown-menu" role="menu">
+
+		              	{{-- <li><a style="color: green" href="{{route('markRead')}}">Marcar todas como leidas</a></li> --}}
+        
+           {{--  @foreach (Auth::user()->unreadNotifications as $notification)
+            
+             <li style="background-color:lightgray">
+                 <a href="#"><i> </i>  <b>{{ $notification->data['data'] }}</b></a>
+             </li>
+
+            @endforeach
+        
+
+         
+            @foreach (Auth::user()->readNotifications as $notification)
+              <li>
+                <a href="#"><i> </i>  <b>{{ $notification->data['data'] }}</b></a>
+              </li>
+            @endforeach --}}
+        
+    </ul>
+
+	
 <!--
 		              <ul class="dropdown-menu menu1 " role="menu">
 		                <li><a href="#">
@@ -172,7 +204,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <ul class="nav" id="side-menu">
 				
                     <li>
-                        <a href="inicio" class=" hvr-bounce-to-right"><i class="fa fa-home nav_icon "></i><span class="nav-label">Inicio</span> </a>
+                        <a href="{{url('/inicio')}}" class=" hvr-bounce-to-right"><i class="fa fa-home nav_icon "></i><span class="nav-label">Inicio</span> </a>
                     </li>
                    
                     
@@ -212,7 +244,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li>
                         <a href="#" class=" hvr-bounce-to-right"><i class="fa fa-indent nav_icon"></i> <span class="nav-label">Reportes</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="{{url('chartjs')}}" class=" hvr-bounce-to-right"> <i class="fa fa-area-chart nav_icon"></i>reporte #1</a></li>
+                            <li><a href="{{url('/chart')}}" class=" hvr-bounce-to-right"> <i class="fa fa-area-chart nav_icon"></i>reporte #1</a></li>
                             
                             <li><a href="#" class=" hvr-bounce-to-right"><i class="fa fa-map-marker nav_icon"></i>#</a></li>
 			

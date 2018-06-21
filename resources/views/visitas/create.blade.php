@@ -72,8 +72,9 @@ Registro de Visitas
               <div class="col-md-12 form-group2 group-mail">
               <label class="control-label">Nombre del visitante</label>
             <select name="visitor_id" type="text">
-            	@foreach($visitantes as $visitante)
-                <option disable selected value>Nombre del Visitante</option>
+            	<option disable selected value>Nombre del Visitante</option>
+              @foreach($visitantes as $visitante)
+                
             	<option value="{{$visitante->id}}">{{$visitante->nombre}} {{$visitante->apellido}}</option>
             	@endforeach
             	
@@ -83,7 +84,7 @@ Registro de Visitas
             
             <div class="col-md-10 form-group1 group-mail">
               <label class="control-label">Fecha de la Visita </label>
-              <input name="fecha_reserva" type="datetime" placeholder="2018-05-21 00:00:00" >
+              <input name="fecha_reserva" type="datetime" placeholder="2018-05-21 00:00:00" title="2018-05-21 00:00:00" >
             </div>
             
          	

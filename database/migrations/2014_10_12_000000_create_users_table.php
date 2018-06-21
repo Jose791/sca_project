@@ -24,6 +24,8 @@ class CreateUsersTable extends Migration
             
             /*$table->('rol');*/
         });
+
+
     }
 
     /**

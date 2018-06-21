@@ -65,11 +65,16 @@ Registro de Enfermedades
 
             <div class="col-md-10 form-group1 group-mail">
               <label class="control-label">Nombre de Enfermedad</label>
-              <input name="nombre" type="text" placeholder="Nombre Enfermedad"  value="{{$enfermedades->nombre}}">
+              <input name="enfermedad" type="text" placeholder="Nombre Enfermedad"  value="{{$enfermedades->enfermedad}}">
             </div>
+
+            {{-- <div class="col-md-10 form-group1 group-mail">
+              <label class="control-label">Descripcion de la Enfermedad</label>
+              <input name="descripcion" type="text" placeholder="descripcion" value="{{$enfermedades->descripcion}}" >
+            </div> --}}
             
             <div class="col-md-12 form-group">
-              <button type="submit" class="btn btn-primary">Enviar</button>
+              <button type="submit" class="btn btn-primary">Actualizar</button>
               <a href="{{url('enfermedades_registradas')}}" class="btn btn-default">Cancelar</a>
             </div>
           <div class="clearfix"> </div>

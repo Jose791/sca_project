@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAsyleeDiseasesTable extends Migration
+class CreateAsyleeDiseaseTable extends Migration
 {
     /**
      * Run the migrations.
@@ -20,8 +20,6 @@ class CreateAsyleeDiseasesTable extends Migration
             $table->integer('disease_id')->unsigned();
             $table->foreign('disease_id')->references('id')->on('diseases');
             $table->timestamps();
-//            $table->foreign('asylee_id')->references('id')->on('asylees');
-//            $table->foreign('disease_id')->references('id')->on('diseases');
         });
     }
 
@@ -32,6 +30,6 @@ class CreateAsyleeDiseasesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('asylee_diseases');
+        Schema::dropIfExists('asylee_disease');
     }
 }

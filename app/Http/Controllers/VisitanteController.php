@@ -26,7 +26,9 @@ class VisitanteController extends Controller
     }
     public function index()
     {
-        $visitantes = Visitor::all();
+        // $visitantes = Visitor::all();
+
+         $visitantes = \App\Visitor::OrderBy('id','DESC')->paginate(10);
 
         // dd($medicamentos);
         

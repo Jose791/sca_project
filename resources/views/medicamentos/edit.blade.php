@@ -58,7 +58,7 @@ Editar Medicamentos
 
             <div class="col-md-6 form-group1 group-mail">
               <label class="control-label">Nombre del Medicamento</label>
-              <input name="nombre" type="text" placeholder="nombre del medicamento" value="{{$medicamentos->nombre}}" >
+              <input name="medicamento" type="text" placeholder="nombre del medicamento" value="{{$medicamentos->medicamento}}" >
             </div>
             
          	<div class="vali-form">

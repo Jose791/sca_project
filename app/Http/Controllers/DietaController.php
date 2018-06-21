@@ -60,9 +60,9 @@ class DietaController extends Controller
     public function store(CrearDietasRequest $request)
     {
          $dieta = Diet::create ($request->all());
-         // $dietas = Diet::all();
-        // pero despues que yo guarde un registro, quiere que me lleve a una vista principal de ese modulo...
-        // seria algo como esto:
+         
+
+        
 
         return redirect()->route('dieta.index');
     }

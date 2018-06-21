@@ -99,7 +99,7 @@ class MedicamentoController extends Controller
     {
          $medicamentos = Medicine::find($id);
 
-        $medicamentos->nombre = $request->nombre;
+        $medicamentos->medicamento = $request->medicamento;
         $medicamentos->condicion = $request->condicion;
         
 

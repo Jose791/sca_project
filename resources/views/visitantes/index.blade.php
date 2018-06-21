@@ -82,6 +82,7 @@
 		      @endforeach
 		    </tbody>
 		  </table>
+      {!! $visitantes->render() !!}
 	  	</div>
 	  </div>
 </div>

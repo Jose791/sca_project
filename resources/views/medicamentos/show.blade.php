@@ -20,7 +20,7 @@
 		    <tbody>
 		      
 			      <tr>
-			        <td>{{ $medicamentos->nombre }}</td>
+			        <td>{{ $medicamentos->medicamento }}</td>
 			        <td>{{ $medicamentos->condicion }}</td>
 
                    <td width="10px">

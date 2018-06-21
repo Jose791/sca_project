@@ -89,7 +89,7 @@ Editar Dieta {{$dietas->id}}
       
           
             <div class="col-md-12 form-group">
-              <button type="submit" class="btn btn-primary">Enviar</button>
+              <button type="submit" class="btn btn-primary">Actualizar</button>
               <a href="{{url('dietas_registradas')}}" class="btn btn-default">Cancelar</a>
             </div>
           <div class="clearfix"> </div>

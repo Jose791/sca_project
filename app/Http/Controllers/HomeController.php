@@ -23,6 +23,10 @@ use App\Visitor;
 
 use Illuminate\Http\Request;
 
+use App\Notification;
+
+use Session;
+
 
 
 
@@ -58,12 +62,12 @@ class HomeController extends Controller
         return view('inicio',compact('asilados'));
     }
     
-//     public function asilados()
-//    {
-//        
-////        
-//         return view('asilados');
-//    }
+    public function create()
+   {
+       
+       
+        return view('');
+   }
     
     
      /* public function medicamentos()

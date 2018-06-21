@@ -1,5 +1,11 @@
 <?php
 
+// Auth::loginUsingId(1);
+
+// use App\Notifications\NotifyUser;
+
+// use App\Events\TaskEvent;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,15 +17,41 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
 
+
+//    Auth::user()->notify(new NotifyUser);
+
+//     return view('welcome');
+// });
+
+
+
+
+
+// Route::get('maskAsRead', function(){
+
+// auth()->user()->unreadNotifications->markAsRead();
+
+// return redirect()->back();
+
+
+// })->name('markRead');
+
+// Route::get('event', function () {
+//     event(new TaskEvent('hola'));
+// });
+// Route::get('tes', function () {
+//     event(new TaskEvent('Someone'));
+//     return "Event has been sent!";
+// });
 //Route::get('asilados', function () {
 //    return view('asilados');
 //});
 
-
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Auth::routes();
 
@@ -169,4 +201,16 @@ Route::delete('/visitas/{id}', 'VisitaController@destroy')->name('visita.destroy
 
 //Reportes
 
-Route::get('chartjs', 'HomeController@chartjs');
+Route::get('chart','ReportController@chartjs');
+
+// Route::get('chartjs', 'ReportController@chart');
+
+
+
+
+
+// Route::get('chart','AsiladoController@chartindex');
+
+
+// Route::get('stocks','StockController@index');
+// Route::get('stock/chart','StockController@chart');
