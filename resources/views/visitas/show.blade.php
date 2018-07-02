@@ -26,8 +26,8 @@
 		      
 			      <tr>
 			        <td>{{ $visitas->id }}</td>
-			        <td>{{ $visitas->visitor->nombre }}</td>
-			        <td>{{ $visitas->asylee->nombre }}</td>
+			        <td>{{ $visitas->visitor->nombre }} {{$visitas->visitor->apellido}}</td>
+			        <td>{{ $visitas->asylee->nombre }} {{ $visitas->asylee->apellido }}</td>
 			        <td>{{ $visitas->fecha_reserva }}</td>
 
 			       

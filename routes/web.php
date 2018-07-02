@@ -158,6 +158,14 @@ Route::get('medicamento_asilado', 'MedicamentoAsiladoController@create')->name('
 
 Route::post('/medicamento_asilado', 'MedicamentoAsiladoController@store')->name('medicamentoasilado.store');
 
+// Route::get('/enfermedades/{id}', 'EnfermedadController@show')->name('enfermedad.show');
+
+Route::get('/medicamento_asilado/edit/{id}', 'MedicamentoAsiladoController@edit')->name('medicamento_asilado.edit');
+
+Route::post('medicamento_asilado/update/{id}', 'MedicamentoAsiladoController@update')->name('medicamento_asilado.update');
+
+// Route::delete('/enfermedades/{id}', 'EnfermedadController@destroy')->name('enfermedad.destroy');
+
 
 //visitantes
 
@@ -201,7 +209,10 @@ Route::delete('/visitas/{id}', 'VisitaController@destroy')->name('visita.destroy
 
 //Reportes
 
-Route::get('chart','ReportController@chartjs');
+Route::get('chart', 'ReportController@chartjs');
+Route::get('sample', 'ReportController@sample');
+Route::post('sample/get', 'ReportController@getConsulting')->name('sample/get');
+Route::get('asilado_x_sexo', 'ReportController@asilado_x_sexo')->name('asilado_x_sexo');
 
 // Route::get('chartjs', 'ReportController@chart');
 

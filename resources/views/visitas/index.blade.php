@@ -36,7 +36,7 @@
 		      @foreach($visitas as $visita) 
 			      <tr>
 			        <td>{{ $visita['id'] }}</td>
-			        <td>{{ $visita['visitor']['nombre'] }}</td>
+			        <td>{{ $visita['visitor']['nombre'] }} </td>
 			        <td>{{ $visita['asylee']['nombre'] }}</td>
 			        <td>{{ $visita['fecha_reserva'] }}</td>
 

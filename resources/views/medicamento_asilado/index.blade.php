@@ -9,26 +9,51 @@
  		<div class="validation-form">         
 	  <div class="panel-danger">
 	  	<div class="panel-body">
+	  			<h2>
+	  		
+           <a href="{{route('medicamentoasilado.create')}}" class="btn btn-primary pull-right">Nuevo</a>
+
+	  	</h2>
 		  <table class="table">
 		    <thead>
 		      <tr>
-		        <th>ID</th>
-		        <th>ID Asilado</th>
-                <th>ID Medicamento</th>
+		        <th># Registro</th>
+		        <th> Asilado</th>
+                <th>Medicamento</th>
                 <th>Hora del Medicamento</th>
                 <th>Complemento</th>
+                <th>Editar</th>
+                <th>Borrar</th>
 		      </tr>
 		    </thead>
 		    <tbody>
-		      @foreach($asilados as $asilado)
-			      <tr>
-			        <td>{{ $asiladomedicamento->id }}</td>
-			        <td>{{ $asilado->asylee_id }}</td>
-                    <td>{{ $medicamento->medicine_id }}</td>
-			        <td>{{ $asiladomedicamento->hora_medicamento }}</td>
-                    <td>{{ $asiladomedicamento->complemento }}</td>
-			      </tr>
-		      @endforeach
+		      	@foreach($asilados as $asilado)
+			      	@foreach($asilado['medicines'] as $medicina)
+			      	<tr>
+				        <td>{{ $asilado['id'] }}</td>
+				        <td>{{ $asilado['nombre'] }}</td>
+	                    <td>{{ $medicina['medicamento'] }}</td>
+				        <td>{{ $medicina['pivot']['hora_medicamento'] }}</td>
+	                    <td>{{ $medicina['pivot']['complemento'] }}</td>
+
+	                    <td width="10px">
+	                    	<a href="{{route('medicamento_asilado.edit',$asilado['id'])}}" class="btn btn-warning">
+	                          
+	                          Editar
+	                    	</a>
+	                    </td>
+
+	                    <td width="10px">
+	                    	<form action="{{action('AsiladoController@destroy',$asilado['id'])}}"  method="post">
+		                    	{{ csrf_field() }}
+
+		                    	<input type="hidden" name="_method" value="DELETE">
+		                    	{{-- <button class="btn btn-danger" type="submit" onclick="return confirm('seguro que desea eliminar?')">Borrar</button> --}}
+	                    	</form>
+	                    </td>
+			      	</tr>
+			      	@endforeach
+		      	@endforeach
 		    </tbody>
 		  </table>
 	  	</div>
@@ -36,6 +61,3 @@
   </div>
 </div>
 @endsection
-
-
-            

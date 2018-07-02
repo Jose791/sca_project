@@ -37,25 +37,7 @@ Registro de Visitantes
         <form method="post" action="{{ url('/visitantes') }}">
             {{ csrf_field() }}
             
-            @if(count($errors)>0)
-
-             <div class="alert alert-danger">
-               
-               <ul>
-                 
-                  @foreach ($errors->all() as $error)
-
-                      <li>{{$error}}</li>
-                  @endforeach
-
-
-               </ul>
-
-
-
-             </div>
-
-            @endif
+            @include('validation.partials.formvalidate')
             
          	<div class="vali-form">
             <div class="col-md-6 form-group1">

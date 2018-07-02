@@ -37,25 +37,7 @@ Registro de Visitas
         <form method="post" action="{{ url('/visitas') }}">
             {{ csrf_field() }}
             
-             @if(count($errors)>0)
-
-             <div class="alert alert-danger">
-               
-               <ul>
-                 
-                  @foreach ($errors->all() as $error)
-
-                      <li>{{$error}}</li>
-                  @endforeach
-
-
-               </ul>
-
-
-
-             </div>
-
-            @endif
+             @include('validation.partials.formvalidate')
             
              <div class="col-md-12 form-group2 group-mail">
               <label class="control-label">Nombre del Asilado</label>
@@ -82,7 +64,7 @@ Registro de Visitas
             </div>
            
             
-            <div class="col-md-10 form-group1 group-mail">
+            <div class="col-md-6 form-group1 group-mail">
               <label class="control-label">Fecha de la Visita </label>
               <input name="fecha_reserva" type="datetime" placeholder="2018-05-21 00:00:00" title="2018-05-21 00:00:00" >
             </div>

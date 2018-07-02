@@ -107,7 +107,7 @@ public function __construct()
          $enfermedades = Disease::find($id);
 
         $enfermedades->enfermedad = $request->enfermedad;
-        // $enfermedades->descripcion = $request->descripcion;
+        $enfermedades->descripcion = $request->descripcion;
        
 
         $enfermedades->save();

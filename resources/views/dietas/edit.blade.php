@@ -32,25 +32,7 @@ Editar Dieta {{$dietas->id}}
         <form method="post" action="{{ route('dieta.update', ['id' => $dietas->id]) }}" >
              @csrf
             
-           @if(count($errors)>0)
-
-             <div class="alert alert-danger">
-               
-               <ul>
-                 
-                  @foreach ($errors->all() as $error)
-
-                      <li>{{$error}}</li>
-                  @endforeach
-
-
-               </ul>
-
-
-
-             </div>
-
-            @endif
+              @include('validation.partials.formvalidate')
             
             <div class="col-md-12 form-group2 group-mail">
               <label class="control-label">Nombre del Asilado</label>

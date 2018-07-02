@@ -4,39 +4,79 @@ namespace App\Http\Controllers;
 
 use DB;
 use App\Asylee;
+use App\Medicine;
 use Illuminate\Http\Request;
 
 class ReportController extends Controller
 {
-   public function index()
-   {
-       $result = \DB::table('asylees')
-            ->where('id','=','1')
-            ->orderBy('fecha_nac', 'ASC')
-            ->get();
-
-       return view('reportes.chartjs', compact('result'));
+   public function __construct()
+    {
+        
+        
+       $this->middleware('admin');
+       $this->middleware('auth');
+       
+        
     }
 
+
+
+
+   // public function index()
+   // {
+   //     $result = \DB::table('asylees')
+   //          ->where('id','=','1')
+   //          ->orderBy('fecha_nac', 'ASC')
+   //          ->get();
+
+   //     return view('reportes.chartjs', compact('result'));
+   //  }
+
     public function chartjs()
-	{
+	
+     {
+        $asilado_enferm = DB::select('select count(a.id) cantidad, d.enfermedad from asylees a, diseases d, asylee_disease ad where a.id = ad.asylee_id and ad.disease_id = d.id group by d.enfermedad');
 
-	    $viewer = Asylee::select(DB::raw("SUM(id) as count"))
-	        ->orderBy("created_at")
-	        ->groupBy(DB::raw("id"))
-	        ->get()->toArray();
+        $asilado_x_sexo = DB::select('select sexo, count(*)  anciano from asylees a group by sexo');
 
-	    $viewer = array_column($viewer, 'count');
 
-	    $click = Asylee::select(DB::raw("SUM(id) as count"))
-	        ->orderBy("created_at")
-	        ->groupBy(DB::raw("id"))
-	        ->get()->toArray();
+        return view('reportes.enfermedad_asilado', compact('asilado_enferm','asilado_x_sexo'));
+	 }
 
-	    $click = array_column($click, 'count');
 
-	    return view('reportes.chartjs')
-            ->with('viewer',json_encode($viewer, JSON_NUMERIC_CHECK))
-            ->with('click',json_encode($click, JSON_NUMERIC_CHECK));
-	}
+    public function sample ()
+     
+     {
+        $medicinas = Medicine::all();
+
+        return view('reportes.sample', compact('medicinas'));
+     
+     }
+
+
+    public function getConsulting (Request $request)
+     
+     {
+        /*$data = DB::select('select count(am.medicine_id) as total, m.medicamento from medicines m, asylee_medicine am where m.id = am.medicine_id group by m.medicamento order by total desc');*/
+
+        $data = DB::select('select count(am.medicine_id) as total, m.medicamento from medicines m, asylee_medicine am where m.id = am.medicine_id and m.id = ? group by m.medicamento order by total desc', array($request->medicina_id));
+
+        foreach($data as $key)
+         {
+            $medicinas[] = $key->medicamento;
+            $consumo[] = $key->total;
+         }
+
+        $response = array (
+            'medicinas' => $medicinas,
+            'consumo' => $consumo
+         );
+        
+
+        return response()->json(['data' => $response]);
+     }
+
+
+
+   
 }

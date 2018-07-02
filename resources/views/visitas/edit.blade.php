@@ -35,44 +35,26 @@ Editar de Visita
 
             @csrf
             
-             @if(count($errors)>0)
-
-             <div class="alert alert-danger">
-               
-               <ul>
-                 
-                  @foreach ($errors->all() as $error)
-
-                      <li>{{$error}}</li>
-                  @endforeach
-
-
-               </ul>
-
-
-
-             </div>
-
-            @endif
+             @include('validation.partials.formvalidate')
             
-             <div class="col-md-12 form-group2 group-mail">
+            <div class="col-md-12 form-group2 group-mail">
               <label class="control-label">Nombre del Asilado</label>
-            <select name="asylee_id" type="text">
-              @foreach($asilados as $asilado)
-                        <option @if($asilado->id == $visitas[0]['asylee_id']) selected @else '' @endif value="{{ $asilado->id }}">{{ $asilado->nombre }} {{ $asilado->apellido }}</option>
-                    @endforeach
+              <select name="asylee_id" type="text">
+                 @foreach($asilados as $asilado)
+                    <option @if($asilado->id == $visitas[0]['asylee_id']) selected @else '' @endif value="{{ $asilado->id }}">{{ $asilado->nombre }} {{ $asilado->apellido }}</option>
+                 @endforeach
             	
-            </select>
+              </select>
             </div>
             
-              <div class="col-md-12 form-group2 group-mail">
+            <div class="col-md-12 form-group2 group-mail">
               <label class="control-label">Nombre del visitante</label>
-            <select name="visitor_id" type="text">
-            	@foreach($visitantes as $visitante)
-                <option @if($visitante->id == $visitas[0]['visitor_id']) selected @else '' @endif value="{{ $visitante->id }}">{{ $visitante->nombre }} {{ $visitante->apellido }}</option>
-            	@endforeach
+              <select name="visitor_id" type="text">
+            	    @foreach($visitantes as $visitante)
+                    <option @if($visitante->id == $visitas[0]['visitor_id']) selected @else '' @endif value="{{ $visitante->id }}">{{ $visitante->nombre }} {{ $visitante->apellido }}</option>
+            	    @endforeach
             	
-            </select>
+              </select>
             </div>
            
             
@@ -81,15 +63,12 @@ Editar de Visita
               <input name="fecha_reserva" type="datetime" placeholder="2018-05-21 00:00:00" value="{{$visitas[0]['fecha_reserva']}}" >
             </div>
             
-         	
-            
-            
-        
-          
+
             <div class="col-md-12 form-group">
               <button type="submit" class="btn btn-success">Actualizar</button>
               <a href="{{url('visitas_registradas')}}" class="btn btn-default">Cancelar</a>
             </div>
+            
           <div class="clearfix"> </div>
         </form>
     

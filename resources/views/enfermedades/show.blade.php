@@ -17,7 +17,7 @@
 		      <tr>
 		        <th># Enfermedad </th>
 		        <th>Nombre de la Enfermedad</th>
-		        {{-- <th>Descripcion</th> --}}
+		        <th>Descripcion</th>
 		        <th colspan="3">Accion</th>
 		      </tr>
 		    </thead>
@@ -26,8 +26,8 @@
 			      <tr>
 			        <td>{{ $enfermedades->id }}</td>
 			        <td>{{ $enfermedades->enfermedad }}</td>
-			        {{-- <td>{{ $enfermedades->descripcion }}</td>
- --}}
+			        <td>{{ $enfermedades->descripcion }}</td>
+
                     <td width="10px">
                     	<a href="{{route('enfermedad.edit',$enfermedades->id)}}" class="btn btn-warning">
                           

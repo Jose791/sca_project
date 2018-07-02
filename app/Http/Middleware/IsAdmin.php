@@ -4,6 +4,8 @@ namespace App\Http\Middleware;
 
 use Illuminate\Contracts\Auth\Guard;
 
+use Illuminate\Support\Facades\Auth;
+
 use Closure;
 
 class IsAdmin
@@ -23,15 +25,9 @@ class IsAdmin
      */
     public function handle($request, Closure $next)
     {
-        if ($this->auth->user()->type != 'admin') {
-            $this->auth->logout();
-            if ($request->ajax()) {
-                return response('Unauthorized.', 401);
-            } else {
-                return redirect()->to('auth/login');
-            }
-        }
+        if (Auth::check() && Auth::User()->type=='admin') 
+            return $next($request);
 
-        return $next($request);
+        return redirect('/');
     }
 }

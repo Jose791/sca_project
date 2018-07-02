@@ -24,7 +24,7 @@ class CrearMedicamentosRequest extends FormRequest
     public function rules()
     {
         return [
-                 'nombre'=>'required',
+                 'medicamento'=>'required',
                  'condicion'=>'required'
         ];
     }
@@ -36,7 +36,7 @@ class CrearMedicamentosRequest extends FormRequest
       return[
 
                
-               'nombre.required'=>'El campo Nombre del Medicamento es requerido',
+               'medicamento.required'=>'El campo Nombre del Medicamento es requerido',
                'condicion.required'=>'El campo Condicion es requerido'
 
 

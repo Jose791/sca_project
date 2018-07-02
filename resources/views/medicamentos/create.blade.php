@@ -37,30 +37,11 @@ Registro de Medicamentos
         <form method="post" action="{{ url('/medicamentos') }}">
             {{ csrf_field() }}
            
-              @if(count($errors)>0)
-
-             <div class="alert alert-danger">
-               
-               <ul>
-                 
-                  @foreach ($errors->all() as $error)
-
-                      <li>{{$error}}</li>
-                  @endforeach
-
-
-               </ul>
-
-
-
-             </div>
-
-            @endif
-
+             @include('validation.partials.formvalidate')
 
             <div class="col-md-6 form-group1 group-mail">
               <label class="control-label">Nombre del Medicamento</label>
-              <input name="nombre" type="text" placeholder="nombre del medicamento" >
+              <input name="medicamento" type="text" placeholder="nombre del medicamento" >
             </div>
             
          	<div class="vali-form">

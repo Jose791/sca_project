@@ -40,25 +40,7 @@ Registro de Enfermedades
 
             @csrf
             
-             @if(count($errors)>0)
-
-             <div class="alert alert-danger">
-               
-               <ul>
-                 
-                  @foreach ($errors->all() as $error)
-
-                      <li>{{$error}}</li>
-                  @endforeach
-
-
-               </ul>
-
-
-
-             </div>
-
-            @endif
+            @include('validation.partials.formvalidate')
 
 
 
@@ -68,10 +50,10 @@ Registro de Enfermedades
               <input name="enfermedad" type="text" placeholder="Nombre Enfermedad"  value="{{$enfermedades->enfermedad}}">
             </div>
 
-            {{-- <div class="col-md-10 form-group1 group-mail">
+            <div class="col-md-10 form-group1 group-mail">
               <label class="control-label">Descripcion de la Enfermedad</label>
               <input name="descripcion" type="text" placeholder="descripcion" value="{{$enfermedades->descripcion}}" >
-            </div> --}}
+            </div>
             
             <div class="col-md-12 form-group">
               <button type="submit" class="btn btn-primary">Actualizar</button>

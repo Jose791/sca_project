@@ -37,39 +37,18 @@ Registro de Enfermedades
             
         <form method="post" action="{{ url('/enfermedades') }}">
             {{ csrf_field() }}
-            
-             @if(count($errors)>0)
 
-             <div class="alert alert-danger">
-               
-               <ul>
-                 
-                  @foreach ($errors->all() as $error)
-
-                      <li>{{$error}}</li>
-                  @endforeach
-
-
-               </ul>
-
-
-
-             </div>
-
-            @endif
-
-
-
+          @include('validation.partials.formvalidate')
 
             <div class="col-md-10 form-group1 group-mail">
               <label class="control-label">Nombre de Enfermedad</label>
               <input name="enfermedad" type="text" placeholder="Nombre Enfermedad" >
             </div>
 
-              {{--  <div class="col-md-10 form-group1 group-mail">
+               <div class="col-md-10 form-group1 group-mail">
               <label class="control-label">Descripcion de la Enfermedad</label>
               <input name="descripcion" type="text" placeholder="descripcion"  >
-            </div> --}}
+            </div>
             
             
          	

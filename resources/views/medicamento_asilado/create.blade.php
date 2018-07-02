@@ -26,31 +26,19 @@ Registro de Asilados
 <div class="validation-system">
  		
  		<div class="validation-form">
+
+       <h2>
+        
+           <a href="{{route('medicamento_asilado.index')}}" class="btn btn-primary pull-right">Medicamentos de Asilados Registrados</a>
+
+      </h2>
  	<!---->
 <!--  	    <h1 align="center">Registro de Medicamento al Asilado</h1>-->
             
         <form method="post" action="{{ url('/medicamento_asilado') }}">
             {{ csrf_field() }}
             
-             @if(count($errors)>0)
-
-             <div class="alert alert-danger">
-               
-               <ul>
-                 
-                  @foreach ($errors->all() as $error)
-
-                      <li>{{$error}}</li>
-                  @endforeach
-
-
-               </ul>
-
-
-
-             </div>
-
-            @endif
+           @include('validation.partials.formvalidate')
 
 
              <div class="col-md-12 form-group2 group-mail">
@@ -65,23 +53,22 @@ Registro de Asilados
             </select>
             </div>
             
-            <div class="col-md-12 form-group2 group-mail">
-              <label class="control-label">Nombre del Medicamento</label>
-            <select name="medicine_id" type="text">
-            	<option disable selected value>Nombre del Medicamento</option>
-              @foreach($medicamentos as $medicamento)
-                
-            	<option value="{{$medicamento->id}}">{{$medicamento->nombre}}</option>
-            	@endforeach
-            	
-            </select>
+             <div class="form-group">
+            <label for="medicines" class="control-label">Seleccionar Medicamentos</label>
+            @foreach($medicines as $medicine )
+           
+
+              <div class="checkbox">
+                <label><input  name="medicine_id[]" type="checkbox" value="{{$medicine->id}}">{{$medicine->medicamento}}</label>
+                 
+              </div>
+         
+           
+            @endforeach
+
             </div>
             
-            <div class="col-md-10 form-group1 group-mail">
-              <label class="control-label">Hora (Aplicar el Medicamento) </label>
-              <input name="hora_medicamento" type="time" placeholder="" >
-            </div>
-            
+           
          	<div class="vali-form">
             <div class="col-md-6 form-group1">
               <label class="control-label">Complemento</label>
@@ -89,6 +76,10 @@ Registro de Asilados
             </div>
            
             <div class="clearfix"> </div>
+            </div>
+             <div class="col-md-10 form-group1 group-mail">
+              <label class="control-label">Hora (Aplicar el Medicamento) </label>
+              <input name="hora_medicamento" type="time" placeholder="" >
             </div>
             
             

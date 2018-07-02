@@ -18,7 +18,8 @@ class Asylee extends Model
 
     public function medicines(){
         return $this->belongsToMany(Medicine::class,'asylee_medicine')
-            ->withPivot('asylee_id','medicine_id','hora_medicamento', 'complemento')->withTimestamps();
+            ->withPivot('id', 'asylee_id','medicine_id','hora_medicamento', 'complemento')
+            ->withTimestamps();
             
     }
 

@@ -2,7 +2,7 @@
 
 @section('title')
 
-Editar Asilados
+Editar A {{$asilados->nombre}} {{$asilados->apellido}}
 
 @endsection
 
@@ -11,9 +11,9 @@ Editar Asilados
 
 <div class="banner">
 		    	<h2>
-				<a >Formularios</a>
+				<a >Editar A</a>
 				<i class="fa fa-angle-right"></i>
-				<span>Asilados</span>
+				<span>{{$asilados->nombre}} {{$asilados->apellido}}</span>
 				</h2>
 		    </div>
 
@@ -29,16 +29,8 @@ Editar Asilados
             
             @csrf
             
-
-            @if(count($errors)>0)
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{$error}}</li>
-                    @endforeach
-                </ul>
-            </div>
-            @endif
+          @include('validation.partials.formvalidate')
+             
 
          	<div class="vali-form">
                 <div class="col-md-6 form-group1">
@@ -101,20 +93,7 @@ Editar Asilados
             <button class="btn btn-success" type="submit">Actualizar</button>
             <a href="{{url('/asilados_registrados')}}" class="btn btn-default">Cancelar</a>
         </form>
-            {{-- <div class="col-md-12 form-group">
-              <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-              <a href="{{url('/asilados_registrados')}}" class="btn btn-secondary">Cancelar</a>
-
-               <form action="{{action('AsiladoController@destroy',$asilados['id'])}}"  method="post">
-
-                      {{ csrf_field() }}
-
-                      <input type="hidden" name="_method" value="DELETE">
-
-                      <button class="btn btn-danger pull-right" type="submit" onclick="return confirm('seguro que desea eliminar?')">Borrar</button>
-
-                      </form>
-            </div> --}}
+            
     </div>
 </div>
 @endsection

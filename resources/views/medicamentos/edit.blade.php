@@ -35,25 +35,7 @@ Editar Medicamentos
 
             @csrf
            
-              @if(count($errors)>0)
-
-             <div class="alert alert-danger">
-               
-               <ul>
-                 
-                  @foreach ($errors->all() as $error)
-
-                      <li>{{$error}}</li>
-                  @endforeach
-
-
-               </ul>
-
-
-
-             </div>
-
-            @endif
+              @include('validation.partials.formvalidate')
 
 
             <div class="col-md-6 form-group1 group-mail">

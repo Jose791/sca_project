@@ -55,10 +55,13 @@ class HomeController extends Controller
     public function index()
     {
 
-        $asilados = Asylee::find(1);
+        $asilados = Asylee::all();
 
-        // dd($enfermedades);
+       // $asilados = Asylee::with('diseases','medicines')->get();
 
+       // dd($asilados); 
+
+      
         return view('inicio',compact('asilados'));
     }
     

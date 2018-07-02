@@ -22,5 +22,15 @@ Inicio
 @section('content')
 
 
+{{-- @foreach($asilados as $asilado)
+
+<tr>
+ <td>{{$asilado->pivot->complemento}}</td>
+</tr>
+
+@endforeach --}}
+
+
+
 
 @endsection

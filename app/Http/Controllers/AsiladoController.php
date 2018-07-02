@@ -61,7 +61,7 @@ class AsiladoController extends Controller
 
         
 
-        return view('asilados.create');
+        return view('asilados.create')->with('diseases', Disease::all())->with('medicines', Medicine::all());
     }
 
     /**
@@ -73,48 +73,15 @@ class AsiladoController extends Controller
     public function store(CrearAsiladosRequest $request  )
    
 
-    {    
-      
-        
+    {     
+
+  
         $asilados = Asylee::create ($request->only(['nombre','apellido','cedula','sexo','residencia','fecha_nac','condicion_especial','estado']));
 
-         $enfermedades = explode( "," , $request->get( 'enfermedad'));
-         $medicinas = explode(",", $request->get('medicamento'));
-         $condi =explode(",", $request->get('condicion'));
-         $hora_medicamento = explode(",", $request->get('hora_medicamento'));
-         $complemento = explode(",", $request->get('complemento'));
-
-
-          $diseases=[];
-          $medicinaa=[];
-         
-   
-          foreach ($enfermedades as $enfermedad) {
-            $enfermedad_db = Disease::where('enfermedad', trim($enfermedad))->firstOrCreate(['enfermedad' => trim($enfermedad)]);
-           $diseases[] =  $enfermedad_db->id;
-       }
-
-       //tabla medicines
-
-       foreach ($medicinas as $medicina) {
-
-            foreach($condi as $condis)
-
-            $medicina_db = Medicine::where('medicamento', trim($medicina))->firstOrCreate(['medicamento' => trim($medicina), 'condicion'=>trim($condis)]);
-           $medicinaa[] =  $medicina_db->id;
-
-       }
-
-       //llenar tabla pivot asylee_disease
-        $asilados->diseases()->attach($diseases);
-
-       //tabla pivot asylee_medicine
-
-        foreach($hora_medicamento as $hora_medicine)
-            
-            foreach ($complemento as $complement)
+  
+         $asilados->diseases()->attach($request->enfermedad);
           
-        $asilados->medicines()->attach($medicinaa, ['hora_medicamento' => $hora_medicine, 'complemento'=>$complement]);
+        // $asilados->medicines()->attach($request->medicamento, ['hora_medicamento' => $request->hora_medicamento, 'complemento'=>$request->complemento]);
         
 
 

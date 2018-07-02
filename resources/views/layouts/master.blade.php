@@ -5,11 +5,13 @@
     <title>@yield('title')</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Minimal Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<meta name="keywords" content="SCA Project" />
+<!-- CSRF Token -->
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href=" {{asset('css/bootstrap.min.css')}}" rel='stylesheet' type='text/css' />
- 
+@yield('styles')
+
 <!-- Custom Theme files -->
 <link href="{{asset('css/style.css')}}" rel='stylesheet' type='text/css' />
 <link href="{{asset('css/font-awesome.css')}}" rel="stylesheet"> 
@@ -24,6 +26,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="{{asset('css/custom.css')}}" rel="stylesheet">
 <script src="{{asset('js/custom.js')}}"></script>
 <script src="{{asset('js/screenfull.js')}}"></script>
+<script src="{{asset('jquery.maskedinput.min.js')}}" ></script>
 		<script>
 		$(function () {
 			$('#supported').text('Supported/allowed: ' + !!screenfull.enabled);
@@ -62,12 +65,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			 <div class=" border-bottom">
         	<div class="full-left">
         	  <section class="full-top">
-				<button id="toggle"><i class="fa fa-arrows-alt"></i></button>	
+				<button id="toggle" title="Pantalla Completa"><i class="fa fa-arrows-alt"></i></button>	
 			</section>
-			<form class=" navbar-left-right">
+			{{-- <form class=" navbar-left-right">
               <input type="text"  value="Buscar..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search...';}">
               <input type="submit" value="" class="fa fa-search">
-            </form>
+            </form> --}}
             <div class="clearfix"> </div>
            </div>
      
@@ -231,22 +234,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <a href="#" class=" hvr-bounce-to-right"><i class="fa fa-list nav_icon"></i> <span class="nav-label">Formularios</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li><a href="{{url('/asilados')}}" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Ansianos</a></li>
-                            <li><a href="enfermedades" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Enfermedades</a></li>
-                            <li><a href="medicamentos" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Medicamentos</a></li>
+                            <li><a href="{{url('enfermedades')}}" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Enfermedades</a></li>
+                            <li><a href="{{url('medicamentos')}}" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Medicamentos</a></li>
                             <li><a href="dietas" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Dietas</a></li>
                             <li><a href="{{url('chequeos_medicos')}}" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Chequeos Medicos</a></li>
-                            <li><a href="medicamento_asilado" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Asilado Medicamento</a></li>
-                            <li><a href="visitantes" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Visitantes</a></li>
-                            <li><a href="visitas" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Visitas</a></li>
+                            <li><a href="{{url('medicamento_asilado')}}" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Asilado Medicamento</a></li>
+                            <li><a href="{{url('visitantes')}}" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Visitantes</a></li>
+                            <li><a href="{{url('visitas')}}" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Visitas</a></li>
                         </ul>
                     </li>
                     
                     <li>
                         <a href="#" class=" hvr-bounce-to-right"><i class="fa fa-indent nav_icon"></i> <span class="nav-label">Reportes</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="{{url('/chart')}}" class=" hvr-bounce-to-right"> <i class="fa fa-area-chart nav_icon"></i>reporte #1</a></li>
+                            <li><a href="{{url('/chart')}}" class=" hvr-bounce-to-right"> <i class="fa fa-area-chart nav_icon"></i>Reporte #1</a></li>
                             
-                            <li><a href="#" class=" hvr-bounce-to-right"><i class="fa fa-map-marker nav_icon"></i>#</a></li>
+                            <li><a href="#" class=" hvr-bounce-to-right"><i class="fa fa-map-marker nav_icon"></i>Anciano x Medicamento</a></li>
 			
 						<li><a href="#" class=" hvr-bounce-to-right"><i class="fa fa-file-text-o nav_icon"></i>#</a></li>
 
@@ -301,6 +304,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--scrolling js-->
 	<script src="{{asset('js/jquery.nicescroll.js')}}"></script>
 	<script src="{{asset('js/scripts.js')}}"></script>
+	@yield('scripts')
 	<!--//scrolling js-->
 </body>
 </html>

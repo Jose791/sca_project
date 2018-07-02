@@ -10,7 +10,7 @@ class Medicine extends Model
 
      public function asylees(){
         return $this->belongsToMany(Asylee::class,'asylee_medicine')
-            ->withPivot('medicine_id','asylee_id','hora_medicamento', 'complemento')->withTimestamps();
+            ->withPivot('id','medicine_id','asylee_id','hora_medicamento', 'complemento')->withTimestamps();
            
     }
 }
