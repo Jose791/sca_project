@@ -29,7 +29,7 @@ Registro de Ancianos
 
       <h2>
         
-           <a href="{{route('asilado.index')}}" class="btn btn-primary pull-right">Ancianos Registrados</a>
+           <a href="{{route('asilado.index')}}" class="btn btn-primary pull-right"><i class="fa fa-list iconos" aria-hidden="true"></i>Lista Ancianos</a>
 
       </h2>
  	<!---->
@@ -42,9 +42,10 @@ Registro de Ancianos
             @include('validation.partials.formvalidate')
 
          	<div class="vali-form">
-            <div class="col-md-6 form-group1">
-              <label class="control-label">Nombre</label>
-              <input  name="nombre" type="text" placeholder="Nombre" value="{{ old('nombre') }}"/>
+            <div class="col-md-6 form-group1 ">
+              <label for="nombre" class="control-label">Nombre</label>
+              <input id="nombre" name="nombre" type="text" placeholder="Nombre" value="{{ old('nombre') }}"/>
+              
             </div>
             <div class="col-md-6 form-group1 form-last">
               <label class="control-label">Apellidos</label>
@@ -96,7 +97,7 @@ Registro de Ancianos
            
              
            
-           <div class="form-group">
+         {{--   <div class="form-group">
             <label for="diseases" class="control-label">Seleccionar Enfermedades</label>
             @foreach($diseases as $disease )
 
@@ -110,13 +111,13 @@ Registro de Ancianos
             @endforeach
       
            </div>
-        
+         --}}
            
         
           
             <div class="col-md-12 form-group1">
-              <button type="submit" class="btn btn-primary">Enviar</button>
-              <button type="reset" class="btn btn-default">Cancelar</button>
+              <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane iconos" aria-hidden="true"></i>Enviar</button>
+              <button type="reset" class="btn btn-danger"><i class="fa fa-ban iconos" aria-hidden="true"></i>Cancelar</button>
             </div>
           <div class="clearfix"> </div>
         </form>

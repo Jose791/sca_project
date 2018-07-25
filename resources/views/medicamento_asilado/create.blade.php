@@ -2,7 +2,7 @@
 
 @section('title')
 
-Registro de Asilados
+Registro de Anciano
 
 @endsection
 
@@ -13,7 +13,7 @@ Registro de Asilados
 		    	<h2>
 				<a >Formularios</a>
 				<i class="fa fa-angle-right"></i>
-				<span>Asilado Medicamento </span>
+				<span>Anciano Medicamento </span>
 				</h2>
 		    </div>
 
@@ -29,7 +29,7 @@ Registro de Asilados
 
        <h2>
         
-           <a href="{{route('medicamento_asilado.index')}}" class="btn btn-primary pull-right">Medicamentos de Asilados Registrados</a>
+           <a href="{{route('medicamento_asilado.index')}}" class="btn btn-primary pull-right"><i class="fa fa-list iconos" aria-hidden="true"></i>Lista Medicamentos/Ancianos</a>
 
       </h2>
  	<!---->
@@ -86,8 +86,8 @@ Registro de Asilados
         
           
             <div class="col-md-12 form-group">
-              <button type="submit" class="btn btn-primary">Enviar</button>
-              <button type="reset" class="btn btn-default">Cancelar</button>
+              <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane iconos" aria-hidden="true"></i>Enviar</button>
+              <button type="reset" class="btn btn-danger"><i class="fa fa-ban iconos" aria-hidden="true"></i>Cancelar</button>
             </div>
           <div class="clearfix"> </div>
         </form>

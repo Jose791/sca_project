@@ -1,5 +1,17 @@
 @extends('layouts.master')
 
+@section('banner')
+
+<div class="banner">
+		    	<h2>
+				<a >Lista de</a>
+				<i class="fa fa-angle-right"></i>
+				<span>Enfermedades</span>
+				</h2>
+		    </div>
+
+@endsection
+
 @section('content')
 	
 	<h2>Todos las Enfermedades</h2>
@@ -17,11 +29,11 @@
 	  <div class="panel-danger">
 	  	<div class="panel-body">
 
-	  		 <h2>
+	  	   <h2>
         
-           <a href="{{route('enfermedad.create')}}" class="btn btn-primary pull-right">Nuevo</a>
+           <a href="{{route('enfermedades.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus iconos" aria-hidden="true"></i>Añadir Enfermedad</a>
 
-      </h2>
+           </h2>
 
 		  <table class="table">
 		    <thead>
@@ -40,7 +52,7 @@
                    {{--  <td>{{ $enfermedad->descripcion }}</td> --}}
 
                    <td width="10px">
-                    	<a href="{{route('enfermedad.show',$enfermedad->id)}}" class="btn btn-info">
+                    	<a href="{{route('enfermedades.show',$enfermedad->id)}}" class="btn btn-info">
                           
                           Ver                    		
 
@@ -52,7 +64,7 @@
                    
 
                     <td width="10px">
-                    	<a href="{{route('enfermedad.edit',$enfermedad->id)}}" class="btn btn-warning">
+                    	<a href="{{route('enfermedades.edit',$enfermedad->id)}}" class="btn btn-warning">
                           
                           Editar                    		
 

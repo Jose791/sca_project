@@ -17,8 +17,8 @@ class Asylee extends Model
     }
 
     public function medicines(){
-        return $this->belongsToMany(Medicine::class,'asylee_medicine')
-            ->withPivot('id', 'asylee_id','medicine_id','hora_medicamento', 'complemento')
+        return $this->belongsToMany(Medicine::class,'asylee_medicine' ,'asylee_id','medicine_id')
+            ->withPivot('hora_medicamento', 'complemento')
             ->withTimestamps();
             
     }
@@ -43,6 +43,11 @@ class Asylee extends Model
    	{
    		return $this->hasMany('App\MedicalCheck');
    	}
+
+    public function schedules ()
+    {
+      return $this->hasMany('App\Schedule');
+    }
 
 
    	public function getNombreAttribute ($nombre)

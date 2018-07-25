@@ -32,11 +32,8 @@ class CrearAsiladosRequest extends FormRequest
                'residencia'=>'required',
                'fecha_nac'=>'required',
                'condicion_especial'=>'required',
-               'estado'=>'required',
-               'enfermedad'=> 'required'
-               // 'medicamento'=> 'required',
-               // 'complemento'=> 'required',
-               // 'hora_medicamento'=> 'required', 
+               'estado'=>'required'
+                
             
         ];
 
@@ -57,11 +54,8 @@ class CrearAsiladosRequest extends FormRequest
                'residencia.required'=>'El campo Residencia es requerido',
                'fecha_nac.required'=>'El campo Fecha de Nacimiento es requerido',
                'condicion_especial.required'=>'El campo Condicion Especial es requerido',
-               'estado.required'=>'El campo Estado es requerido',
-               'enfermedad.required'=>'El campo Nombre de Enfermedad es requerido'
-               // 'medicamento.required'=>'El campo Nombre de Medicamento es requerido',
-               // 'complemento.required'=>'El campo complemento es requerido',
-               // 'hora_medicamento.required'=>'El campo Hora del Medicameto es requerido'
+               'estado.required'=>'El campo Estado es requerido'
+               
 
 
 

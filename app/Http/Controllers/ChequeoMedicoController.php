@@ -11,96 +11,82 @@ use App\Http\Requests\CrearChequeosMedicosRequest;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Session;
+
+
 class ChequeoMedicoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
+    
 
     public function __construct()
-    {
+     {
         
         
        $this->middleware('auth');
        
         
-    }
+     }
+
     public function index()
-    {
+     {
        
         $chequeosmedicos = MedicalCheck::with('asylee')
             ->get()
             ->toArray();
 
-        // dd($chequeosmedicos);
         return view('chequeos_medicos.index',compact('chequeosmedicos'));
-    }
+     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function create()
-    {  
+     {  
+      
        $asilados = Asylee::all();
-       return view('chequeos_medicos.create', compact('asilados'));
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+       return view('chequeos_medicos.create', compact('asilados'));
+     }
+
+   
     public function store(CrearChequeosMedicosRequest $request)
-    {
-         $chequeosmedicos = MedicalCheck::create ($request->all());
-        // $chequeosmedicos = MedicalCheck::all();
+     {
         
+        $chequeosmedicos = MedicalCheck::create ($request->all());
+        
+        
+        Session::flash('info','El Chequeo Medico Fue Creado Exitosamente');
      
 
         return redirect()->route('chequeo_medico.index');
-    }
+     }
 
-     public function show($id)
-    {
-        $chequeosmedicos = MedicalCheck::find($id);
 
-        // dd($asilados);
+
+    public function show($id)
+      {
+        
+        $chequeosmedicos = MedicalCheck::findOrFail($id);
+
 
         return view('chequeos_medicos.show', compact('chequeosmedicos'));
-    }
+     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function edit($id)
-    {
+     {
+        $cm=MedicalCheck::findOrFail($id);
         $asilados = Asylee::all();
         $chequeosmedicos=MedicalCheck::with('asylee')->where('id', $id)
             ->get()
             ->toArray();
 
-        return view('chequeos_medicos.edit')->with (compact('chequeosmedicos', 'asilados'));
-    }
+        return view('chequeos_medicos.edit')->with (compact('chequeosmedicos', 'asilados', 'cm'));
+     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function update(CrearChequeosMedicosRequest $request, $id)
-    {
-        $chequeosmedicos=MedicalCheck::find($id);
+     {
+        
+        $chequeosmedicos=MedicalCheck::findOrFail($id);
 
         $chequeosmedicos->asylee_id=$request->input('asylee_id');
         $chequeosmedicos->diagnostico=$request->input('diagnostico');
@@ -108,25 +94,21 @@ class ChequeoMedicoController extends Controller
 
         $chequeosmedicos->save();
 
-         // $asilados = Asylee::all();
+        Session::flash('info','El Chequeo Medico Fue Actualizado Exitosamente');
+
         return redirect('/chequeos_registrados');
-    }
+     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy($id)
-    {
+     {
 
-        // dd("eliminado".$id);
+        
         $chequeosmedicos = \App\MedicalCheck::findOrFail($id);
         $chequeosmedicos->delete();
 
-        // Session::flash('info',$chequeosmedicos->nombre, $asilados->apellido. ' Fue Eliminado');
+        Session::flash('info','Chequeo Medico Eliminado');
 
-         return redirect()->route('chequeo_medico.index');
-    }
+        return redirect()->route('chequeo_medico.index');
+     }
 }

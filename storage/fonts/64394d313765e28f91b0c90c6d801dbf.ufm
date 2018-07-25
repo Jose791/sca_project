@@ -1,0 +1,1106 @@
+StartFontMetrics 4.1
+Notice Converted by PHP-font-lib
+Comment https://github.com/PhenX/php-font-lib
+EncodingScheme FontSpecific
+Copyright Copyright (c) 2011 by vernon adams. All rights reserved.
+FontName Muli
+FontSubfamily Regular
+UniqueID vernonadams: Muli: 2011
+FullName Muli
+Version Version 1.000
+PostScriptName Muli
+Trademark Muli is a trademark of vernon adams.
+Manufacturer vernon adams
+Designer vernon adams
+Description Copyright (c) 2011 by vernon adams. All rights reserved.
+LicenseURL http://scripts.sil.org/OFL
+CompatibleFullName Muli
+Weight Medium
+ItalicAngle -12
+IsFixedPitch false
+UnderlineThickness 58
+UnderlinePosition -87
+FontHeightOffset 0
+Ascender 957
+Descender -305
+FontBBox -165 -305 1123 957
+StartCharMetrics 280
+U 13 ; WX 0 ; N uni000D ; G 2
+U 32 ; WX 292 ; N space ; G 3
+U 33 ; WX 360 ; N exclam ; G 4
+U 34 ; WX 352 ; N quotedbl ; G 5
+U 35 ; WX 606 ; N numbersign ; G 6
+U 36 ; WX 581 ; N dollar ; G 7
+U 37 ; WX 969 ; N percent ; G 8
+U 38 ; WX 804 ; N ampersand ; G 9
+U 39 ; WX 271 ; N quotesingle ; G 10
+U 40 ; WX 307 ; N parenleft ; G 11
+U 41 ; WX 307 ; N parenright ; G 12
+U 42 ; WX 520 ; N asterisk ; G 13
+U 43 ; WX 712 ; N plus ; G 14
+U 44 ; WX 264 ; N comma ; G 15
+U 45 ; WX 355 ; N hyphen ; G 16
+U 46 ; WX 264 ; N period ; G 17
+U 47 ; WX 350 ; N slash ; G 18
+U 48 ; WX 581 ; N zero ; G 19
+U 49 ; WX 581 ; N one ; G 20
+U 50 ; WX 581 ; N two ; G 21
+U 51 ; WX 581 ; N three ; G 22
+U 52 ; WX 581 ; N four ; G 23
+U 53 ; WX 581 ; N five ; G 24
+U 54 ; WX 581 ; N six ; G 25
+U 55 ; WX 581 ; N seven ; G 26
+U 56 ; WX 581 ; N eight ; G 27
+U 57 ; WX 581 ; N nine ; G 28
+U 58 ; WX 264 ; N colon ; G 29
+U 59 ; WX 264 ; N semicolon ; G 30
+U 60 ; WX 712 ; N less ; G 31
+U 61 ; WX 712 ; N equal ; G 32
+U 62 ; WX 712 ; N greater ; G 33
+U 63 ; WX 504 ; N question ; G 34
+U 64 ; WX 925 ; N at ; G 35
+U 65 ; WX 696 ; N A ; G 36
+U 66 ; WX 660 ; N B ; G 37
+U 67 ; WX 683 ; N C ; G 38
+U 68 ; WX 755 ; N D ; G 39
+U 69 ; WX 595 ; N E ; G 40
+U 70 ; WX 555 ; N F ; G 41
+U 71 ; WX 747 ; N G ; G 42
+U 72 ; WX 759 ; N H ; G 43
+U 73 ; WX 289 ; N I ; G 44
+U 74 ; WX 458 ; N J ; G 45
+U 75 ; WX 632 ; N K ; G 46
+U 76 ; WX 547 ; N L ; G 47
+U 77 ; WX 978 ; N M ; G 48
+U 78 ; WX 778 ; N N ; G 49
+U 79 ; WX 812 ; N O ; G 50
+U 80 ; WX 622 ; N P ; G 51
+U 81 ; WX 813 ; N Q ; G 52
+U 82 ; WX 672 ; N R ; G 53
+U 83 ; WX 607 ; N S ; G 54
+U 84 ; WX 573 ; N T ; G 55
+U 85 ; WX 748 ; N U ; G 56
+U 86 ; WX 652 ; N V ; G 57
+U 87 ; WX 1027 ; N W ; G 58
+U 88 ; WX 637 ; N X ; G 59
+U 89 ; WX 618 ; N Y ; G 60
+U 90 ; WX 597 ; N Z ; G 61
+U 91 ; WX 307 ; N bracketleft ; G 62
+U 92 ; WX 345 ; N backslash ; G 63
+U 93 ; WX 307 ; N bracketright ; G 64
+U 94 ; WX 711 ; N asciicircum ; G 65
+U 95 ; WX 487 ; N underscore ; G 66
+U 96 ; WX 290 ; N grave ; G 67
+U 97 ; WX 607 ; N a ; G 68
+U 98 ; WX 605 ; N b ; G 69
+U 99 ; WX 511 ; N c ; G 70
+U 100 ; WX 605 ; N d ; G 71
+U 101 ; WX 573 ; N e ; G 72
+U 102 ; WX 343 ; N f ; G 73
+U 103 ; WX 606 ; N g ; G 74
+U 104 ; WX 594 ; N h ; G 75
+U 105 ; WX 246 ; N i ; G 76
+U 106 ; WX 246 ; N j ; G 77
+U 107 ; WX 528 ; N k ; G 78
+U 108 ; WX 246 ; N l ; G 79
+U 109 ; WX 928 ; N m ; G 80
+U 110 ; WX 594 ; N n ; G 81
+U 111 ; WX 604 ; N o ; G 82
+U 112 ; WX 605 ; N p ; G 83
+U 113 ; WX 605 ; N q ; G 84
+U 114 ; WX 360 ; N r ; G 85
+U 115 ; WX 492 ; N s ; G 86
+U 116 ; WX 356 ; N t ; G 87
+U 117 ; WX 594 ; N u ; G 88
+U 118 ; WX 519 ; N v ; G 89
+U 119 ; WX 828 ; N w ; G 90
+U 120 ; WX 509 ; N x ; G 91
+U 121 ; WX 522 ; N y ; G 92
+U 122 ; WX 468 ; N z ; G 93
+U 123 ; WX 306 ; N braceleft ; G 94
+U 124 ; WX 244 ; N bar ; G 95
+U 125 ; WX 306 ; N braceright ; G 96
+U 126 ; WX 712 ; N asciitilde ; G 97
+U 160 ; WX 274 ; N nbspace ; G 98
+U 161 ; WX 360 ; N exclamdown ; G 99
+U 162 ; WX 581 ; N cent ; G 100
+U 163 ; WX 581 ; N sterling ; G 101
+U 164 ; WX 608 ; N currency ; G 102
+U 165 ; WX 581 ; N yen ; G 103
+U 166 ; WX 244 ; N brokenbar ; G 104
+U 167 ; WX 536 ; N section ; G 105
+U 168 ; WX 363 ; N dieresis ; G 106
+U 169 ; WX 893 ; N copyright ; G 107
+U 170 ; WX 364 ; N ordfeminine ; G 108
+U 171 ; WX 564 ; N guillemotleft ; G 109
+U 172 ; WX 712 ; N logicalnot ; G 110
+U 174 ; WX 893 ; N registered ; G 111
+U 175 ; WX 415 ; N uni00AF ; G 112
+U 176 ; WX 412 ; N degree ; G 113
+U 177 ; WX 712 ; N plusminus ; G 114
+U 178 ; WX 581 ; N twosuperior ; G 115
+U 179 ; WX 581 ; N threesuperior ; G 116
+U 180 ; WX 296 ; N acute ; G 117
+U 181 ; WX 594 ; N mu ; G 118
+U 182 ; WX 593 ; N paragraph ; G 119
+U 183 ; WX 217 ; N periodcentered ; G 120
+U 184 ; WX 258 ; N cedilla ; G 121
+U 185 ; WX 581 ; N onesuperior ; G 122
+U 186 ; WX 402 ; N ordmasculine ; G 123
+U 187 ; WX 564 ; N guillemotright ; G 124
+U 188 ; WX 970 ; N onequarter ; G 125
+U 189 ; WX 907 ; N onehalf ; G 126
+U 190 ; WX 938 ; N threequarters ; G 127
+U 191 ; WX 504 ; N questiondown ; G 128
+U 192 ; WX 696 ; N Agrave ; G 129
+U 193 ; WX 696 ; N Aacute ; G 130
+U 194 ; WX 696 ; N Acircumflex ; G 131
+U 195 ; WX 696 ; N Atilde ; G 132
+U 196 ; WX 696 ; N Adieresis ; G 133
+U 197 ; WX 696 ; N Aring ; G 134
+U 198 ; WX 990 ; N AE ; G 135
+U 199 ; WX 683 ; N Ccedilla ; G 136
+U 200 ; WX 595 ; N Egrave ; G 137
+U 201 ; WX 595 ; N Eacute ; G 138
+U 202 ; WX 595 ; N Ecircumflex ; G 139
+U 203 ; WX 595 ; N Edieresis ; G 140
+U 204 ; WX 289 ; N Igrave ; G 141
+U 205 ; WX 289 ; N Iacute ; G 142
+U 206 ; WX 289 ; N Icircumflex ; G 143
+U 207 ; WX 289 ; N Idieresis ; G 144
+U 208 ; WX 755 ; N Eth ; G 145
+U 209 ; WX 778 ; N Ntilde ; G 146
+U 210 ; WX 812 ; N Ograve ; G 147
+U 211 ; WX 812 ; N Oacute ; G 148
+U 212 ; WX 812 ; N Ocircumflex ; G 149
+U 213 ; WX 812 ; N Otilde ; G 150
+U 214 ; WX 812 ; N Odieresis ; G 151
+U 215 ; WX 712 ; N multiply ; G 152
+U 216 ; WX 812 ; N Oslash ; G 153
+U 217 ; WX 748 ; N Ugrave ; G 154
+U 218 ; WX 748 ; N Uacute ; G 155
+U 219 ; WX 748 ; N Ucircumflex ; G 156
+U 220 ; WX 748 ; N Udieresis ; G 157
+U 221 ; WX 618 ; N Yacute ; G 158
+U 222 ; WX 622 ; N Thorn ; G 159
+U 223 ; WX 614 ; N germandbls ; G 160
+U 224 ; WX 607 ; N agrave ; G 161
+U 225 ; WX 607 ; N aacute ; G 162
+U 226 ; WX 607 ; N acircumflex ; G 163
+U 227 ; WX 607 ; N atilde ; G 164
+U 228 ; WX 607 ; N adieresis ; G 165
+U 229 ; WX 607 ; N aring ; G 166
+U 230 ; WX 926 ; N ae ; G 167
+U 231 ; WX 511 ; N ccedilla ; G 168
+U 232 ; WX 573 ; N egrave ; G 169
+U 233 ; WX 573 ; N eacute ; G 170
+U 234 ; WX 573 ; N ecircumflex ; G 171
+U 235 ; WX 573 ; N edieresis ; G 172
+U 236 ; WX 246 ; N igrave ; G 173
+U 237 ; WX 246 ; N iacute ; G 174
+U 238 ; WX 246 ; N icircumflex ; G 175
+U 239 ; WX 246 ; N idieresis ; G 176
+U 240 ; WX 581 ; N eth ; G 177
+U 241 ; WX 594 ; N ntilde ; G 178
+U 242 ; WX 604 ; N ograve ; G 179
+U 243 ; WX 604 ; N oacute ; G 180
+U 244 ; WX 604 ; N ocircumflex ; G 181
+U 245 ; WX 604 ; N otilde ; G 182
+U 246 ; WX 604 ; N odieresis ; G 183
+U 247 ; WX 712 ; N divide ; G 184
+U 248 ; WX 604 ; N oslash ; G 185
+U 249 ; WX 594 ; N ugrave ; G 186
+U 250 ; WX 594 ; N uacute ; G 187
+U 251 ; WX 594 ; N ucircumflex ; G 188
+U 252 ; WX 594 ; N udieresis ; G 189
+U 253 ; WX 522 ; N yacute ; G 190
+U 254 ; WX 605 ; N thorn ; G 191
+U 255 ; WX 522 ; N ydieresis ; G 192
+U 305 ; WX 246 ; N dotlessi ; G 193
+U 321 ; WX 547 ; N Lslash ; G 194
+U 322 ; WX 246 ; N lslash ; G 195
+U 338 ; WX 1025 ; N OE ; G 196
+U 339 ; WX 962 ; N oe ; G 197
+U 352 ; WX 607 ; N Scaron ; G 198
+U 353 ; WX 492 ; N scaron ; G 199
+U 376 ; WX 618 ; N Ydieresis ; G 200
+U 381 ; WX 597 ; N Zcaron ; G 201
+U 382 ; WX 468 ; N zcaron ; G 202
+U 402 ; WX 581 ; N florin ; G 203
+U 512 ; WX 696 ; N uni0200 ; G 204
+U 513 ; WX 607 ; N uni0201 ; G 205
+U 514 ; WX 696 ; N uni0202 ; G 206
+U 515 ; WX 607 ; N uni0203 ; G 207
+U 516 ; WX 595 ; N uni0204 ; G 208
+U 517 ; WX 573 ; N uni0205 ; G 209
+U 518 ; WX 595 ; N uni0206 ; G 210
+U 519 ; WX 573 ; N uni0207 ; G 211
+U 520 ; WX 289 ; N uni0208 ; G 212
+U 521 ; WX 246 ; N uni0209 ; G 213
+U 522 ; WX 289 ; N uni020A ; G 214
+U 523 ; WX 246 ; N uni020B ; G 215
+U 524 ; WX 812 ; N uni020C ; G 216
+U 525 ; WX 604 ; N uni020D ; G 217
+U 526 ; WX 812 ; N uni020E ; G 218
+U 527 ; WX 604 ; N uni020F ; G 219
+U 528 ; WX 672 ; N uni0210 ; G 220
+U 529 ; WX 360 ; N uni0211 ; G 221
+U 530 ; WX 672 ; N uni0212 ; G 222
+U 531 ; WX 360 ; N uni0213 ; G 223
+U 532 ; WX 748 ; N uni0214 ; G 224
+U 533 ; WX 594 ; N uni0215 ; G 225
+U 534 ; WX 748 ; N uni0216 ; G 226
+U 535 ; WX 594 ; N uni0217 ; G 227
+U 536 ; WX 573 ; N uni0218 ; G 228
+U 537 ; WX 356 ; N uni0219 ; G 229
+U 538 ; WX 573 ; N uni021A ; G 230
+U 539 ; WX 356 ; N uni021B ; G 231
+U 710 ; WX 341 ; N circumflex ; G 232
+U 711 ; WX 341 ; N caron ; G 233
+U 728 ; WX 307 ; N breve ; G 234
+U 729 ; WX 256 ; N dotaccent ; G 235
+U 730 ; WX 295 ; N ring ; G 236
+U 731 ; WX 248 ; N ogonek ; G 237
+U 732 ; WX 324 ; N tilde ; G 238
+U 733 ; WX 473 ; N hungarumlaut ; G 239
+U 783 ; WX 473 ; N uni030F ; G 240
+U 785 ; WX 307 ; N uni0311 ; G 241
+U 806 ; WX 264 ; N uni0326 ; G 242
+U 937 ; WX 783 ; N Omega ; G 243
+U 956 ; WX 594 ; N mu ; G 118
+U 960 ; WX 629 ; N pi ; G 244
+U 8211 ; WX 530 ; N endash ; G 245
+U 8212 ; WX 1060 ; N emdash ; G 246
+U 8216 ; WX 270 ; N quoteleft ; G 247
+U 8217 ; WX 270 ; N quoteright ; G 248
+U 8218 ; WX 270 ; N quotesinglbase ; G 249
+U 8220 ; WX 500 ; N quotedblleft ; G 250
+U 8221 ; WX 500 ; N quotedblright ; G 251
+U 8222 ; WX 500 ; N quotedblbase ; G 252
+U 8224 ; WX 499 ; N dagger ; G 253
+U 8225 ; WX 499 ; N daggerdbl ; G 254
+U 8226 ; WX 483 ; N bullet ; G 255
+U 8230 ; WX 791 ; N ellipsis ; G 256
+U 8240 ; WX 1165 ; N perthousand ; G 257
+U 8249 ; WX 313 ; N guilsinglleft ; G 258
+U 8250 ; WX 313 ; N guilsinglright ; G 259
+U 8260 ; WX 180 ; N fraction ; G 260
+U 8308 ; WX 438 ; N foursuperior ; G 261
+U 8364 ; WX 581 ; N Euro ; G 262
+U 8482 ; WX 913 ; N trademark ; G 263
+U 8706 ; WX 570 ; N partialdiff ; G 264
+U 8710 ; WX 642 ; N uni2206 ; G 265
+U 8719 ; WX 766 ; N product ; G 266
+U 8721 ; WX 617 ; N summation ; G 267
+U 8722 ; WX 712 ; N minus ; G 268
+U 8730 ; WX 642 ; N radical ; G 269
+U 8734 ; WX 842 ; N infinity ; G 270
+U 8747 ; WX 343 ; N integral ; G 271
+U 8776 ; WX 660 ; N approxequal ; G 272
+U 8800 ; WX 660 ; N notequal ; G 273
+U 8804 ; WX 660 ; N lessequal ; G 274
+U 8805 ; WX 659 ; N greaterequal ; G 275
+U 9674 ; WX 609 ; N lozenge ; G 276
+U 64257 ; WX 588 ; N fi ; G 277
+U 64258 ; WX 588 ; N fl ; G 278
+EndCharMetrics
+StartKernData 
+StartKernPairs 1021
+
+KPX uni000D dollar -166
+KPX uni000D hyphen -154
+KPX uni000D F -102
+KPX uni000D G -102
+KPX uni000D H -102
+KPX uni000D J -102
+KPX uni000D R -102
+KPX uni000D T -102
+
+KPX quotedbl oacute -37
+
+KPX dollar uni000D -129
+KPX dollar ampersand -27
+KPX dollar asterisk -27
+KPX dollar hyphen 94
+KPX dollar two -27
+KPX dollar seven -147
+KPX dollar eight -27
+KPX dollar nine -117
+KPX dollar colon -74
+KPX dollar less -156
+KPX dollar equal 59
+KPX dollar W -27
+KPX dollar Y -43
+KPX dollar Z -27
+KPX dollar backslash -37
+KPX dollar Agrave -63
+KPX dollar Egrave -156
+KPX dollar divide -154
+KPX dollar oslash -193
+KPX dollar uacute -154
+KPX dollar ucircumflex -193
+
+KPX percent seven -92
+KPX percent less -66
+KPX percent Egrave -66
+KPX percent ugrave -78
+KPX percent udieresis -78
+
+KPX ampersand quotedbl 2
+KPX ampersand ampersand -55
+KPX ampersand asterisk -55
+KPX ampersand two -27
+KPX ampersand four -55
+KPX ampersand m -49
+KPX ampersand degree 29
+KPX ampersand Adieresis -55
+
+KPX quotesingle dollar -33
+KPX quotesingle seven -92
+KPX quotesingle semicolon -53
+KPX quotesingle equal -49
+KPX quotesingle Egrave -10
+KPX quotesingle ugrave -117
+KPX quotesingle udieresis -117
+
+KPX parenleft dollar 10
+KPX parenleft hyphen 68
+KPX parenleft seven 4
+KPX parenleft colon 29
+KPX parenleft semicolon 8
+KPX parenleft degree 18
+
+KPX parenright dollar -133
+KPX parenright hyphen -66
+KPX parenright six -27
+KPX parenright seven 14
+KPX parenright D -76
+KPX parenright I 10
+KPX parenright degree 39
+KPX parenright ugrave -182
+KPX parenright udieresis -182
+
+KPX asterisk seven -49
+KPX asterisk nine -27
+KPX asterisk backslash -27
+KPX asterisk Agrave -27
+
+KPX hyphen dollar -37
+KPX hyphen hyphen -66
+KPX hyphen D -27
+KPX hyphen exclamdown -27
+KPX hyphen cent -27
+KPX hyphen sterling -27
+KPX hyphen currency -27
+KPX hyphen yen -27
+KPX hyphen brokenbar -27
+KPX hyphen section -27
+KPX hyphen ugrave -154
+KPX hyphen udieresis -102
+
+KPX period ampersand -90
+KPX period asterisk -90
+KPX period hyphen 90
+KPX period two -90
+KPX period four -90
+KPX period semicolon 37
+KPX period equal 39
+KPX period F -27
+KPX period G -27
+KPX period H -27
+KPX period J -27
+KPX period R -27
+KPX period T -27
+KPX period W -47
+KPX period Y -74
+KPX period Z -53
+KPX period backslash -92
+KPX period dieresis -27
+KPX period copyright -27
+KPX period ordfeminine -27
+KPX period guillemotleft -27
+KPX period logicalnot -27
+KPX period registered -49
+KPX period degree 39
+KPX period threesuperior -27
+KPX period acute -27
+KPX period mu -27
+KPX period paragraph -27
+KPX period periodcentered -27
+KPX period Agrave -92
+KPX period Adieresis -90
+KPX period Aring -27
+KPX period ugrave 68
+KPX period udieresis 68
+
+KPX slash uni000D -207
+KPX slash quotedbl -102
+KPX slash dollar 59
+KPX slash ampersand -66
+KPX slash asterisk -66
+KPX slash hyphen 100
+KPX slash two -70
+KPX slash four -70
+KPX slash seven -113
+KPX slash eight -29
+KPX slash nine -117
+KPX slash colon -49
+KPX slash less -129
+KPX slash equal 59
+KPX slash W -27
+KPX slash Y -102
+KPX slash Z -66
+KPX slash backslash -76
+KPX slash Agrave -76
+KPX slash Adieresis -70
+KPX slash Egrave -102
+KPX slash divide -141
+KPX slash oslash -129
+KPX slash ugrave 68
+KPX slash uacute -141
+KPX slash ucircumflex -117
+KPX slash udieresis 68
+
+KPX two dollar -27
+KPX two hyphen -10
+KPX two seven -92
+KPX two semicolon -37
+KPX two less -25
+KPX two equal -49
+KPX two Egrave -10
+KPX two ugrave -180
+KPX two udieresis -104
+
+KPX three dollar -158
+KPX three asterisk -10
+KPX three hyphen -129
+KPX three colon 39
+KPX three semicolon -61
+KPX three D -66
+KPX three F -76
+KPX three G -76
+KPX three H -76
+KPX three J -76
+KPX three R -76
+KPX three T -74
+KPX three exclamdown -66
+KPX three cent -66
+KPX three sterling -66
+KPX three currency -66
+KPX three yen -66
+KPX three brokenbar -66
+KPX three section -66
+KPX three dieresis -76
+KPX three copyright -76
+KPX three ordfeminine -76
+KPX three guillemotleft -76
+KPX three logicalnot -76
+KPX three threesuperior -76
+KPX three acute -76
+KPX three mu -76
+KPX three paragraph -76
+KPX three periodcentered -76
+KPX three Aring -76
+KPX three ugrave -326
+KPX three udieresis -338
+
+KPX four dollar -27
+KPX four seven -92
+KPX four semicolon -37
+KPX four less -10
+KPX four equal -49
+KPX four Egrave -10
+KPX four ugrave -104
+KPX four udieresis -104
+
+KPX five ampersand -29
+KPX five asterisk -29
+KPX five hyphen 57
+KPX five two -20
+KPX five four -20
+KPX five seven -53
+KPX five less -39
+KPX five F -53
+KPX five G -53
+KPX five H -57
+KPX five J -57
+KPX five R -59
+KPX five T -53
+KPX five dieresis -66
+KPX five copyright -66
+KPX five ordfeminine -66
+KPX five guillemotleft -66
+KPX five logicalnot -66
+KPX five threesuperior -59
+KPX five acute -59
+KPX five mu -59
+KPX five paragraph -59
+KPX five periodcentered -59
+KPX five Adieresis -20
+KPX five Aring -59
+KPX five Egrave -27
+
+KPX six W -66
+KPX six Y -49
+KPX six Z -27
+KPX six backslash -47
+KPX six Agrave -66
+KPX six ugrave -78
+KPX six udieresis -78
+
+KPX seven dollar -154
+KPX seven ampersand -92
+KPX seven asterisk -92
+KPX seven hyphen -113
+KPX seven two -92
+KPX seven four -92
+KPX seven seven 39
+KPX seven nine 43
+KPX seven colon 39
+KPX seven semicolon -6
+KPX seven less 29
+KPX seven D -217
+KPX seven F -211
+KPX seven G -211
+KPX seven H -211
+KPX seven I -96
+KPX seven J -211
+KPX seven P -178
+KPX seven Q -178
+KPX seven R -211
+KPX seven S -178
+KPX seven T -211
+KPX seven U -178
+KPX seven V -154
+KPX seven X -178
+KPX seven Y -102
+KPX seven Z -113
+KPX seven bracketleft -180
+KPX seven backslash -113
+KPX seven bracketright -129
+KPX seven m -102
+KPX seven bar -49
+KPX seven exclamdown -217
+KPX seven cent -217
+KPX seven sterling -217
+KPX seven currency -193
+KPX seven yen -217
+KPX seven brokenbar -217
+KPX seven section -217
+KPX seven dieresis -229
+KPX seven copyright -211
+KPX seven ordfeminine -211
+KPX seven guillemotleft -211
+KPX seven logicalnot -211
+KPX seven registered -23
+KPX seven uni00AF 49
+KPX seven degree 111
+KPX seven twosuperior -178
+KPX seven threesuperior -211
+KPX seven acute -211
+KPX seven mu -211
+KPX seven paragraph -211
+KPX seven periodcentered -211
+KPX seven ordmasculine -178
+KPX seven guillemotright -178
+KPX seven onequarter -178
+KPX seven onehalf -178
+KPX seven Agrave -113
+KPX seven Adieresis -92
+KPX seven Aring -211
+KPX seven oslash 39
+KPX seven ugrave -233
+KPX seven ucircumflex 39
+KPX seven udieresis -233
+
+KPX eight dollar -41
+KPX eight ugrave -90
+KPX eight udieresis -90
+
+KPX nine dollar -117
+KPX nine ampersand -43
+KPX nine asterisk -43
+KPX nine hyphen -70
+KPX nine two -12
+KPX nine four -43
+KPX nine six -27
+KPX nine seven 39
+KPX nine D -147
+KPX nine F -129
+KPX nine G -129
+KPX nine H -129
+KPX nine J -129
+KPX nine P -76
+KPX nine Q -76
+KPX nine R -129
+KPX nine S -76
+KPX nine T -129
+KPX nine U -76
+KPX nine V -66
+KPX nine X -76
+KPX nine m -49
+KPX nine exclamdown -147
+KPX nine cent -147
+KPX nine sterling -147
+KPX nine currency -147
+KPX nine yen -147
+KPX nine brokenbar -147
+KPX nine section -147
+KPX nine dieresis -129
+KPX nine copyright -129
+KPX nine ordfeminine -129
+KPX nine guillemotleft -129
+KPX nine logicalnot -129
+KPX nine uni00AF 29
+KPX nine degree 90
+KPX nine twosuperior -76
+KPX nine threesuperior -129
+KPX nine acute -129
+KPX nine mu -129
+KPX nine paragraph -129
+KPX nine periodcentered -129
+KPX nine ordmasculine -76
+KPX nine guillemotright -76
+KPX nine onequarter -76
+KPX nine onehalf -76
+KPX nine Adieresis -12
+KPX nine Aring -129
+KPX nine ugrave -141
+KPX nine udieresis -129
+
+KPX colon dollar -74
+KPX colon seven 39
+KPX colon D -76
+KPX colon F -49
+KPX colon G -49
+KPX colon H -49
+KPX colon J -49
+KPX colon R -49
+KPX colon T -49
+KPX colon m -49
+KPX colon bar 39
+KPX colon exclamdown -76
+KPX colon cent -76
+KPX colon sterling -76
+KPX colon currency -76
+KPX colon yen -76
+KPX colon brokenbar -76
+KPX colon section -76
+KPX colon dieresis -49
+KPX colon copyright -49
+KPX colon ordfeminine -49
+KPX colon guillemotleft -49
+KPX colon logicalnot -49
+KPX colon uni00AF 49
+KPX colon degree 100
+KPX colon threesuperior -49
+KPX colon acute -49
+KPX colon mu -49
+KPX colon paragraph -49
+KPX colon periodcentered -49
+KPX colon Aring -49
+KPX colon ugrave -129
+KPX colon udieresis -117
+
+KPX semicolon ampersand -23
+KPX semicolon asterisk -23
+KPX semicolon hyphen 96
+KPX semicolon two -23
+KPX semicolon four -23
+KPX semicolon seven 33
+KPX semicolon degree 82
+KPX semicolon Adieresis -23
+KPX semicolon ugrave 68
+KPX semicolon udieresis 82
+
+KPX less dollar -158
+KPX less ampersand -45
+KPX less asterisk -45
+KPX less hyphen -66
+KPX less two -45
+KPX less four -45
+KPX less six -27
+KPX less seven 39
+KPX less D -199
+KPX less F -180
+KPX less G -180
+KPX less H -180
+KPX less I -27
+KPX less J -180
+KPX less P -141
+KPX less Q -141
+KPX less R -180
+KPX less S -141
+KPX less T -180
+KPX less U -141
+KPX less V -133
+KPX less X -141
+KPX less m -49
+KPX less exclamdown -199
+KPX less cent -199
+KPX less sterling -199
+KPX less currency -154
+KPX less yen -129
+KPX less brokenbar -199
+KPX less section -199
+KPX less dieresis -180
+KPX less copyright -180
+KPX less ordfeminine -180
+KPX less guillemotleft -180
+KPX less logicalnot -180
+KPX less degree 90
+KPX less twosuperior -141
+KPX less threesuperior -180
+KPX less acute -180
+KPX less mu -180
+KPX less paragraph -180
+KPX less periodcentered -180
+KPX less ordmasculine -141
+KPX less guillemotright -141
+KPX less onequarter -141
+KPX less onehalf -141
+KPX less Adieresis -45
+KPX less Aring -180
+KPX less ugrave -248
+KPX less udieresis -248
+
+KPX equal hyphen 82
+KPX equal seven 39
+KPX equal backslash -53
+KPX equal bar 39
+KPX equal degree 70
+KPX equal Agrave -66
+
+KPX greater M 233
+
+KPX E D -27
+KPX E I -10
+KPX E bracketleft -25
+KPX E exclamdown -27
+KPX E cent -27
+KPX E sterling -27
+KPX E currency -27
+KPX E yen -27
+KPX E brokenbar -27
+KPX E section -27
+
+KPX F hyphen 70
+KPX F seven -102
+KPX F less -76
+
+
+KPX I quotedbl 66
+KPX I at 141
+KPX I E 18
+KPX I K 18
+KPX I W 37
+KPX I Y 39
+KPX I Z 39
+KPX I bracketleft 18
+KPX I backslash 33
+KPX I grave 82
+KPX I bar 39
+KPX I uni00AF 18
+KPX I degree 121
+KPX I divide 94
+KPX I oslash 82
+KPX I ugrave -80
+KPX I uacute 94
+KPX I ucircumflex 82
+KPX I udieresis -80
+
+KPX J M 47
+
+KPX M M 35
+
+KPX N F -41
+KPX N G -27
+KPX N H -41
+KPX N J -41
+KPX N R -41
+KPX N T -27
+KPX N W -16
+KPX N dieresis -27
+KPX N copyright -41
+KPX N ordfeminine -41
+KPX N guillemotleft -41
+KPX N logicalnot -41
+KPX N threesuperior -41
+KPX N acute -41
+KPX N mu -41
+KPX N paragraph -41
+KPX N periodcentered -41
+KPX N Aring -41
+
+
+KPX R D -27
+KPX R I -37
+KPX R bracketleft -25
+KPX R exclamdown -27
+KPX R cent -27
+KPX R sterling -27
+KPX R currency -27
+KPX R yen -27
+KPX R brokenbar -27
+KPX R section -27
+KPX R divide -66
+KPX R oslash -131
+KPX R uacute -78
+KPX R ucircumflex -131
+
+KPX S D -27
+KPX S I -37
+KPX S bracketleft -25
+KPX S exclamdown -27
+KPX S cent -27
+KPX S sterling -27
+KPX S currency -27
+KPX S yen -27
+KPX S brokenbar -27
+KPX S section -27
+KPX S divide -119
+KPX S oslash -119
+KPX S uacute -53
+KPX S ucircumflex -119
+
+KPX T M 102
+
+KPX U F -27
+KPX U G -27
+KPX U H -27
+KPX U I 39
+KPX U J -27
+KPX U P -4
+KPX U Q -4
+KPX U R -27
+KPX U T -27
+KPX U V 14
+KPX U W 59
+KPX U Y 82
+KPX U Z 82
+KPX U bracketleft 59
+KPX U backslash 82
+KPX U bracketright 39
+KPX U dieresis -27
+KPX U copyright -27
+KPX U ordfeminine -27
+KPX U guillemotleft -27
+KPX U logicalnot -27
+KPX U threesuperior -27
+KPX U acute -27
+KPX U mu -27
+KPX U paragraph -27
+KPX U periodcentered -27
+KPX U Aring -27
+KPX U divide 164
+KPX U oslash 121
+KPX U ugrave -158
+KPX U uacute 164
+KPX U ucircumflex 121
+KPX U udieresis -158
+
+KPX W quotedbl -53
+KPX W F -27
+KPX W G -27
+KPX W H -16
+KPX W J -16
+KPX W R -16
+KPX W T -16
+KPX W bracketleft 29
+KPX W bar 39
+KPX W dieresis -27
+KPX W copyright -16
+KPX W ordfeminine -16
+KPX W guillemotleft -16
+KPX W logicalnot -16
+KPX W threesuperior -16
+KPX W acute -16
+KPX W mu -16
+KPX W paragraph -16
+KPX W periodcentered -16
+KPX W Aring -16
+
+
+KPX Y D -37
+KPX Y F -12
+KPX Y G -16
+KPX Y H -12
+KPX Y J -12
+KPX Y R -12
+KPX Y T -16
+KPX Y exclamdown -37
+KPX Y cent -37
+KPX Y sterling -37
+KPX Y currency -37
+KPX Y yen -37
+KPX Y brokenbar -37
+KPX Y section -37
+KPX Y dieresis -12
+KPX Y copyright -12
+KPX Y ordfeminine -12
+KPX Y guillemotleft -12
+KPX Y logicalnot -12
+KPX Y threesuperior -12
+KPX Y acute -12
+KPX Y mu -12
+KPX Y paragraph -12
+KPX Y periodcentered -12
+KPX Y Aring -12
+KPX Y ugrave -117
+KPX Y udieresis -129
+
+KPX Z F -6
+KPX Z G -10
+KPX Z H -10
+KPX Z J -6
+KPX Z R -6
+KPX Z T -10
+KPX Z dieresis -6
+KPX Z copyright -10
+KPX Z ordfeminine -10
+KPX Z guillemotleft -10
+KPX Z logicalnot -10
+KPX Z threesuperior -6
+KPX Z acute -6
+KPX Z mu -6
+KPX Z paragraph -6
+KPX Z periodcentered -6
+KPX Z Aring -6
+KPX Z ugrave -76
+KPX Z udieresis -76
+
+KPX bracketleft F -16
+KPX bracketleft G -16
+KPX bracketleft H -16
+KPX bracketleft J -16
+KPX bracketleft R -16
+KPX bracketleft T -16
+KPX bracketleft dieresis -16
+KPX bracketleft copyright -16
+KPX bracketleft ordfeminine -16
+KPX bracketleft guillemotleft -16
+KPX bracketleft logicalnot -16
+KPX bracketleft threesuperior -16
+KPX bracketleft acute -16
+KPX bracketleft mu -16
+KPX bracketleft paragraph -16
+KPX bracketleft periodcentered -16
+KPX bracketleft Aring -16
+
+KPX backslash quotedbl -76
+KPX backslash F -10
+KPX backslash G -10
+KPX backslash H -10
+KPX backslash I 4
+KPX backslash J -10
+KPX backslash R -10
+KPX backslash T -10
+KPX backslash W 6
+KPX backslash dieresis -10
+KPX backslash copyright -10
+KPX backslash ordfeminine -10
+KPX backslash guillemotleft -10
+KPX backslash logicalnot -10
+KPX backslash threesuperior -10
+KPX backslash acute -10
+KPX backslash mu -10
+KPX backslash paragraph -10
+KPX backslash periodcentered -10
+KPX backslash Aring -10
+KPX backslash ugrave -115
+KPX backslash udieresis -115
+
+KPX asciicircum M 203
+
+KPX c M 160
+KPX c oacute -37
+
+KPX m hyphen 82
+KPX m seven -49
+KPX m colon 82
+KPX m equal 82
+KPX m backslash 12
+
+KPX bar seven -49
+KPX bar nine -49
+KPX bar colon -49
+KPX bar less -102
+
+KPX Adieresis dollar 29
+KPX Adieresis hyphen 68
+KPX Adieresis seven 4
+KPX Adieresis semicolon 8
+
+KPX oacute oacute 25
+
+KPX divide dollar -219
+KPX divide ampersand -66
+KPX divide hyphen -145
+KPX divide seven 82
+KPX divide F -129
+KPX divide G -158
+KPX divide H -129
+KPX divide J -129
+KPX divide R -129
+KPX divide V -78
+KPX divide divide -172
+
+KPX oslash dollar -166
+KPX oslash hyphen -158
+KPX oslash seven 82
+KPX oslash D -104
+KPX oslash F -195
+KPX oslash G -158
+KPX oslash H -158
+KPX oslash J -158
+KPX oslash R -158
+KPX oslash T -145
+KPX oslash V -117
+KPX oslash oslash -172
+KPX oslash ugrave -104
+
+KPX ugrave asterisk -78
+KPX ugrave hyphen 109
+KPX ugrave two -90
+KPX ugrave seven -207
+KPX ugrave eight -10
+KPX ugrave nine -141
+KPX ugrave colon -129
+KPX ugrave semicolon 57
+KPX ugrave less -248
+KPX ugrave R 25
+KPX ugrave Y -117
+KPX ugrave Z -129
+
+KPX uacute dollar -219
+KPX uacute hyphen -158
+KPX uacute seven 82
+KPX uacute F -129
+KPX uacute G -129
+KPX uacute H -129
+KPX uacute J -141
+KPX uacute V -78
+
+KPX ucircumflex dollar -154
+KPX ucircumflex seven 82
+KPX ucircumflex F -35
+KPX ucircumflex G -158
+KPX ucircumflex H -158
+KPX ucircumflex J -158
+KPX ucircumflex R -158
+KPX ucircumflex V -129
+
+KPX udieresis asterisk -90
+KPX udieresis hyphen 109
+KPX udieresis two -78
+KPX udieresis seven -207
+KPX udieresis eight -10
+KPX udieresis nine -129
+KPX udieresis colon -117
+KPX udieresis semicolon 39
+KPX udieresis less -195
+KPX udieresis Y -117
+KPX udieresis Z -129
+EndKernPairs
+EndKernData
+EndFontMetrics

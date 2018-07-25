@@ -29,7 +29,7 @@
 			        <td>{{ $enfermedades->descripcion }}</td>
 
                     <td width="10px">
-                    	<a href="{{route('enfermedad.edit',$enfermedades->id)}}" class="btn btn-warning">
+                    	<a href="{{route('enfermedades.edit',$enfermedades->id)}}" class="btn btn-warning">
                           
                           Editar                    		
 

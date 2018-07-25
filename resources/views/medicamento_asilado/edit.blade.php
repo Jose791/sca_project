@@ -2,7 +2,7 @@
 
 @section('title')
 
-Registro de Asilados
+Editar Anciano
 
 @endsection
 
@@ -73,15 +73,15 @@ Registro de Asilados
             </div>
              <div class="col-md-10 form-group1 group-mail">
               <label class="control-label">Hora (Aplicar el Medicamento) </label>
-              <input name="hora_medicamento" type="time"  value="{{$m['pivot']->hora_medicamento}}">
+              <input name="hora_medicamento" type="time" value="{{$m['pivot']->hora_medicamento}}" >
             </div>
             
             
         
           
             <div class="col-md-12 form-group">
-              <button type="submit" class="btn btn-primary">Enviar</button>
-              <a href="{{url('medicamento_asilado_registrados')}}" class="btn btn-default">Cancelar</a>
+              <button class="btn btn-success" type="submit"><i class="fa fa-pencil-square-o iconos" aria-hidden="true"></i>Actualizar</button>
+              <a href="{{url('medicamento_asilado_registrados')}}" class="btn btn-danger"><i class="fa fa-ban iconos" aria-hidden="true"></i>Cancelar</a>
             </div>
           <div class="clearfix"> </div>
         </form>

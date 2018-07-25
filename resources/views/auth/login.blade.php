@@ -8,14 +8,15 @@
 			<form method="POST" action="{{ route('login') }}" autocomplete="off">
 			<div class="col-md-6">
                 @csrf
-				<div class="login-mail">
+				<div class="login-mail {{ $errors->has('email') ? 'has-error' : '' }}">
 					<input id="email" type="email"  placeholder="Correo" name="email" value="{{ old('email') }}" >
 					<i class="fa fa-envelope"></i>
-                   @if ($errors->has('email'))
+					<span class="text-danger">{{ $errors->first('email') }}</span>
+                  {{--  @if ($errors->has('email'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
-                                @endif 
+                                @endif  --}}
 				</div>
                 
 				<div class="login-mail">

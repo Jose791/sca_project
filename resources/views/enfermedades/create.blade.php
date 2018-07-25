@@ -29,7 +29,7 @@ Registro de Enfermedades
 
       <h2>
         
-           <a href="{{route('enfermedad.index')}}" class="btn btn-primary pull-right">Enfermedades Registradas</a>
+           <a href="{{route('enfermedades.index')}}" class="btn btn-primary pull-right"><i class="fa fa-list iconos" aria-hidden="true"></i>Lista Enfermedades</a>
 
       </h2>
  	<!---->
@@ -119,8 +119,8 @@ Registro de Enfermedades
              
           
             <div class="col-md-12 form-group">
-              <button type="submit" class="btn btn-primary">Enviar</button>
-              <button type="reset" class="btn btn-default">Cancelar</button>
+              <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane iconos" aria-hidden="true"></i>Enviar</button>
+              <button type="reset" class="btn btn-danger"><i class="fa fa-ban iconos" aria-hidden="true"></i>Cancelar</button>
             </div>
           <div class="clearfix"> </div>
         </form>

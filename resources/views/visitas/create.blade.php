@@ -29,7 +29,7 @@ Registro de Visitas
 
       <h2>
         
-           <a href="{{route('visita.index')}}" class="btn btn-primary pull-right">Visitas Registradas</a>
+           <a href="{{route('visita.index')}}" class="btn btn-primary pull-right"><i class="fa fa-list iconos" aria-hidden="true"></i>Lista Visitas</a>
 
       </h2>
  	<!---->
@@ -40,9 +40,9 @@ Registro de Visitas
              @include('validation.partials.formvalidate')
             
              <div class="col-md-12 form-group2 group-mail">
-              <label class="control-label">Nombre del Asilado</label>
+              <label class="control-label">Nombre del Anciano</label>
             <select name="asylee_id" type="text">
-            	<option value="" disable selected value>Nombre del Asilado</option>
+            	<option value="" disable selected value>Nombre del Anciano</option>
                 @foreach($asilados as $asilado)
                 
             	<option value="{{$asilado->id}}">{{$asilado->nombre}} {{$asilado->apellido}}</option>
@@ -75,8 +75,8 @@ Registro de Visitas
         
           
             <div class="col-md-12 form-group">
-              <button type="submit" class="btn btn-primary">Enviar</button>
-              <button type="reset" class="btn btn-default">Cancelar</button>
+              <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane iconos" aria-hidden="true"></i>Enviar</button>
+              <button type="reset" class="btn btn-danger"><i class="fa fa-ban iconos" aria-hidden="true"></i>Cancelar</button>
             </div>
           <div class="clearfix"> </div>
         </form>

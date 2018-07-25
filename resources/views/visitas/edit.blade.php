@@ -30,9 +30,9 @@ Editar de Visita
       
  	
   	    
-        <form method="post" action="{{ route('visita.update', ['id' => $visitas[0]['id']]) }}">
+        <form method="post" action="{{ route('visita.update', ['id' => $vi['id']]) }}">
             
-
+      {{-- <SPAN>{{$vi['id']}}</SPAN> --}}
             @csrf
             
              @include('validation.partials.formvalidate')
@@ -41,7 +41,7 @@ Editar de Visita
               <label class="control-label">Nombre del Asilado</label>
               <select name="asylee_id" type="text">
                  @foreach($asilados as $asilado)
-                    <option @if($asilado->id == $visitas[0]['asylee_id']) selected @else '' @endif value="{{ $asilado->id }}">{{ $asilado->nombre }} {{ $asilado->apellido }}</option>
+                    <option @if($asilado->id == $vi->asylee_id) selected @else '' @endif value="{{ $asilado->id }}">{{ $asilado->nombre }} {{ $asilado->apellido }}</option>
                  @endforeach
             	
               </select>
@@ -51,7 +51,7 @@ Editar de Visita
               <label class="control-label">Nombre del visitante</label>
               <select name="visitor_id" type="text">
             	    @foreach($visitantes as $visitante)
-                    <option @if($visitante->id == $visitas[0]['visitor_id']) selected @else '' @endif value="{{ $visitante->id }}">{{ $visitante->nombre }} {{ $visitante->apellido }}</option>
+                    <option @if($visitante->id == $vi->visitor_id) selected @else '' @endif value="{{ $visitante->id }}">{{ $visitante->nombre }} {{ $visitante->apellido }}</option>
             	    @endforeach
             	
               </select>
@@ -60,13 +60,13 @@ Editar de Visita
             
             <div class="col-md-10 form-group1 group-mail">
               <label class="control-label">Fecha de la Visita </label>
-              <input name="fecha_reserva" type="datetime" placeholder="2018-05-21 00:00:00" value="{{$visitas[0]['fecha_reserva']}}" >
+              <input name="fecha_reserva" type="datetime" placeholder="2018-05-21 00:00:00" value="{{$vi->fecha_reserva}}" >
             </div>
             
 
             <div class="col-md-12 form-group">
-              <button type="submit" class="btn btn-success">Actualizar</button>
-              <a href="{{url('visitas_registradas')}}" class="btn btn-default">Cancelar</a>
+              <button type="submit" class="btn btn-success"><i class="fa fa-pencil-square-o iconos" aria-hidden="true"></i>Actualizar</button>
+              <a href="{{url('visitas_registradas')}}" class="btn btn-danger"><i class="fa fa-ban iconos" aria-hidden="true"></i>Cancelar</a>
             </div>
             
           <div class="clearfix"> </div>

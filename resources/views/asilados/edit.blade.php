@@ -90,8 +90,8 @@ Editar A {{$asilados->nombre}} {{$asilados->apellido}}
             
             <div class="clearfix"> </div>
 
-            <button class="btn btn-success" type="submit">Actualizar</button>
-            <a href="{{url('/asilados_registrados')}}" class="btn btn-default">Cancelar</a>
+            <button class="btn btn-success" type="submit"><i class="fa fa-pencil-square-o iconos" aria-hidden="true"></i>Actualizar</button>
+            <a href="{{url('/asilados_registrados')}}" class="btn btn-danger"><i class="fa fa-ban iconos" aria-hidden="true"></i>Cancelar</a>
         </form>
             
     </div>

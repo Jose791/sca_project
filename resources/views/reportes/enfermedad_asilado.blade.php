@@ -19,7 +19,7 @@
   <div class="graph-grid">
          <div class="col-md-6 graph-1">
             <div class="grid-1">
-             {{-- Grafico de barras --}}
+            {{--  Grafico de barras --}}
     
               <h4>Ancianos agrupados por enfermedad (grafico de barra)</h4>
                  <canvas id="grafico_barra" height="300" width="500" style="width: 500px; height: 300px;"></canvas>
@@ -113,9 +113,9 @@
         data: {
             labels: [
                 <?php
-                    foreach ($asilado_enferm as $key)
+                    foreach ($asilado_enferm as $key1)
                     {
-                        echo "'$key->enfermedad',";
+                        echo "'$key1->enfermedad',";
                     }
                 ?>],
             datasets: [{

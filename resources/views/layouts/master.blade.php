@@ -24,9 +24,17 @@
 <script src="{{asset('js/jquery.slimscroll.min.js')}}"></script>
 <!-- Custom and plugin javascript -->
 <link href="{{asset('css/custom.css')}}" rel="stylesheet">
+<link rel="stylesheet"  href="{{asset('css/toastr.min.css')}}">
 <script src="{{asset('js/custom.js')}}"></script>
 <script src="{{asset('js/screenfull.js')}}"></script>
-<script src="{{asset('jquery.maskedinput.min.js')}}" ></script>
+<script src="{{asset('js/jquery.printPage.js')}}"></script>
+
+
+<!-- Fonts -->
+
+{{-- <link href="https://fonts.googleapis.com/css?family=Coda+Caption:800" rel="stylesheet"> --}}
+<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+
 		<script>
 		$(function () {
 			$('#supported').text('Supported/allowed: ' + !!screenfull.enabled);
@@ -52,7 +60,7 @@
 <body>
 <div id="wrapper">
         <!----->
-        <nav class="navbar-default navbar-static-top" role="navigation">
+    <nav class="navbar-default navbar-static-top" role="navigation">
              <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -60,7 +68,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-               <h1> <a class="navbar-brand" href="inicio">SCA</a></h1>         
+               <h1> <a class="navbar-brand" href="#">SCA</a></h1>         
 			   </div>
 			 <div class=" border-bottom">
         	<div class="full-left">
@@ -82,7 +90,7 @@
 		        <ul class=" nav_1">
 		           
 		    		<li class="dropdown at-drop">
-		              <a href="#" class="dropdown-toggle dropdown-at " data-toggle="dropdown"><i class="fa fa-globe"></i>
+		              <a href="#" class="dropdown-toggle dropdown-at " data-toggle="dropdown"><i class="fa fa-bell" aria-hidden="true"></i>
                        
                        @if (count(Auth::user()->unreadNotifications))
 
@@ -92,93 +100,25 @@
 
 	       	           </a>
 
-		              <ul class="dropdown-menu" role="menu">
+		             
 
-		              	{{-- <li><a style="color: green" href="{{route('markRead')}}">Marcar todas como leidas</a></li> --}}
-        
-           {{--  @foreach (Auth::user()->unreadNotifications as $notification)
-            
-             <li style="background-color:lightgray">
-                 <a href="#"><i> </i>  <b>{{ $notification->data['data'] }}</b></a>
-             </li>
-
-            @endforeach
-        
-
-         
-            @foreach (Auth::user()->readNotifications as $notification)
-              <li>
-                <a href="#"><i> </i>  <b>{{ $notification->data['data'] }}</b></a>
-              </li>
-            @endforeach --}}
-        
-    </ul>
-
-	
-<!--
-		              <ul class="dropdown-menu menu1 " role="menu">
-		                <li><a href="#">
-		               
-		                	<div class="user-new">
-		                	<p>New user registered</p>
-		                	<span>40 seconds ago</span>
-		                	</div>
-		                	<div class="user-new-left">
-		                
-		                	<i class="fa fa-user-plus"></i>
-		                	</div>
-		                	<div class="clearfix"> </div>
-		                	</a></li>
-		                <li><a href="#">
-		                	<div class="user-new">
-		                	<p>Someone special liked this</p>
-		                	<span>3 minutes ago</span>
-		                	</div>
-		                	<div class="user-new-left">
-		                
-		                	<i class="fa fa-heart"></i>
-		                	</div>
-		                	<div class="clearfix"> </div>
-		                </a></li>
-		                <li><a href="#">
-		                	<div class="user-new">
-		                	<p>John cancelled the event</p>
-		                	<span>4 hours ago</span>
-		                	</div>
-		                	<div class="user-new-left">
-		                
-		                	<i class="fa fa-times"></i>
-		                	</div>
-		                	<div class="clearfix"> </div>
-		                </a></li>
-		                <li><a href="#">
-		                	<div class="user-new">
-		                	<p>The server is status is stable</p>
-		                	<span>yesterday at 08:30am</span>
-		                	</div>
-		                	<div class="user-new-left">
-		                
-		                	<i class="fa fa-info"></i>
-		                	</div>
-		                	<div class="clearfix"> </div>
-		                </a></li>
-		                <li><a href="#">
-		                	<div class="user-new">
-		                	<p>New comments waiting approval</p>
-		                	<span>Last Week</span>
-		                	</div>
-		                	<div class="user-new-left">
-		                
-		                	<i class="fa fa-rss"></i>
-		                	</div>
-		                	<div class="clearfix"> </div>
-		                </a></li>
-		                <li><a href="#" class="view">View all messages</a></li>
-		              </ul>
--->
-		            </li>
+		         </li>
 					<li class="dropdown">
-		              <a href="#" class="dropdown-toggle dropdown-at" data-toggle="dropdown"><span class=" name-caret">{{ Auth::user()->name }}<i class="caret"></i></span><img src="{{asset('images/wo.jpg')}}"></a>
+		             
+
+		              <a href="#" class="dropdown-toggle dropdown-at" data-toggle="dropdown"><span class=" name-caret">{{ Auth::user()->name}} <i class="caret"></i></span>
+                      
+                      @if(Auth::user()->type=='admin')
+		              	  
+
+		              	  <img src="{{asset('images/itachi.jpg')}}">
+                       @else   
+
+		              	<img src="{{asset('images/wo.jpg')}}">
+
+		              	@endif
+		              </a>
+
 		              <ul class="dropdown-menu " role="menu">
 <!--
 		                <li><a href="profile.html"><i class="fa fa-user"></i>Edit Profile</a></li>
@@ -193,8 +133,11 @@
                                         @csrf
                                     </form>
                           </li>
+
 		              </ul>
+
 		            </li>
+
 		           
 		        </ul>
 		     </div> <!-- /.navbar-collapse -->
@@ -211,49 +154,49 @@
                     </li>
                    
                     
-					<!-- <li>
-                        <a href="inbox.html" class=" hvr-bounce-to-right"><i class="fa fa-inbox nav_icon"></i> <span class="nav-label">Inbox</span> </a>
-                    </li>
-                    
-                    <li>
-                        <a href="gallery.html" class=" hvr-bounce-to-right"><i class="fa fa-picture-o nav_icon"></i> <span class="nav-label">Gallery</span> </a>
-                    </li>
-                     <li>
-                        <a href="#" class=" hvr-bounce-to-right"><i class="fa fa-desktop nav_icon"></i> <span class="nav-label">Pages</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li><a href="404.html" class=" hvr-bounce-to-right"> <i class="fa fa-info-circle nav_icon"></i>Error 404</a></li>
-                            <li><a href="faq.html" class=" hvr-bounce-to-right"><i class="fa fa-question-circle nav_icon"></i>FAQ</a></li>
-                            <li><a href="blank.html" class=" hvr-bounce-to-right"><i class="fa fa-file-o nav_icon"></i>Blank</a></li>
-                       </ul>
-                    </li>
-                     <li>
-                        <a href="layout.html" class=" hvr-bounce-to-right"><i class="fa fa-th nav_icon"></i> <span class="nav-label">Grid Layouts</span> </a>
-                    </li>
-                   -->
                     <li>
                         <a href="#" class=" hvr-bounce-to-right"><i class="fa fa-list nav_icon"></i> <span class="nav-label">Formularios</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li><a href="{{url('/asilados')}}" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Ansianos</a></li>
+                        <ul class="nav nav-second-level ">
+                            <li><a href="{{url('/asilados')}}" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Ancianos</a></li>
                             <li><a href="{{url('enfermedades')}}" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Enfermedades</a></li>
                             <li><a href="{{url('medicamentos')}}" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Medicamentos</a></li>
-                            <li><a href="dietas" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Dietas</a></li>
+                            <li><a href="{{url('dietas')}}" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Dietas</a></li>
                             <li><a href="{{url('chequeos_medicos')}}" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Chequeos Medicos</a></li>
-                            <li><a href="{{url('medicamento_asilado')}}" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Asilado Medicamento</a></li>
+                            <li><a href="{{url('medicamento_asilado')}}" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Anciano Medicamento</a></li>
+                             <li><a href="{{url('enfermedad')}}" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Anciano Enfermedad</a></li>
                             <li><a href="{{url('visitantes')}}" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Visitantes</a></li>
                             <li><a href="{{url('visitas')}}" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Visitas</a></li>
                         </ul>
                     </li>
                     
+                       {{-- <li>
+                        <a href="#" class=" hvr-bounce-to-right"><i class="fa fa-list nav_icon"></i> <span class="nav-label">Index</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="{{url('/asilados_registrados')}}" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Ancianos lista</a></li>
+                            <li><a href="{{url('enfermedades_registradas')}}" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Enfermedades</a></li>
+                            <li><a href="{{url('medicamentos_registrados')}}" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Medicamentos</a></li>
+                            <li><a href="{{url('dietas_registradas')}}" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Dietas</a></li>
+                            <li><a href="{{url('chequeos_registrados')}}" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Chequeos Medicos</a></li>
+                            <li><a href="{{url('medicamento_asilado_registrados')}}" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Anciano Medicamento</a></li>
+                             <li><a href="{{url('enfermedad_asilado')}}" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Anciano Enfermedad</a></li>
+                            <li><a href="{{url('visitantes_registrados')}}" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Visitantes</a></li>
+                            <li><a href="{{url('visitas_registradas')}}" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Visitas</a></li>
+                        </ul>
+                    </li> --}}
+                   
+                  @if(Auth::user()->type=='admin')
                     <li>
                         <a href="#" class=" hvr-bounce-to-right"><i class="fa fa-indent nav_icon"></i> <span class="nav-label">Reportes</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="{{url('/chart')}}" class=" hvr-bounce-to-right"> <i class="fa fa-area-chart nav_icon"></i>Reporte #1</a></li>
+                            <li><a href="{{url('/chart')}}" class=" hvr-bounce-to-right"> <i class="fa fa-area-chart nav_icon"></i>Anciano x Enfermedad</a></li>
                             
-                            <li><a href="#" class=" hvr-bounce-to-right"><i class="fa fa-map-marker nav_icon"></i>Anciano x Medicamento</a></li>
-			
-						<li><a href="#" class=" hvr-bounce-to-right"><i class="fa fa-file-text-o nav_icon"></i>#</a></li>
+                            {{-- <li><a href="{{url('sample')}}" class=" hvr-bounce-to-right"><i class="fa fa-area-chart nav_icon"></i>Anciano x Medicamento</a></li> --}}
 
-					   </ul>
+                            <li><a href="{{url('asilado_x_medicamento')}}" class=" hvr-bounce-to-right"><i class="fa fa-area-chart nav_icon"></i>Anciano x Medicamento</a></li>
+			
+						{{-- <li><a href="#" class=" hvr-bounce-to-right"><i class="fa fa-file-text-o nav_icon"></i>#</a></li> --}}
+
+					              </ul>
                     </li>
                     
                    
@@ -265,11 +208,14 @@
                                                    
                         </ul>
                     </li>
+
+                    @endif
                      
                 </ul>
             </div>
 			</div>
-        </nav>
+
+ </nav>
 		 <div id="page-wrapper" class="gray-bg dashbard-1">
        <div class="content-main">
  
@@ -305,6 +251,31 @@
 	<script src="{{asset('js/jquery.nicescroll.js')}}"></script>
 	<script src="{{asset('js/scripts.js')}}"></script>
 	@yield('scripts')
+	<script src="{{asset('js/toastr.min.js')}}"></script>
+
+	<script>
+		
+      @if(Session::has('info'))
+
+        toastr.info("{{Session::get('info')}}")
+     
+
+
+      @endif
+
+
+      @if (Session::has('success'))
+
+
+         toastr.success("{{Session::get('success')}}")
+
+      @endif 
+
+     
+
+
+
+	</script>
 	<!--//scrolling js-->
 </body>
 </html>

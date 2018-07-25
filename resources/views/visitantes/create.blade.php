@@ -29,7 +29,7 @@ Registro de Visitantes
 
       <h2>
         
-           <a href="{{route('visitante.index')}}" class="btn btn-primary pull-right">Visitantes Registrados</a>
+           <a href="{{route('visitante.index')}}" class="btn btn-primary pull-right"><i class="fa fa-list iconos" aria-hidden="true"></i>Lista Visitantes</a>
 
       </h2>
  	<!---->
@@ -141,8 +141,8 @@ Registro de Visitantes
              
           
             <div class="col-md-12 form-group">
-              <button type="submit" class="btn btn-primary">Enviar</button>
-              <button type="reset" class="btn btn-default">Cancelar</button>
+              <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane iconos" aria-hidden="true"></i>Enviar</button>
+              <button type="reset" class="btn btn-danger"><i class="fa fa-ban iconos" aria-hidden="true"></i>Cancelar</button>
             </div>
           <div class="clearfix"> </div>
         </form>

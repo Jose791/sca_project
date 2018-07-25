@@ -6,30 +6,43 @@ Inicio
 
 @endsection
 
-@section('banner')
+{{-- @section('banner')
 
-<div class="banner">
+            <div class="banner">
 		    	<h2>
-				<a href="inicio">Inicio</a>
-				<i class="fa fa-angle-right"></i>
-				<span>Inicio</span>
+				   <a href="inicio">Inicio</a>
+				     <i class="fa fa-angle-right"></i>
+				       <span>Inicio</span>
 				</h2>
 		    </div>
 
-@endsection
+@endsection --}}
 
 
-@section('content')
+@section('content' )
+
+{{-- <div id="page-wrapper" class="gray-bg dashbard-1"> --}}
+     
+
+  {{--  <div class="content-main"> --}}
+
+	       <div class="blank"> 
+
+             {{-- <div class="blank-page">
 
 
-{{-- @foreach($asilados as $asilado)
 
-<tr>
- <td>{{$asilado->pivot->complemento}}</td>
-</tr>
 
-@endforeach --}}
+             </div> --}}
 
+         
+
+    </div>
+
+
+
+{{-- </div> --}}
+{{-- </div> --}}
 
 
 

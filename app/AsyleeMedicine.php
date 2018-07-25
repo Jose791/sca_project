@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class AsyleeMedicine extends Model
 {
  protected $table = 'asylee_medicine';
- protected $fillable=['asylee_id','hora_medicamento','complemento'];
+ protected $fillable=[];
 	
     //
 

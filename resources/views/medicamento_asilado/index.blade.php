@@ -1,4 +1,15 @@
 @extends('layouts.master')
+@section('banner')
+
+<div class="banner">
+		    	<h2>
+				<a >Lista de</a>
+				<i class="fa fa-angle-right"></i>
+				<span>Medicamentos de Ancianos</span>
+				</h2>
+		    </div>
+
+@endsection
 
 @section('content')
 	
@@ -11,7 +22,7 @@
 	  	<div class="panel-body">
 	  			<h2>
 	  		
-           <a href="{{route('medicamentoasilado.create')}}" class="btn btn-primary pull-right">Nuevo</a>
+           <a href="{{route('medicamentoasilado.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus iconos" aria-hidden="true"></i>Añadir Medicamento/Anciano</a>
 
 	  	</h2>
 		  <table class="table">

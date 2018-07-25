@@ -1,5 +1,17 @@
 @extends('layouts.master')
 
+@section('banner')
+
+<div class="banner">
+		    	<h2>
+				<a >Lista de</a>
+				<i class="fa fa-angle-right"></i>
+				<span>Dietas</span>
+				</h2>
+		    </div>
+
+@endsection
+
 @section('content')
 	
 	<h2>Todos las Dietas</h2>
@@ -18,7 +30,7 @@
 
 	  	<h2>
 	  		
-           <a href="{{route('dieta.create')}}" class="btn btn-primary pull-right">Nuevo</a>
+           <a href="{{route('dieta.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus iconos" aria-hidden="true"></i>Añadir Dieta</a>
 
 	  	</h2>
 		  <table class="table">
@@ -26,6 +38,7 @@
 		      <tr>
 		        <th>Dieta #</th>
 		        <th>Asilado</th>  
+                <th>Hora (aplicacion)</th>
                 <th>Descripcion</th>
                 <th colspan="3">Accion</th>
 		      </tr>
@@ -35,7 +48,9 @@
 			      <tr>
 			        <td>{{ $dieta->id }}</td>
 			        <td>{{ $dieta->asylee->nombre }}</td>
+                    <td>{{ $dieta->hora_dieta}}</td>
                     <td>{{ $dieta->descripcion}}</td>
+
 
 
                     <td width="10px">

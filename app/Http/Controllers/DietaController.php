@@ -14,107 +14,71 @@ use Illuminate\Support\Facades\Session;
 
 class DietaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     
      public function __construct()
-    {
+     {
         
         
        $this->middleware('auth');
        
         
-    }
+     }
+
     public function index()
-    {
-//         $asilados = Asylee::all();
+     {
+
           $dietas = Diet::all();
-//        $visitas = Visit::all();
-//         dd($dietas);
-        
+
         return view('dietas.index',compact('dietas'));
-    }
+     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+  
     public function create()
-    {
+     {
         $asilados = Asylee::all();
-        
-//        dd($dietas);
+
         return view('dietas.create')->with (compact('asilados'));
-    }
+     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    
     public function store(CrearDietasRequest $request)
-    {
-         $dieta = Diet::create ($request->all());
-         
-
+     {
         
+        $dieta = Diet::create ($request->all());
+   
+        Session::flash('info','La Dieta Fue Creada Exitosamente');
+      
 
         return redirect()->route('dieta.index');
-    }
+     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-      public function show($id)
-    {
-        $dietas = Diet::find($id);
 
-        // dd($asilados);
+    public function show($id)
+     {
+       
+        $dietas = Diet::findOrFail($id);
+
 
         return view('dietas.show', compact('dietas'));
-    }
+     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
+
     public function edit($id)
-    {
+     {
        
        $asilados = Asylee::all();
-       $dietas=Diet::find($id);
+       $dietas=Diet::findOrFail($id);
 
-        return view('dietas.edit')->with (compact('dietas','asilados'));
+       return view('dietas.edit')->with (compact('dietas','asilados'));
 
-        // $asilados = Asylee::all();
-        // $dietas=Diet::with('asylee')->where('id', $id)
-        //     ->get()
-        //     ->toArray();
+     }
 
-        // return view('dietas.edit')->with (compact('dietas', 'asilados'));   
-
-         }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function update(Request $request, $id)
-    {
-          $dietas = Diet::find($id);
+     {
+         
+        $dietas = Diet::findOrFail($id);
 
         $dietas->asylee_id = $request->asylee_id;
         $dietas->descripcion = $request->descripcion;
@@ -124,24 +88,22 @@ class DietaController extends Controller
 
         $dietas->save();
 
+        Session::flash('info','La Dieta Fue Actualizada Exitosamente');
+
+
         return redirect()->route('dieta.index');
-    }
+     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function destroy($id)
-    {
+     {
 
-        // dd("eliminado".$id);
+        
         $dietas = \App\Diet::findOrFail($id);
         $dietas->delete();
 
-        // Session::flash('info',$dietas->nombre, $asilados->apellido. ' Fue Eliminado');
+        Session::flash('info','La Dieta Fue Eliminada');
 
          return redirect()->route('dieta.index');
-    }
+     }
 }

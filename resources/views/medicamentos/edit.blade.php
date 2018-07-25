@@ -55,8 +55,8 @@ Editar Medicamentos
 
             
             <div class="col-md-12 form-group">
-              <button type="submit" class="btn btn-primary">Enviar</button>
-              <a href="{{url('medicamentos_registrados')}}" class="btn btn-default">Cancelar</a>
+              <button class="btn btn-success" type="submit"><i class="fa fa-pencil-square-o iconos" aria-hidden="true"></i>Actualizar</button>
+              <a href="{{url('medicamentos_registrados')}}" class="btn btn-danger"><i class="fa fa-ban iconos" aria-hidden="true"></i>Cancelar</a>
             </div>
           <div class="clearfix"> </div>
         </form>

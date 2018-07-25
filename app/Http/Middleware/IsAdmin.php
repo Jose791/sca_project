@@ -6,6 +6,8 @@ use Illuminate\Contracts\Auth\Guard;
 
 use Illuminate\Support\Facades\Auth;
 
+use Session;
+
 use Closure;
 
 class IsAdmin
@@ -25,9 +27,22 @@ class IsAdmin
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check() && Auth::User()->type=='admin') 
-            return $next($request);
+       
+        if (Auth::check() && Auth::User()->type=='admin'){
 
-        return redirect('/');
+            
+          
+            return $next($request);
+         
+        
+         
+        
     }
+
+    
+          Session::flash('info', 'Requiere permisos de administrador...');
+
+         return redirect()->back();
+}
+
 }

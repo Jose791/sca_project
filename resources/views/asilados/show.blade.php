@@ -5,9 +5,9 @@
 
 <div class="banner">
 		    	<h2>
-				<a >Formularios</a>
+				<a >Mostrar Datos de:</a>
 				<i class="fa fa-angle-right"></i>
-				<span>Asilados registrados</span>
+				<span>{{$asilados->nombre}} {{$asilados->apellido}}</span>
 				</h2>
 		    </div>
 
@@ -17,8 +17,8 @@
 
 
 	
-	<h2>Todos los Asilados</h2>
-	  <p>Todos los Asilados registrados</p>  
+	<h2>Datos del Anciano</h2>
+	  {{-- <p>Todos los Asilados registrados</p>   --}}
 	  <div class="validation-system">
  		 
  		<div class="validation-form">
@@ -38,15 +38,16 @@
 		  <table class="table ">
 		    <thead>
 		      <tr>
-            <th>Asilado #</th>
-		        <th>Cedula</th>
-            <th>Nombre</th>
-		        <th>Apellidos</th>
-            <th>Sexo</th>
-		        <th>Residencia</th>
-            <th>Fecha de Nacimiento</th>
-		        <th class="col-md-4">Condicion</th>
-            <th>Estado</th>
+                 <th>Anciano #</th>
+		         <th>Cedula</th>
+                 <th>Nombre</th>
+		         <th>Apellidos</th>
+                 <th>Sexo</th>
+		         <th>Residencia</th>
+                 <th>Fecha de Nacimiento</th>
+		         <th class="col-md-4">Condicion</th>
+                 <th>Estado</th>
+                 <th>Accion</th>
 		      </tr>
 		    </thead>
 		    <tbody>
@@ -62,7 +63,7 @@
               <td>{{ $asilados->condicion_especial }}</td>
               <td>{{ $asilados->estado }}</td>
             <td width="20px">
-                      <a href="{{route('asilado.edit', $asilados->id)}}" class="btn btn-link">
+                      <a href="{{route('asilado.edit', $asilados->id)}}" class="btn btn-warning">
                           
                           Editar                        
 

@@ -74,8 +74,8 @@ Registro de Visitantes
              
           
             <div class="col-md-12 form-group">
-              <button type="submit" class="btn btn-success">Actualizar</button>
-              <a href="{{url('visitantes_registrados')}}" class="btn btn-default">Cancelar</a>
+              <button type="submit" class="btn btn-success"><i class="fa fa-pencil-square-o iconos" aria-hidden="true"></i>Actualizar</button>
+              <a href="{{url('visitantes_registrados')}}" class="btn btn-danger"><i class="fa fa-ban iconos" aria-hidden="true"></i>Cancelar</a>
             </div>
           <div class="clearfix"> </div>
         </form>

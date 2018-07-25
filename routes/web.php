@@ -50,7 +50,7 @@
 //});
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
@@ -133,21 +133,36 @@ Route::delete('/dietas/{id}', 'DietaMedicoController@destroy')->name('dieta.dest
 
 //enfermedades
 
-Route::get('enfermedades_registradas', 'EnfermedadController@index')->name('enfermedad.index');
+Route::get('enfermedades_registradas', 'EnfermedadController@index')->name('enfermedades.index');
 
-Route::get('enfermedades', 'EnfermedadController@create')->name('enfermedad.create');
+Route::get('enfermedades', 'EnfermedadController@create')->name('enfermedades.create');
 
-Route::post('/enfermedades', 'EnfermedadController@store')->name('enfermedad.store');
+Route::post('/enfermedades', 'EnfermedadController@store')->name('enfermedades.store');
 
-Route::get('/enfermedades/{id}', 'EnfermedadController@show')->name('enfermedad.show');
+Route::get('/enfermedades/{id}', 'EnfermedadController@show')->name('enfermedades.show');
 
-Route::get('enfermedades/edit/{id}', 'EnfermedadController@edit')->name('enfermedad.edit');
+Route::get('enfermedades/edit/{id}', 'EnfermedadController@edit')->name('enfermedades.edit');
 
-Route::post('enfermedades/update/{id}', 'EnfermedadController@update')->name('enfermedad.update');
+Route::post('enfermedades/update/{id}', 'EnfermedadController@update')->name('enfermedades.update');
 
-Route::delete('/enfermedades/{id}', 'EnfermedadController@destroy')->name('enfermedad.destroy');
+Route::delete('/enfermedades/{id}', 'EnfermedadController@destroy')->name('enfermedades.destroy');
 
 
+//enfermedad_asilado
+
+Route::get('enfermedad_asilado', 'EnfermedadAsiladoController@index')->name('enfermedad.index');
+
+Route::get('enfermedad', 'EnfermedadAsiladoController@create')->name('enfermedad.create');
+
+Route::post('/enfermedad', 'EnfermedadAsiladoController@store')->name('enfermedad.store');
+
+Route::get('/enfermedad/{id}', 'EnfermedadAsiladoController@show')->name('enfermedad.show');
+
+Route::get('enfermedad/edit/{id}', 'EnfermedadAsiladoController@edit')->name('enfermedad.edit');
+
+Route::post('enfermedad/update/{id}', 'EnfermedadAsiladoController@update')->name('enfermedad.update');
+
+Route::delete('/enfermedad/{id}', 'EnfermedadAsiladoController@destroy')->name('enfermedad.destroy');
 
 
 //medicamento_asilado
@@ -207,12 +222,22 @@ Route::delete('/visitas/{id}', 'VisitaController@destroy')->name('visita.destroy
 });*/
 
 
+//mostrar horarios
+
+Route::get('mostrar', 'MostrarController@index')->name('mostrar.index');
+Route::post('mostrar', 'MostrarController@store')->name('mostrar.store');
+Route::get('descargar-horarios', 'MostrarController@pdf')->name('mostrar.pdf');
+
+
+
 //Reportes
 
 Route::get('chart', 'ReportController@chartjs');
 Route::get('sample', 'ReportController@sample');
 Route::post('sample/get', 'ReportController@getConsulting')->name('sample/get');
 Route::get('asilado_x_sexo', 'ReportController@asilado_x_sexo')->name('asilado_x_sexo');
+Route::get('asilado_x_medicamento', 'ReportController@asilado_x_medicamento')->name('asilado_x_medicamento');
+
 
 // Route::get('chartjs', 'ReportController@chart');
 
@@ -224,4 +249,24 @@ Route::get('asilado_x_sexo', 'ReportController@asilado_x_sexo')->name('asilado_x
 
 
 // Route::get('stocks','StockController@index');
-// Route::get('stock/chart','StockController@chart');
+// Route::get('stock/chart','StockController@chart
+
+
+
+
+
+
+
+
+
+Route::get('test', function () {
+	$result = App\Asylee::has('medicines')
+		->with(['medicines', 'schedules' => function ($query) {
+			$query->whereRaw('date_format(created_at, "%Y-%m-%d") = date_format(now(), "%Y-%m-%d")')
+				->get();
+		}])
+		->get()
+		->toArray();
+
+	dd($result);
+});

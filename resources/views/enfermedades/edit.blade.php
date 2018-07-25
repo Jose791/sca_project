@@ -29,13 +29,13 @@ Registro de Enfermedades
 
       <h2>
         
-           <a href="{{route('enfermedad.index')}}" class="btn btn-primary pull-right">Enfermedades Registradas</a>
+           <a href="{{route('enfermedades.index')}}" class="btn btn-primary pull-right">Enfermedades Registradas</a>
 
       </h2>
  	<!---->
 <!--  	    <h1 align="center">Registro de Enfermedades</h1>-->
             
-        <form method="post" action="{{ route('enfermedad.update', ['id' => $enfermedades->id]) }}">
+        <form method="post" action="{{ route('enfermedades.update', ['id' => $enfermedades->id]) }}">
             
 
             @csrf
@@ -56,8 +56,8 @@ Registro de Enfermedades
             </div>
             
             <div class="col-md-12 form-group">
-              <button type="submit" class="btn btn-primary">Actualizar</button>
-              <a href="{{url('enfermedades_registradas')}}" class="btn btn-default">Cancelar</a>
+              <button class="btn btn-success" type="submit"><i class="fa fa-pencil-square-o iconos" aria-hidden="true"></i>Actualizar</button>
+              <a href="{{url('enfermedades_registradas')}}" class="btn btn-danger"><i class="fa fa-ban iconos" aria-hidden="true"></i>Cancelar</a>
             </div>
           <div class="clearfix"> </div>
         </form>

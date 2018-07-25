@@ -29,7 +29,7 @@ Registro de Dietas
 
       <h2>
         
-           <a href="{{route('dieta.index')}}" class="btn btn-primary pull-right">Dietas Registradas</a>
+           <a href="{{route('dieta.index')}}" class="btn btn-primary pull-right"><i class="fa fa-list iconos" aria-hidden="true"></i>Lista Dietas</a>
 
       </h2>
  	<!---->
@@ -142,8 +142,8 @@ Registro de Dietas
              
           
             <div class="col-md-12 form-group">
-              <button type="submit" class="btn btn-primary">Enviar</button>
-              <button type="reset" class="btn btn-default">Cancelar</button>
+              <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane iconos" aria-hidden="true"></i>Enviar</button>
+              <button type="reset" class="btn btn-danger"><i class="fa fa-ban iconos" aria-hidden="true"></i>Cancelar</button>
             </div>
           <div class="clearfix"> </div>
         </form>

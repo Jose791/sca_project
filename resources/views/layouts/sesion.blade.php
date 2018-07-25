@@ -1,6 +1,6 @@
 
 <!DOCTYPE HTML>
-<html>
+<html class="fondo">
 <head>
 <title>SCA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,10 +15,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="{{asset('js/jquery.min.js')}}"> </script>
 <script src="{{asset('js/bootstrap.min.js')}}"> </script>
 </head>
-<body>
+<body class="fondo">
     @yield('content')
     
-    <div class="copy-right">
+    <div class="copy-right2">
             <p> &copy; 2018 SCA. All Rights Reserved | Design by <a href="#" target="_blank">SCA</a> </p>	    </div>  
 <!---->
 <!--scrolling js-->

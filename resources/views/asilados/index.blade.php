@@ -5,9 +5,9 @@
 
 <div class="banner">
 		    	<h2>
-				<a >Formularios</a>
+				<a >Lista de</a>
 				<i class="fa fa-angle-right"></i>
-				<span>Asilados registrados</span>
+				<span>Ancianos Registrados</span>
 				</h2>
 		    </div>
 
@@ -17,23 +17,19 @@
 
 
 	
-	<h2>Todos los Asilados</h2>
-	  <p>Todos los Asilados registrados</p> 
+	<h2>Todos los Ancianos</h2>
+	  <p>Todos los Ancianos Registrados</p> 
 
-	{{--   <div>
-	  	
-      <li>{{$contar}}</li>
 
-	  </div>  --}}
 	 
 	  <div class="validation-system">
  		
  		<div class="validation-form">  
 	<div class="col-sm-4">
 
-		<div >
+		{{-- <div >
 
-</div>
+</div> --}}
   
 @include('asilados.partials.aside')
 
@@ -41,13 +37,13 @@
  		        
 	  <div class="panel-danger">
 	  	<div class="panel-body">
-	  <h4 align="left">Cantidad de Registros {{$contar}}</h4>
+	  {{-- <h4 align="left">Cantidad de Registros {{$contar}}</h4> --}}
 	  	<h2>
-	  		
-           <a href="{{route('asilado.create')}}" class="btn btn-primary pull-right">Nuevo</a>
+	  	   
+           <a href="{{route('asilado.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus iconos" aria-hidden="true"></i> Añadir Anciano</a>
 
 	  	</h2>
-	  	@include('asilados.partials.info')
+	  	{{-- @include('asilados.partials.info') --}}
 	  	
 
 		  <table class="table table-bordered ">
@@ -101,7 +97,7 @@
 
                     </td>
 
-          
+                 @if(Auth::user()->type=='admin')
                      <td width="10px">
                     
                     	
@@ -116,7 +112,7 @@
                     	</form>
 
                      </td>
-                    
+                    @endif
                   
 			      </tr>
 

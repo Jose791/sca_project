@@ -1,5 +1,23 @@
 @extends('layouts.master')
 
+@section('title')
+
+Lista Chequeos Medicos
+
+@endsection
+
+@section('banner')
+
+<div class="banner">
+		    	<h2>
+				<a >Lista de</a>
+				<i class="fa fa-angle-right"></i>
+				<span>Chequeos Medicos</span>
+				</h2>
+		    </div>
+
+@endsection
+
 @section('content')
 	
 	<h2>Todos los Chequeos Medicos</h2>
@@ -18,7 +36,7 @@
 
 	  	<h2>
 	  		
-           <a href="{{route('chequeo_medico.create')}}" class="btn btn-primary pull-right">Nuevo</a>
+           <a href="{{route('chequeo_medico.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus iconos" aria-hidden="true"></i>Añadir Chequeo Medico</a>
 
 	  	</h2>
 		  <table class="table">
@@ -83,6 +101,7 @@
 	  </div>
 </div>
 </div>
+
 @endsection
 
 
