@@ -26,7 +26,9 @@
 <!-- Fonts -->
 
 {{-- <link href="https://fonts.googleapis.com/css?family=Coda+Caption:800" rel="stylesheet"> --}}
-<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+{{-- <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet"> --}}
+<link rel="stylesheet" type="text/css" href="{{asset('fonts/Merriweather-regular.ttf')}}">
+
 
 
 

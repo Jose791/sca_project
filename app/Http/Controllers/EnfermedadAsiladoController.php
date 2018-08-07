@@ -38,8 +38,7 @@ class EnfermedadAsiladoController extends Controller
         $asilados = Asylee::has('diseases')
             ->with('diseases')
             ->OrderBy('id','DESC')  
-            ->get()
-            ->toArray();
+            ->paginate(3);
 
         return view('enfermedad_asilado.index',compact('asilados'));
      }

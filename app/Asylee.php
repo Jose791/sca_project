@@ -46,7 +46,8 @@ class Asylee extends Model
 
     public function schedules ()
     {
-      return $this->hasMany('App\Schedule');
+      return $this->hasMany('App\Schedule')
+        ->whereRaw('date_format(created_at, "%Y-%m-%d") = date_format(now(), "%Y-%m-%d")');
     }
 
 

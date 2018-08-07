@@ -1,14 +1,13 @@
 @extends('layouts.master')
 
-@section('title')
 
-Lista Chequeos Medicos
+@section('title', 'Lista Chequeos Medicos')
 
-@endsection
+
 
 @section('banner')
 
-<div class="banner">
+           <div class="banner">
 		    	<h2>
 				<a >Lista de</a>
 				<i class="fa fa-angle-right"></i>
@@ -43,7 +42,7 @@ Lista Chequeos Medicos
 		    <thead>
 		      <tr>
 		        <th>Chequeo #</th>
-		        <th>Asilado</th> 
+		        <th>Anciano</th> 
                 <th>Diagnostico</th>
                 <th colspan="3">Accion</th>
 		      </tr>
@@ -58,7 +57,7 @@ Lista Chequeos Medicos
                      
                      <td width="10px">
                     	<a href="{{route('chequeo_medico.show', $chequeo['id'])}}" class="btn btn-info">
-                          
+                          <i class="fa fa-eye iconos" aria-hidden="true"></i>
                           Ver                    		
 
                     	</a>
@@ -70,7 +69,7 @@ Lista Chequeos Medicos
 
                     <td width="10px">
                     	<a href="{{route('chequeo_medico.edit', $chequeo['id'])}}" class="btn btn-warning">
-                          
+                          <i class="fa fa-pencil iconos" aria-hidden="true"></i>
                           Editar                    		
 
                     	</a>
@@ -88,7 +87,7 @@ Lista Chequeos Medicos
 
                     	<input type="hidden" name="_method" value="DELETE">
 
-                    	<button class="btn btn-danger" type="submit" onclick=" return confirm('seguro que desea eliminar?')">Borrar</button>
+                    	<button class="btn btn-danger" type="submit" onclick=" return confirm('seguro que desea eliminar?')"><i class="fa fa-trash-o iconos" aria-hidden="true"></i>Borrar</button>
 
                     	</form>
 
@@ -96,6 +95,8 @@ Lista Chequeos Medicos
 			      </tr>
 		      @endforeach
 		    </tbody>
+
+		    {{ $chequeosmedicos->links() }}
 		  </table>
 	  	</div>
 	  </div>

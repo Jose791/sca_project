@@ -31,7 +31,7 @@ class VisitaController extends Controller
     public function index()
      {
         
-         $visitas = Visit::OrderBy('id', 'DESC')->with('asylee','visitor')->get()->toArray();
+         $visitas = Visit::OrderBy('id', 'DESC')->with('asylee','visitor')->paginate(10);
 
        
         
@@ -88,7 +88,7 @@ class VisitaController extends Controller
      }
 
 
-    public function update(Request $request, $id)
+    public function update(CrearVisitasRequest $request, $id)
      {
          
          

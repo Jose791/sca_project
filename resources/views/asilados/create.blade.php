@@ -1,21 +1,17 @@
 @extends('layouts.master')
 
-@section('title')
-
-Registro de Ancianos
-
-@endsection
+@section('title','Registro de Ancianos')
 
 
 @section('banner')
 
 <div class="banner">
-		    	<h2>
-				<a >Formularios</a>
-				<i class="fa fa-angle-right"></i>
-				<span>Ancianos</span>
-				</h2>
-		    </div>
+		  <h2>
+				 <a>Formularios</a>
+				 <i class="fa fa-angle-right"></i>
+				 <span>Ancianos</span>
+			</h2>
+</div>
 
 @endsection
 
@@ -35,7 +31,7 @@ Registro de Ancianos
  	<!---->
         
          
-        <form method="post" action="{{ url('/asilados_registrados') }}">
+        <form method="post" action="{{ url('/asilados_registrados') }}" autocomplete="off">
             {{ csrf_field() }}
             
 

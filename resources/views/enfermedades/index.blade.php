@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('title', 'Lista de Enfermedades')
+
 @section('banner')
 
 <div class="banner">
@@ -53,7 +55,7 @@
 
                    <td width="10px">
                     	<a href="{{route('enfermedades.show',$enfermedad->id)}}" class="btn btn-info">
-                          
+                          <i class="fa fa-eye iconos" aria-hidden="true"></i>
                           Ver                    		
 
                     	</a>
@@ -65,7 +67,7 @@
 
                     <td width="10px">
                     	<a href="{{route('enfermedades.edit',$enfermedad->id)}}" class="btn btn-warning">
-                          
+                          <i class="fa fa-pencil iconos" aria-hidden="true"></i>
                           Editar                    		
 
                     	</a>
@@ -83,7 +85,7 @@
 
                     	<input type="hidden" name="_method" value="DELETE">
 
-                    	<button class="btn btn-danger" type="submit" onclick=" return confirm('seguro que desea eliminar?')">Borrar</button>
+                    	<button class="btn btn-danger" type="submit" onclick=" return confirm('seguro que desea eliminar?')"><i class="fa fa-trash-o iconos" aria-hidden="true"></i>Borrar</button>
 
                     	</form>
 
@@ -94,7 +96,7 @@
 		      @endforeach
 		    </tbody>
 		  </table>
-		  {!! $enfermedades->render() !!}
+		  {!! $enfermedades->links() !!}
 	  	</div>
 	  </div>
    </div>

@@ -26,7 +26,7 @@ class CrearVisitantesRequest extends FormRequest
         return [
                  'nombre'=>'required',
                  'apellido'=>'required',
-                 'cedula'=>'required',
+                 'cedula'=>'required|min:11|max:11',
                  'direccion'=>'required',
                  'sexo'=>'required',
         ];

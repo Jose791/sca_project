@@ -1,10 +1,6 @@
 @extends('layouts.master')
 
-@section('title')
-
-Chequeos Medicos
-
-@endsection
+@section('title','Chequeos Medicos')
 
 
 @section('banner')
@@ -32,15 +28,15 @@ Chequeos Medicos
            <a href="{{route('chequeo_medico.index')}}" class="btn btn-primary pull-right"><i class="fa fa-list iconos" aria-hidden="true"></i>Lista Chequeos</a>
 
       </h2>
-        <form method="post" action="{{ url('/chequeos_medicos') }}">
+        <form method="post" action="{{ url('/chequeos_medicos') }}" autocomplete="off">
             {{ csrf_field() }}
            
           @include('validation.partials.formvalidate')
         
              <div class="col-md-12 form-group2 group-mail">
-              <label class="control-label">Nombre del Asilado</label>
+              <label class="control-label">Nombre del Anciano</label>
             <select name="asylee_id" type="text">
-            	<option disable selected value>Nombre del Asilado</option>
+            	<option disable selected value>Nombre del Anciano</option>
                 @foreach($asilados as $asilado)
                 
             	<option value="{{$asilado->id}}">{{$asilado->nombre}} {{$asilado->apellido}}</option>

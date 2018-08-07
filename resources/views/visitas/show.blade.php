@@ -1,12 +1,20 @@
 @extends('layouts.master')
 
+@section('title','Mostrar Visita')
+
 @section('content')
 	
 	<h2>Ver Visitas</h2>
 	  <p>Ver Visita Registrada</p>   
 	  <div class="validation-system">
  		
- 		<div class="validation-form">         
+ 		<div class="validation-form"> 
+
+ 		<h2>
+        
+           <a href="{{route('visita.index')}}" class="btn btn-primary pull-right"><i class="fa fa-list iconos" aria-hidden="true"></i>Lista Visitas</a>
+
+      </h2>        
 	  <div class="panel-danger">
 	  	<div class="panel-body">
 
@@ -35,7 +43,7 @@
 
                     <td width="10px">
                     	<a href="{{route('visita.edit',$visitas->id)}}" class="btn btn-warning">
-                          
+                          <i class="fa fa-pencil iconos" aria-hidden="true"></i>
                           Editar                    		
 
                     	</a>

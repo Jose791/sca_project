@@ -1,4 +1,7 @@
 @extends('layouts.master')
+
+@section('title', 'Lista de Medicamentos de Ancianos')
+
 @section('banner')
 
 <div class="banner">
@@ -13,8 +16,8 @@
 
 @section('content')
 	
-	<h2>Todos los Medicamentos de cada asilado</h2>
-	  <p>Todos los Medicamentos de cada asilado Registrados</p>   
+	<h2>Todos los Medicamentos de cada anciano</h2>
+	  <p>Todos los Medicamentos de cada anciano Registrados</p>   
 	  <div class="validation-system">
  		
  		<div class="validation-form">         
@@ -29,7 +32,7 @@
 		    <thead>
 		      <tr>
 		        <th># Registro</th>
-		        <th> Asilado</th>
+		        <th>Anciano</th>
                 <th>Medicamento</th>
                 <th>Hora del Medicamento</th>
                 <th>Complemento</th>
@@ -39,23 +42,21 @@
 		    </thead>
 		    <tbody>
 		      	@foreach($asilados as $asilado)
-			      	@foreach($asilado['medicines'] as $medicina)
 			      	<tr>
-				        <td>{{ $asilado['id'] }}</td>
-				        <td>{{ $asilado['nombre'] }}</td>
-	                    <td>{{ $medicina['medicamento'] }}</td>
-				        <td>{{ $medicina['pivot']['hora_medicamento'] }}</td>
-	                    <td>{{ $medicina['pivot']['complemento'] }}</td>
-
+				        <td>{{ $asilado->id }}</td>
+				        <td>{{ $asilado->nombre }}</td>
+	                    <td>{{ $asilado->medicamento }}</td>
+				        <td>{{ Carbon\Carbon::parse($asilado->hora_medicamento)->format('h:i A') }}</td>
+	                    <td>{{ $asilado->complemento }}</td>
 	                    <td width="10px">
-	                    	<a href="{{route('medicamento_asilado.edit',$asilado['id'])}}" class="btn btn-warning">
-	                          
+	                    	<a href="{{ route('medicamento_asilado.edit', $asilado->asylee_id) }}" class="btn btn-warning">
+	                          <i class="fa fa-pencil iconos" aria-hidden="true"></i>
 	                          Editar
 	                    	</a>
 	                    </td>
 
 	                    <td width="10px">
-	                    	<form action="{{action('AsiladoController@destroy',$asilado['id'])}}"  method="post">
+	                    	<form action="{{action('AsiladoController@destroy', $asilado->asylee_id)}}"  method="post">
 		                    	{{ csrf_field() }}
 
 		                    	<input type="hidden" name="_method" value="DELETE">
@@ -63,10 +64,11 @@
 	                    	</form>
 	                    </td>
 			      	</tr>
-			      	@endforeach
 		      	@endforeach
 		    </tbody>
 		  </table>
+
+		  {{-- {{ $asilados->links() }} --}}
 	  	</div>
 	  </div>
   </div>

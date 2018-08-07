@@ -1,10 +1,7 @@
 @extends('layouts.master')
 
-@section('title')
+@section('title','Registro de Medicamento')
 
-Registro de Medicamentos
-
-@endsection
 
 
 @section('banner')
@@ -35,7 +32,7 @@ Registro de Medicamentos
       </h2>
  	<!---->
   	    
-        <form method="post" action="{{ url('/medicamentos') }}">
+        <form method="post" action="{{ url('/medicamentos') }}" autocomplete="off">
             {{ csrf_field() }}
            
              @include('validation.partials.formvalidate')

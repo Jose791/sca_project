@@ -1,10 +1,6 @@
 @extends('layouts.master')
 
-@section('title')
-
-Chequeos Medicos
-
-@endsection
+@section('title','Editar chequeos Medicos')
 
 
 @section('banner')

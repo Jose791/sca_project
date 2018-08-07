@@ -1,12 +1,20 @@
 @extends('layouts.master')
 
+@section('title','Mostrar Dieta')
+
 @section('content')
 	
 	<h2>Todos las Dietas</h2>
 	  <p>Todas las Dietas registradas</p>
 	  <div class="validation-system">
  		
- 		<div class="validation-form">            
+ 		<div class="validation-form"> 
+
+      <h2>
+        
+           <a href="{{route('dieta.index')}}" class="btn btn-primary pull-right"><i class="fa fa-list iconos" aria-hidden="true"></i>Lista Dietas</a>
+
+      </h2>           
 	  <div class="panel-danger">
 	  	<div class="panel-body">
 		  <table class="table">
@@ -42,7 +50,7 @@
 
                     <td width="10px">
                     	<a href="{{route('dieta.edit',$dietas->id)}}" class="btn btn-warning">
-                          
+                          <i class="fa fa-pencil iconos" aria-hidden="true"></i>
                           Editar                    		
 
                     	</a>

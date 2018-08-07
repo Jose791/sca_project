@@ -1,10 +1,6 @@
 @extends('layouts.master')
 
-@section('title')
-
-Registro de Dietas
-
-@endsection
+@section('title','Registro de Dietas')
 
 
 @section('banner')
@@ -35,7 +31,7 @@ Registro de Dietas
  	<!---->
 <!--  	    <h1 align="center">Registro de Dietas</h1>-->
             
-        <form method="post" action="{{ url('/dietas_registradas') }}">
+        <form method="post" action="{{ url('/dietas_registradas') }}" autocomplete="off">
             {{ csrf_field() }}
             
           @include('validation.partials.formvalidate')

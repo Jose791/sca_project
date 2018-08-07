@@ -1,10 +1,6 @@
 @extends('layouts.master')
 
-@section('title')
-
-Registro de Enfermedades
-
-@endsection
+@section('title','Registro de Enfermedade')
 
 
 @section('banner')
@@ -35,7 +31,7 @@ Registro de Enfermedades
  	<!---->
 <!--  	    <h1 align="center">Registro de Enfermedades</h1>-->
             
-        <form method="post" action="{{ url('/enfermedades') }}">
+        <form method="post" action="{{ url('/enfermedades') }}" autocomplete="off">
             {{ csrf_field() }}
 
           @include('validation.partials.formvalidate')

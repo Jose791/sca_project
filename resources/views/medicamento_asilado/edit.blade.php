@@ -1,10 +1,6 @@
 @extends('layouts.master')
 
-@section('title')
-
-Editar Anciano
-
-@endsection
+@section('title','Editar Medicamento/Anciano')
 
 
 @section('banner')
@@ -13,7 +9,7 @@ Editar Anciano
 		    	<h2>
 				<a >Formularios</a>
 				<i class="fa fa-angle-right"></i>
-				<span>Asilado Medicamento  </span>
+				<span>Anciano Medicamento  </span>
 				</h2>
 		    </div>
 
@@ -35,7 +31,7 @@ Editar Anciano
        @include('validation.partials.formvalidate')
             
             <div class="col-md-12 form-group2 group-mail">
-            <label class="control-label">Nombre del Asilado</label>
+            <label class="control-label">Nombre del Anciano</label>
             <select name="asylee_id">
                 @foreach($asilados as $asilado)
                     <option value="{{ $asilado->id }}" @if($asilado->id == $asiladosm->id) selected @endif>

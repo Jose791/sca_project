@@ -27,7 +27,7 @@ class DietaController extends Controller
     public function index()
      {
 
-          $dietas = Diet::all();
+          $dietas = Diet::paginate(10);
 
         return view('dietas.index',compact('dietas'));
      }
@@ -75,7 +75,7 @@ class DietaController extends Controller
      }
 
    
-    public function update(Request $request, $id)
+    public function update(CrearDietasRequest $request, $id)
      {
          
         $dietas = Diet::findOrFail($id);

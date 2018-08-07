@@ -35,7 +35,7 @@ class AsiladoController extends Controller
       
         $contar=Asylee::all()->count();
 
-        $asilados = \App\Asylee::OrderBy('id','DESC')->paginate(10);
+        $asilados = \App\Asylee::OrderBy('id','DESC')->paginate(5);
 
         
         return view('asilados.index',compact('asilados','contar'));

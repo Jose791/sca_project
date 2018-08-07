@@ -84,7 +84,7 @@ class VisitanteController extends Controller
 
     
 
-    public function update(Request $request, $id)
+    public function update(CrearVisitantesRequest $request, $id)
      {
         
          $visitantes = Visitor::find($id);

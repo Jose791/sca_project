@@ -27,7 +27,7 @@ class EnfermedadController extends Controller
     public function index()
      {
 
-        $enfermedades = \App\Disease::OrderBy('id','DESC')->paginate(10);
+        $enfermedades = \App\Disease::OrderBy('id','DESC')->paginate(5);
         
 
         return view('enfermedades.index',compact('enfermedades'));

@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('title', 'Lista de Dietas')
+
 @section('banner')
 
 <div class="banner">
@@ -48,14 +50,15 @@
 			      <tr>
 			        <td>{{ $dieta->id }}</td>
 			        <td>{{ $dieta->asylee->nombre }}</td>
-                    <td>{{ $dieta->hora_dieta}}</td>
+                    <td>{{Carbon\Carbon::parse( $dieta->hora_dieta)->format('h:i A')}}</td>
                     <td>{{ $dieta->descripcion}}</td>
 
-
+{{-- <td>{{ Carbon\Carbon::parse($medicina['pivot']['hora_medicamento'])->format('h:i A') }} --}}
+				        </td>
 
                     <td width="10px">
                     	<a href="{{route('dieta.show',$dieta->id)}}" class="btn btn-info">
-                          
+                          <i class="fa fa-eye iconos" aria-hidden="true"></i> 
                           Ver                    		
 
                     	</a>
@@ -67,7 +70,7 @@
 
                     <td width="10px">
                     	<a href="{{route('dieta.edit',$dieta->id)}}" class="btn btn-warning">
-                          
+                          <i class="fa fa-pencil iconos" aria-hidden="true"></i>
                           Editar                    		
 
                     	</a>
@@ -85,7 +88,7 @@
 
                     	<input type="hidden" name="_method" value="DELETE">
 
-                    	<button class="btn btn-danger" type="submit" onclick=" return confirm('seguro que desea eliminar?')">Borrar</button>
+                    	<button class="btn btn-danger" type="submit" onclick=" return confirm('seguro que desea eliminar?')"><i class="fa fa-trash-o iconos" aria-hidden="true"></i>Borrar</button>
 
                     	</form>
 
@@ -94,6 +97,8 @@
 		      @endforeach
 		    </tbody>
 		  </table>
+
+		  {{ $dietas->links() }}
 	  	</div>
 	  </div>
    </div>

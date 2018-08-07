@@ -1,20 +1,27 @@
 @extends('layouts.master')
 
+@section('title','Mostrar Visitante')
+
 @section('content')
 	
 	<h2>Todos los Visitantes</h2>
 	  <p>Todos los Visitantes Registrados</p> 
 	  <div class="validation-system">
  		
- 		<div class="validation-form">           
+ 		<div class="validation-form"> 
+ 		 <h2>
+        
+           <a href="{{route('visitante.index')}}" class="btn btn-primary pull-right"><i class="fa fa-list iconos" aria-hidden="true"></i>Lista Visitantes</a>
+
+      </h2>          
 	  <div class="panel-danger">
 	  	<div class="panel-body">
 
-	  		<h2>
+	  		{{-- <h2>
         
            <a href="{{route('visitante.create')}}" class="btn btn-primary pull-right">Nuevo</a>
 
-      </h2>
+      </h2> --}}
 		  <table class="table">
 		    <thead>
 		      <tr>
@@ -38,7 +45,7 @@
                     
                     <td width="10px">
                     	<a href="{{route('visitante.edit',$visitantes->id)}}" class="btn btn-warning">
-                          
+                          <i class="fa fa-pencil iconos" aria-hidden="true"></i>
                           Editar                    		
 
                     	</a>

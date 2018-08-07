@@ -1,5 +1,5 @@
 @extends('layouts.master')
-
+@section('title', 'Lista de Reportes')
 
 @section('banner')
 
@@ -7,7 +7,7 @@
                 <h2>
                 <a >Reportes</a>
                 <i class="fa fa-angle-right"></i>
-                <span>Anciano por Enfermedad </span>
+                <span>todos</span>
                 </h2>
             </div>
 
@@ -15,41 +15,148 @@
 
 @section('content')
 
-<div class="graph">
-  <div class="graph-grid">
-         <div class="col-md-6 graph-1">
-            <div class="grid-1">
-            {{--  Grafico de barras --}}
+<div class="content-top">
+
+<div class="col-md-12 ">
+            <h2>Reportes</h2>
+            <br>
+        </div>
+
+     
     
-              <h4>Ancianos agrupados por enfermedad (grafico de barra)</h4>
-                 <canvas id="grafico_barra" height="300" width="500" style="width: 500px; height: 300px;"></canvas>
-            </div>
-        </div>
+        <button id="" type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal"><i class="fa fa-bar-chart iconos" aria-hidden="true"></i>Ancianos/Enfermedad</button>
 
+        <button  type="button" class="btn btn-primary  " data-toggle="modal" data-target="#anciano_sexo"><i class="fa fa-bar-chart iconos" aria-hidden="true"></i>Ancianos/Sexo</button>
 
-        <div class="col-md-6 graph-2">
-           <div class="grid-1">
+        <button  type="button" class="btn btn-primary  " data-toggle="modal" data-target="#anciano_medicamento"><i class="fa fa-bar-chart iconos" aria-hidden="true"></i>Ancianos/medicamento</button>
 
-            <h4>Ancianos agrupado por enfermedad (grafico de pastel/pie)</h4>
-              <canvas id="enfermedad_asilado" height="300" width="500" style="width: 500px; height: 300px;"></canvas>
-  
-           </div>
+        <button  type="button" class="btn btn-primary  " data-toggle="modal" data-target="#anciano_provincia"><i class="fa fa-bar-chart iconos" aria-hidden="true"></i>Ancianos/provincia</button>  
 
-        </div>
-
-        <div class="col-md-6 graph-box1 clearfix">
-          <div class="grid-1">
-          {{-- Grafico de barras --}}
-    
-           <h4>Ancianos agrupados por Sexo</h4>
-             <canvas id="grafico_barra_anciano_x_sexo" height="300" width="500" style="width: 500px; height: 300px;"></canvas>
-          </div>
-        </div>
 
 
      </div>
-     <div class="clearfix"> </div>
+
+
+       
+
+
+
+<!-- Modal Ancianos x Enfermedades -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+    
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Ancianos agrupados por Enfermedad </h4>
+      </div>
+      <div class="modal-body">
+        {{-- <h4>Ancianos agrupados por enfermedad (grafico de barra)</h4> --}}
+         <canvas id="grafico_barra" height="300" width="500" style="width: 500px; height: 300px;"></canvas>
+  
+      </div>
+     
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+
+  </div>
 </div>
+
+
+
+
+<!-- Modal Ancianos x Sexo -->
+<div id="anciano_sexo" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+
+
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Ancianos agrupados por sexo</h4>
+      </div>
+      <div class="modal-body">
+        {{-- <h4>Ancianos agrupados por enfermedad (grafico de barra)</h4> --}}
+         
+     {{-- <h4>Ancianos agrupado por sexo </h4> --}}
+              <canvas id="grafico_barra_anciano_x_sexo" height="300" width="500" style="width: 500px; height: 300px;"></canvas>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">cerrar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- Modal Ancianos x Medicamentos -->
+<div id="anciano_medicamento" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+
+
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Ancianos agrupados por Medicamento </h4>
+      </div>
+      <div class="modal-body">
+        {{-- <h4>Ancianos agrupados por enfermedad (grafico de barra)</h4> --}}
+         
+     {{-- <h4>Ancianos agrupados por medicamento (grafico de barra)</h4> --}}
+                 <canvas id="grafico_barra2" height="300" width="500" style="width: 500px; height: 300px;"></canvas>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">cerrar</button>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="clearfix"> </div>
+
+
+<!-- Modal Ancianos x provincia -->
+<div id="anciano_provincia" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+
+
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Ancianos agrupados por Provincia</h4>
+      </div>
+      <div class="modal-body">
+        {{-- <h4>Ancianos agrupados por Provincia</h4> --}}
+         <canvas id="grafico_barra_anciano_x_provincia" height="300" width="500" style="width: 500px; height: 300px;"></canvas>
+  
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">cerrar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
 
 
 @endsection
@@ -63,49 +170,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
 <script type="text/javascript">
     
-    {{-- Grafico de pie --}}
-    {{-- esto obtiene el elemento por el id mandado --}}
-    var oilCanvas = document.getElementById("enfermedad_asilado");
-
-    var oilData = {
-        // esta propiedad imprime los labels... 
-        labels: [
-            <?php
-                foreach ($asilado_enferm as $key)
-                {
-                    echo "'$key->enfermedad',";
-                }
-            ?>
-        ],
-        datasets: [
-            {
-                // esta propiedad imprime la data que viene desde el contrador
-                data: [
-                    <?php
-                        foreach ($asilado_enferm as $key)
-                        {
-                            echo "'$key->cantidad',";
-                        }
-                    ?>
-                ],
-
-                // estos son los colores que usaria el grafico... 
-                backgroundColor: [
-                    "#FF3D00",
-                    "#D81B60",
-                    "#00B8D4",
-                    "#66BB6A",
-                    "#9C24DAFF" 
-                ]
-            }]
-    };
-
-    var pieChart = new Chart(oilCanvas, {
-        type: 'pie',
-        data: oilData
-    });
-
-
+   
     // GRAFICO DE BARRAS
     var ctx = document.getElementById("grafico_barra").getContext('2d');
     var myChart = new Chart(ctx, {
@@ -169,7 +234,7 @@
 
             title: {
                 display: true,
-                text: 'Cantidad de Asilados Agrupados por Enfermedad'
+                text: 'Cantidad de Ancianos Agrupados por Enfermedad'
             },
 
             legend: {
@@ -177,6 +242,8 @@
             }
         }
     });
+
+
 
 // GRAFICO DE BARRAS Anciano x Sexo
     var ctx = document.getElementById("grafico_barra_anciano_x_sexo").getContext('2d');
@@ -249,6 +316,160 @@
             }
         }
     });
+
+
+
+    // GRAFICO DE BARRAS ancianos x medicamentos
+    var ctx = document.getElementById("grafico_barra2").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: [
+                <?php
+                    foreach ($asilado_x_medicamento as $key)
+                    {
+                        echo "'$key->medicamento',";
+                    }
+                ?>],
+            datasets: [{
+                data: [
+                <?php
+                    foreach ($asilado_x_medicamento as $key)
+                    {
+                        echo "'$key->cantidad',";
+                    }
+                ?>],
+                
+                backgroundColor: [
+                    '#00ACC1',
+                    '#FBC02D',
+                    '#424242',
+                    '#FF3D00',
+                    '#d50000',
+                    '#E040FB',
+                    '#388E3C',
+                    '#03A9F4',
+                    '#EC407A',
+                    '#FFCC80',
+                    '#757575',
+                    '#607D8B'
+                ],
+                borderColor: [
+                    '#00ACC1',
+                    '#FBC02D',
+                    '#424242',
+                    '#FF3D00',
+                    '#d50000',
+                    '#E040FB',
+                    '#388E3C',
+                    '#03A9F4',
+                    '#EC407A',
+                    '#FFCC80',
+                    '#757575',
+                    '#607D8B'
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            },
+
+            title: {
+                display: true,
+                text: 'Cantidad de Ancianos Agrupados por medicamento'
+            },
+
+            legend: {
+                display: false
+            }
+        }
+    });
+
+
+// GRAFICO DE BARRAS Anciano x provincia
+    var ctx = document.getElementById("grafico_barra_anciano_x_provincia").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: [
+                <?php
+                    foreach ($asilado_x_provincia as $key)
+                    {
+                        echo "'$key->residencia',";
+                    }
+                ?>],
+            datasets: [{
+                data: [
+                <?php
+                    foreach ($asilado_x_provincia as $key)
+                    {
+                        echo "'$key->anciano',";
+                    }
+                ?>],
+                
+                backgroundColor: [
+                    '#00ACC1',
+                    '#FBC02D',
+                    '#424242',
+                    '#FF3D00',
+                    '#d50000',
+                    '#E040FB',
+                    '#388E3C',
+                    '#03A9F4',
+                    '#EC407A',
+                    '#FFCC80',
+                    '#757575',
+                    '#607D8B'
+                ],
+                borderColor: [
+                    '#00ACC1',
+                    '#FBC02D',
+                    '#424242',
+                    '#FF3D00',
+                    '#d50000',
+                    '#E040FB',
+                    '#388E3C',
+                    '#03A9F4',
+                    '#EC407A',
+                    '#FFCC80',
+                    '#757575',
+                    '#607D8B'
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            },
+
+            title: {
+                display: true,
+                text: 'Cantidad de Ancianos Agrupados por Provincia'
+            },
+
+            legend: {
+                display: false
+            }
+        }
+    });
+
 </script>
 
+
+
 @endsection
+
+
+
+

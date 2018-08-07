@@ -49,6 +49,19 @@
 //    return view('asilados');
 //});
 
+
+// Route::get('test', function() {
+	
+// 	$notificaciones = App\Asylee::has('medicines')
+//         ->with(['medicines', 'schedules' => function ($query) {
+//             $query->whereRaw('date_format(created_at, "%Y-%m-%d") = date_format(now(), "%Y-%m-%d")')
+//                 ->get();
+//         }])
+//         ->count();
+
+//     return $notificaciones;
+// });
+
 Route::get('/', function () {
     return view('auth.login');
 });
@@ -238,6 +251,9 @@ Route::post('sample/get', 'ReportController@getConsulting')->name('sample/get');
 Route::get('asilado_x_sexo', 'ReportController@asilado_x_sexo')->name('asilado_x_sexo');
 Route::get('asilado_x_medicamento', 'ReportController@asilado_x_medicamento')->name('asilado_x_medicamento');
 
+Route::post('notification/get', 'MostrarController@cantidadMedicSuministrar');
+
+
 
 // Route::get('chartjs', 'ReportController@chart');
 
@@ -250,23 +266,3 @@ Route::get('asilado_x_medicamento', 'ReportController@asilado_x_medicamento')->n
 
 // Route::get('stocks','StockController@index');
 // Route::get('stock/chart','StockController@chart
-
-
-
-
-
-
-
-
-
-Route::get('test', function () {
-	$result = App\Asylee::has('medicines')
-		->with(['medicines', 'schedules' => function ($query) {
-			$query->whereRaw('date_format(created_at, "%Y-%m-%d") = date_format(now(), "%Y-%m-%d")')
-				->get();
-		}])
-		->get()
-		->toArray();
-
-	dd($result);
-});

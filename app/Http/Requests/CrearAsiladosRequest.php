@@ -25,7 +25,7 @@ class CrearAsiladosRequest extends FormRequest
     {
         return [
 
-               'cedula'=>'required|numeric',
+               'cedula'=>'required|min:11|max:11',
                'nombre'=>'required',
                'apellido'=>'required',
                'sexo'=>'required',

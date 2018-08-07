@@ -1,11 +1,6 @@
 @extends('layouts.master')
 
-@section('title')
-
-Editar Anciano
-
-@endsection
-
+@section('title','Editar Enfermedad/Anciano')
 
 @section('banner')
 

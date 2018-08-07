@@ -37,8 +37,11 @@ class ReportController extends Controller
 
         $asilado_x_sexo = DB::select('select sexo, count(*)  anciano from asylees a group by sexo');
 
+         $asilado_x_medicamento = DB::select('select count(a.id) cantidad, m.medicamento from asylees a, medicines m, asylee_medicine am where a.id = am.asylee_id and am.medicine_id = m.id group by m.medicamento');
+         
+         $asilado_x_provincia = DB::select('select residencia, count(*)  anciano from asylees a group by residencia');
 
-        return view('reportes.enfermedad_asilado', compact('asilado_enferm','asilado_x_sexo'));
+        return view('reportes.enfermedad_asilado', compact('asilado_enferm','asilado_x_sexo','asilado_x_medicamento', 'asilado_x_provincia'));
 	   }
 
 

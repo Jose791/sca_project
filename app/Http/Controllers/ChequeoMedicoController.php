@@ -31,8 +31,7 @@ class ChequeoMedicoController extends Controller
      {
        
         $chequeosmedicos = MedicalCheck::with('asylee')
-            ->get()
-            ->toArray();
+            ->paginate(10);
 
         return view('chequeos_medicos.index',compact('chequeosmedicos'));
      }

@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-
+@section('title','Mostrar Anciano')
 @section('banner')
 
 <div class="banner">
@@ -32,7 +32,7 @@
 	  	
       <h2>
 	  		
-           <a href="{{route('asilado.index')}}" class="btn btn-primary pull-right">Lista de Asilados</a>
+           <a href="{{route('asilado.index')}}" class="btn btn-primary pull-right"><i class="fa fa-list iconos" aria-hidden="true"></i>Lista de Ancianos</a>
 
 	  	</h2>
 		  <table class="table ">
@@ -64,7 +64,7 @@
               <td>{{ $asilados->estado }}</td>
             <td width="20px">
                       <a href="{{route('asilado.edit', $asilados->id)}}" class="btn btn-warning">
-                          
+                          <i class="fa fa-pencil iconos" aria-hidden="true"></i>
                           Editar                        
 
                       </a>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 
 use App\Asylee;
 
@@ -35,11 +36,11 @@ class MedicamentoAsiladoController extends Controller
 
     public function index()
      {
-        $asilados = Asylee::has('medicines')
-            ->with('medicines')
-            ->OrderBy('id','DESC')  
-            ->get()
-            ->toArray();
+        $asilados = DB::table('asylees')
+            ->join('asylee_medicine', 'asylees.id', '=', 'asylee_medicine.asylee_id')
+            ->join('medicines', 'medicines.id', '=', 'asylee_medicine.medicine_id')
+            ->orderBy('asylee_medicine.hora_medicamento', 'asc')
+            ->paginate(10);
 
         return view('medicamento_asilado.index',compact('asilados'));
      }
@@ -77,19 +78,16 @@ class MedicamentoAsiladoController extends Controller
 
     
     public function edit($id)
-     {
-         
-        $asiladosm = Asylee::find($id);
-
-       
-        return view('medicamento_asilado.edit')->with('asiladosm', $asiladosm)
-           ->with('asilados', Asylee::all())
-           ->with('medicines', Medicine::all());
-                                              
-     }
+    {
+        $asiladosm = Asylee::findOrFail($id);
+        $asilados = Asylee::all();
+        $medicines = Medicine::all();
+        
+        return view('medicamento_asilado.edit', compact('asiladosm', 'asilados', 'medicines'));
+    }
 
    
-    public function update(Request $request, $id)
+    public function update(CrearMedicamentosAsiladosRequest $request, $id)
      {
        
  

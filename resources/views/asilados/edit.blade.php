@@ -1,10 +1,10 @@
 @extends('layouts.master')
 
-@section('title')
+@section('title','Editar Anciano')
 
-Editar A {{$asilados->nombre}} {{$asilados->apellido}}
 
-@endsection
+
+
 
 
 @section('banner')

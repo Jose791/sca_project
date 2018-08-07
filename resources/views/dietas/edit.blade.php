@@ -1,10 +1,6 @@
 @extends('layouts.master')
 
-@section('title')
-
-Editar Dieta {{$dietas->id}}
-
-@endsection
+@section('title','Editar Dieta')
 
 
 @section('banner')

@@ -1,10 +1,6 @@
 @extends('layouts.master')
 
-@section('title')
-
-Registro de Visitantes
-
-@endsection
+@section('title','Editar Visitante')
 
 
 @section('banner')

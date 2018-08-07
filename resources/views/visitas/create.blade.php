@@ -1,10 +1,6 @@
 @extends('layouts.master')
 
-@section('title')
-
-Registro de Visitas
-
-@endsection
+@section('title','Registro de Visita')
 
 
 @section('banner')
@@ -34,7 +30,7 @@ Registro de Visitas
       </h2>
  	<!---->
   	    
-        <form method="post" action="{{ url('/visitas') }}">
+        <form method="post" action="{{ url('/visitas') }}" autocomplete="off">
             {{ csrf_field() }}
             
              @include('validation.partials.formvalidate')

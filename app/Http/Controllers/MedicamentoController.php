@@ -26,7 +26,7 @@ class MedicamentoController extends Controller
     public function index()
      {
        
-        $medicamentos = Medicine::all();
+        $medicamentos = Medicine::OrderBy('id','DSC')->paginate(5);
 
        
         
@@ -74,7 +74,7 @@ class MedicamentoController extends Controller
      }
 
    
-    public function update(Request $request, $id)
+    public function update(CrearMedicamentosRequest $request, $id)
      {
         
          $medicamentos = Medicine::find($id);

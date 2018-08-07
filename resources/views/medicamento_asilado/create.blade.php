@@ -1,10 +1,6 @@
 @extends('layouts.master')
 
-@section('title')
-
-Registro de Anciano
-
-@endsection
+@section('title','Registro de Medicamento/Anciano')
 
 
 @section('banner')
@@ -35,16 +31,16 @@ Registro de Anciano
  	<!---->
 <!--  	    <h1 align="center">Registro de Medicamento al Asilado</h1>-->
             
-        <form method="post" action="{{ url('/medicamento_asilado') }}">
+        <form method="post" action="{{ url('/medicamento_asilado') }}" autocomplete="off">
             {{ csrf_field() }}
             
            @include('validation.partials.formvalidate')
 
 
              <div class="col-md-12 form-group2 group-mail">
-              <label class="control-label">Nombre del Asilado</label>
+              <label class="control-label">Nombre del Anciano</label>
             <select name="asylee_id" type="text">
-            	<option disable selected value>Nombre del Asilado</option>
+            	<option disable selected value>Nombre del Anciano</option>
               @foreach($asilados as $asilado)
                 
             	<option value="{{$asilado->id}}">{{$asilado->nombre}} {{$asilado->apellido}}</option>

@@ -1,49 +1,65 @@
 @extends('layouts.master')
 
-@section('title')
+@section('title', 'Inicio')
 
-Inicio
+@section('content')
+	<div class="content-top">
+		<div class="col-md-12">
+			<h2><i class="fa fa-tachometer"></i> Dashboard</h2>
+			<br>
+		</div>
 
-@endsection
+		<div class="col-md-4">
+			<a href="{{url('/asilados_registrados')}}">
+			<div class="content-top-1">
+				<div class="col-md-6 top-content">
+					<h5>Ancianos</h5>
+					<label>{{ $asilados }}</label>
+				</div>
 
-{{-- @section('banner')
+				<div class="col-md-4">
+					<i class="fa fa-user text-info" style="font-size: 50px;"></i>
+				</div>
+			
+			 	<div class="clearfix"> </div>
+			</div>
+			</a>
+		</div>
 
-            <div class="banner">
-		    	<h2>
-				   <a href="inicio">Inicio</a>
-				     <i class="fa fa-angle-right"></i>
-				       <span>Inicio</span>
-				</h2>
-		    </div>
+		<div class="col-md-4">
+			<a href="{{url('medicamentos_registrados')}}">
+			<div class="content-top-1">
+				<div class="col-md-6 top-content">
+					<h5>Medicinas</h5>
+					<label>{{ $medicinas }}</label>
+				</div>
 
-@endsection --}}
+				<div class="col-md-4">
+					<i class="fa fa-medkit text-danger" style="font-size: 50px;"></i>
+				</div>
+			
+			 	<div class="clearfix"> </div>
+			</div>
+			</a>
+		</div>
 
+		<div class="col-md-4">
+			
+		<a href="{{url('enfermedades_registradas')}}">
+			<div class="content-top-1">
+				<div class="col-md-6 top-content">
+					<h5>Enfermedades</h5>
+					<label>{{ $enfermedades }}</label>
+				</div>
 
-@section('content' )
-
-{{-- <div id="page-wrapper" class="gray-bg dashbard-1"> --}}
-     
-
-  {{--  <div class="content-main"> --}}
-
-	       <div class="blank"> 
-
-             {{-- <div class="blank-page">
-
-
-
-
-             </div> --}}
-
-         
-
-    </div>
-
-
-
-{{-- </div> --}}
-{{-- </div> --}}
-
-
-
+				<div class="col-md-4">
+					<i class="fa fa-wheelchair text-warning"  style="font-size: 50px; "></i>
+				</div>
+			 	<div class="clearfix"> </div>
+			</div>
+			
+			</a>
+		</div>
+	</div>
+	<div class="clearfix"> </div>
 @endsection

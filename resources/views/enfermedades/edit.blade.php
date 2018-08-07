@@ -1,10 +1,7 @@
 @extends('layouts.master')
 
-@section('title')
+@section('title','Editar Enfermedad')
 
-Registro de Enfermedades
-
-@endsection
 
 
 @section('banner')

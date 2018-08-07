@@ -8,11 +8,11 @@ window.Popper = require('popper.js').default;
  * code may be modified to fit the specific needs of your application.
  */
 
-try {
+/*try {
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap');
-} catch (e) {}
+} catch (e) {}*/
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -56,7 +56,7 @@ if (token) {
 // });
 
 
-import Echo from 'laravel-echo'
+/*import Echo from 'laravel-echo'
 
 window.Pusher = require('pusher-js');
 
@@ -66,4 +66,4 @@ window.Echo = new Echo({
     cluster: process.env.'ap2',
     encrypted: true
 
-});
+});*/

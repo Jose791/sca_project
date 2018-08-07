@@ -10,16 +10,18 @@
 @section('content')
 	
 	<h2 style="text-align: center; font-weight: bold;">Lista Horas de Aplicar Medicamentos</h2>
+	 <br>
+	 <br>
 	  <p> Fecha y hora de Impresion </p>  
-      
-        	<?php date_default_timezone_set('Europe/Madrid');?>
+       
+       <?php date_default_timezone_set('Europe/Madrid');?>
 
 	  	<?=date('d/m/Y g:ia');?>
 
 
-	  <div class="validation-system">
+	  {{-- <div class="validation-system">
  		
- 		<div class="validation-form">         
+ 		<div class="validation-form">  --}}        
 	  <div class="panel-danger">
 	  	<div class="panel-body">
 
@@ -31,7 +33,7 @@
 		  <table class="table table-bordered">
 		    <thead >
 		      <tr >
-		        <th>Asilado</th>
+		        <th>Anciano</th>
                 <th>Medicamento</th>
                 <th>Hora del Medicamento</th>
                 <th>Complemento</th>
@@ -40,27 +42,27 @@
 		    </thead>
 		    <tbody>
 		      	@foreach($asilados as $asilado)
-		      		{{-- variable de control para verificar si el asilado se le ha suministrado un medicamento x --}}
+		      		
 		      		
 
-			      	@foreach($asilado['medicines'] as $medicina)
-			      	<tr>
-				        <td>{{ $asilado['nombre'] }}</td>
-	                    <td>{{ $medicina['medicamento'] }}</td>
-				        <td>{{ $medicina['pivot']['hora_medicamento'] }}</td>
-	                    <td>{{ $medicina['pivot']['complemento'] }}</td>
-                      <td  > 
+			      	{{-- @foreach($asilado['medicines'] as $medicina) --}}
+			      	 <tr>
+				        <td>{{ $asilado['asylee']['nombre'] }}</td>
+	                    <td>{{ $asilado['medicine']['medicamento'] }}</td>
+				        <td>{{ Carbon\Carbon::parse($asilado['hora_medicamento'])->format('h:i A') }}</td>
+	                    <td>{{ $asilado['complemento'] }}</td>
+                        <td  > 
                       
 
-                  </td>
+                        </td>
 	                 
 			      	</tr>
-			      	@endforeach
+			      	{{-- @endforeach --}}
 		      	@endforeach
 		    </tbody>
 		  </table>
 	  	</div>
 	  </div>
-  </div>
-</div>
+ {{--  </div>
+</div> --}}
 @endsection

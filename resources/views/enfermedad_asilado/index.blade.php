@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('title', 'Lista de Enfermedades de Ancianos')
+
 @section('banner')
 
 <div class="banner">
@@ -35,7 +37,7 @@
                 {{-- <th>Hora del Medicamento</th>
                 <th>Complemento</th> --}}
                 <th>Editar</th>
-                <th>Borrar</th>
+                ?
 		      </tr>
 		    </thead>
 		    <tbody>
@@ -50,7 +52,7 @@
 
 	                    <td width="10px">
 	                    	<a href="{{route('enfermedad.edit',$asilado['id'])}}" class="btn btn-warning">
-	                          
+	                          <i class="fa fa-eye iconos" aria-hidden="true"></i>
 	                          Editar
 	                    	</a>
 	                    </td>
@@ -68,6 +70,8 @@
 		      	@endforeach
 		    </tbody>
 		  </table>
+
+		  {{ $asilados->links() }}
 	  	</div>
 	  </div>
   </div>
